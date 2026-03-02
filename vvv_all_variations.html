@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VVV Problem Variations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --red:  #cc1414;
+  --pink: #f2c4d4;
+  --ts:   0 1px 8px rgba(0,0,0,0.85);
+  --div:  rgba(255,255,255,0.12);
+}
+
+body {
+  background: #16110e;
+  font-family: 'Inter', sans-serif;
+  padding: 40px 20px;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.block { width: 720px; max-width: 100%; }
+.lbl   { padding: 22px 0 9px; display: flex; align-items: center; gap: 10px; }
+.vn    { font-size: 9px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.vd    { font-size: 9px; font-weight: 300; letter-spacing: .12em; text-transform: uppercase; color: #444; }
+.sep   { width: 720px; max-width: 100%; height: 1px; background: #1f1a17; }
+
+.slide {
+  width: 720px; max-width: 100%;
+  position: relative; overflow: hidden;
+  border-radius: 5px;
+  background:
+    url('backgrounds/2b271d78-9739-459a-9319-5b6b6c23cd95.jpg') center / cover no-repeat,
+    radial-gradient(circle 220px at 78% 28%, rgba(195,120,30,0.95)  0%, rgba(195,120,30,0)  60%),
+    radial-gradient(circle 180px at 28% 62%, rgba(165,28,28,0.92)   0%, rgba(165,28,28,0)   62%),
+    radial-gradient(circle 140px at 62% 58%, rgba(40,100,25,0.88)   0%, rgba(40,100,25,0)   55%),
+    radial-gradient(circle 110px at 48% 38%, rgba(170,90,18,0.85)   0%, rgba(170,90,18,0)   52%),
+    radial-gradient(circle  90px at 12% 35%, rgba(190,100,80,0.80)  0%, rgba(190,100,80,0)  48%),
+    radial-gradient(circle  70px at 90% 72%, rgba(140,55,30,0.78)   0%, rgba(140,55,30,0)   44%),
+    radial-gradient(circle  60px at 55% 18%, rgba(210,160,50,0.72)  0%, rgba(210,160,50,0)  40%),
+    #0a0605;
+}
+
+.s-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding: 18px 18px 14px;
+}
+.s-hl { display: flex; align-items: center; gap: 10px; }
+
+.s-panel {
+  padding: 0 12px 0;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.50);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,0.10);
+  overflow: hidden;
+}
+
+.card-row { display: flex; gap: 8px; }
+
+.bbar {
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 26px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 18px;
+  margin: 8px 12px 12px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.bbar span {
+  font-size: 7.5px; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+}
+
+.badge {
+  background: var(--red); color: #fff;
+  font-size: 11px; font-weight: 700;
+  width: 28px; height: 28px; border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.slide-title {
+  font-size: 17px; font-weight: 800;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: #fff; text-shadow: var(--ts);
+}
+
+.pbox   { background: var(--pink); padding: 9px 13px; border-radius: 6px; max-width: 340px; }
+.pbox p { font-size: 9px; font-weight: 700; line-height: 1.55; color: #1e0808; text-align: center; }
+
+.pink-card { background: var(--pink) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+.pink-card p { font-size: 9px; font-weight: 700; line-height: 1.5; color: #1e0808; padding: 10px 16px; }
+
+.inum  { font-size: 7px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+.ianc  { font-size: 10.5px; font-weight: 700; line-height: 1.2; letter-spacing: -.01em; color: #fff; margin-bottom: 4px; }
+.ibod  { font-size: 8.5px; font-weight: 300; line-height: 1.72; color: rgba(255,255,255,0.70); }
+.clos  { font-size: 8.5px; font-weight: 300; font-style: italic; line-height: 1.75; color: rgba(255,255,255,0.58); border-left: 2px solid var(--pink); padding-left: 10px; }
+.arr   { color: var(--red); font-size: 11px; flex-shrink: 0; }
+
+
+/* ============================================================
+   V1  —  Left pillar card  +  2×2 individual cards  +  closing card
+   ============================================================ */
+.v1-l {
+  padding: 18px 15px 18px 17px;
+  display: flex; flex-direction: column;
+  width: 165px; flex-shrink: 0;
+}
+.v1big {
+  font-size: 26px; font-weight: 700; line-height: 1.0;
+  letter-spacing: -.03em; color: #fff; flex: 1; margin-top: 2px;
+}
+.v1tags { display: flex; flex-direction: column; gap: 3px; margin-top: 14px; }
+.v1tags span { font-size: 7.5px; font-weight: 300; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+.v1-r   { flex: 1; display: flex; flex-direction: column; }
+.v1grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; }
+.v1item { padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+.v1clos { padding: 11px 16px; }
+
+/* ============================================================
+   V2  —  Big left card  +  stacked individual right cards
+   ============================================================ */
+.v2-l {
+  padding: 20px 16px 18px 17px;
+  display: flex; flex-direction: column; flex: 1;
+}
+.v2big {
+  font-size: 24px; font-weight: 700; line-height: 1.05;
+  letter-spacing: -.03em; color: #fff; flex: 1;
+}
+.v2big em { font-style: normal; color: var(--pink); }
+.v2clos { margin-top: 16px; }
+.v2-r   { display: flex; flex-direction: column; gap: 8px; width: 245px; flex-shrink: 0; }
+.v2item { padding: 10px 14px; display: flex; flex-direction: column; gap: 3px; }
+.v2idx { font-size: 7.5px; font-weight: 700; letter-spacing: .10em; color: var(--red); }
+.v2anc { font-size: 8px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: #fff; margin-bottom: 1px; }
+.v2bod { font-size: 8px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.68); }
+
+/* ============================================================
+   V3  —  Lead card  +  2×2 individual grid cards  +  footer card
+   ============================================================ */
+.v3-lead{
+  padding: 17px 14px 16px;
+  display: flex; flex-direction: column;
+  width: 205px; flex-shrink: 0;
+}
+.v3-eye { font-size: 6.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
+.v3-q   { font-size: 17px; font-weight: 700; line-height: 1.15; letter-spacing: -.02em; color: #fff; flex: 1; }
+.v3-sub { font-size: 8px; font-weight: 300; font-style: italic; line-height: 1.78; color: rgba(255,255,255,0.55); margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--div); }
+.v3-right { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.v3item { padding: 13px 12px; display: flex; flex-direction: column; gap: 4px; }
+.v3deck { font-size: 9.5px; font-weight: 700; line-height: 1.2; letter-spacing: -.01em; color: #fff; }
+.v3bod  { font-size: 8px; font-weight: 300; line-height: 1.68; color: rgba(255,255,255,0.68); }
+.v3-foot{ display: flex; align-items: center; gap: 8px; padding: 9px 14px; }
+.v3-foot p { font-size: 8px; font-weight: 300; font-style: italic; line-height: 1.5; color: rgba(255,255,255,0.52); }
+
+/* ============================================================
+   V4  —  Pink intro card  +  4 individual column cards  +  footer
+   ============================================================ */
+.v4-kick { font-size: 7.5px; font-weight: 300; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-shadow: var(--ts); }
+.v4-col  { flex: 1; padding: 14px 13px 16px; display: flex; flex-direction: column; gap: 7px; }
+.v4n    { font-size: 7px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.v4head { font-size: 19px; font-weight: 700; line-height: 1.08; letter-spacing: -.025em; color: #fff; }
+.v4bod  { font-size: 8px; font-weight: 300; line-height: 1.68; color: rgba(255,255,255,0.68); flex: 1; }
+.v4-close { display: flex; gap: 8px; padding: 10px 13px; }
+.v4-close p { font-size: 8px; font-weight: 300; font-style: italic; line-height: 1.65; color: rgba(255,255,255,0.52); }
+
+/* ============================================================
+   V5  —  3 stacked hero cards left  +  3 individual stack cards right
+   ============================================================ */
+.v5-tr  { font-size: 7.5px; font-weight: 300; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.62); text-shadow: var(--ts); }
+.v5-hero{ flex: 3; display: flex; flex-direction: column; gap: 8px; }
+.v5-hdr { padding: 10px 15px; }
+.v5-hdr p { font-size: 9.5px; font-weight: 500; line-height: 1.55; color: rgba(255,255,255,0.78); font-style: italic; }
+.v5-main{ flex: 1; padding: 17px 15px 15px; }
+.v5-eye { font-size: 6.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
+.v5big  { font-size: 42px; font-weight: 700; line-height: .92; letter-spacing: -.04em; color: #fff; }
+.v5sub  { font-size: 8.5px; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.68); margin-top: 11px; }
+.v5-foot{ padding: 9px 15px; display: flex; gap: 8px; }
+.v5-foot p { font-size: 8px; font-weight: 300; font-style: italic; line-height: 1.6; color: rgba(255,255,255,0.50); }
+.v5-stack{ flex: 2; display: flex; flex-direction: column; gap: 8px; }
+.v5item { padding: 12px 13px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.v5item.feat { flex: 1.35; }
+.v5sn   { font-size: 7px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.v5sh   { font-size: 11px; font-weight: 700; line-height: 1.15; letter-spacing: -.015em; color: #fff; }
+.v5item.feat .v5sh { font-size: 13px; }
+.v5sb   { font-size: 8px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.68); }
+
+/* ── Consolidated-version helpers ── */
+.v1-cols { display: grid; grid-template-columns: 165px 1fr; }
+.v3-grid { display: grid; grid-template-columns: 1fr 1fr; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     V1  —  Left pillar card + 2×2 individual grid cards
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V1</span><span class="vd">Left pillar + 2×2 grid</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <div class="pbox"><p>The basics of a seamless experience for artists and collectors still aren't solved.</p></div>
+    </div>
+    <div class="s-panel">
+      <div class="card-row">
+        <!-- Left pillar: its own card -->
+        <div class="card v1-l">
+          <div class="v1big">The<br>basics<br>aren't<br>solved.</div>
+          <div class="v1tags">
+            <span>Artists</span><span>+ Collectors</span>
+            <span>+ Experience</span><span>+ Culture</span>
+          </div>
+        </div>
+        <!-- Right: 4 individual cards in 2×2 -->
+        <div class="v1-r">
+          <div class="v1grid">
+            <div class="card v1item"><span class="inum">01 —</span><p class="ianc">Viewing is broken</p><p class="ibod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
+            <div class="card v1item"><span class="inum">02 —</span><p class="ianc">No platform feels fun</p><p class="ibod">Nothing captures the instinctive trading energy people had with Pokemon cards — where experience matters more than material.</p></div>
+            <div class="card v1item"><span class="inum">03 —</span><p class="ianc">Artists vs. collectors</p><p class="ibod">Treated as separate groups instead of a symbiotic ecosystem that needs each other to build sustainable cultural and economic value.</p></div>
+            <div class="card v1item"><span class="inum">04 —</span><p class="ianc">History frozen in 2021</p><p class="ibod">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing forward.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="card v1clos"><p class="clos">Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V2  —  Big left card + 4 individual stacked right cards
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V2</span><span class="vd">Big left statement + stacked right</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+    </div>
+    <div class="s-panel">
+      <div class="card-row">
+        <div class="card v2-l">
+          <div class="v2big">The basics<br>of a seamless<br>experience<br>still <em>aren't</em><br>solved.</div>
+          <p class="clos v2clos">Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p>
+        </div>
+        <!-- Right: pink label + 4 individual item cards -->
+        <div class="v2-r">
+          <div class="card pink-card"><p>For artists &amp; collectors</p></div>
+          <div class="card v2item"><span class="v2idx">01 —</span><p class="v2anc">Viewing is broken</p><p class="v2bod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
+          <div class="card v2item"><span class="v2idx">02 —</span><p class="v2anc">No fun platform</p><p class="v2bod">Nothing captures the instinctive trading energy of Pokemon cards, where experience matters more than material.</p></div>
+          <div class="card v2item"><span class="v2idx">03 —</span><p class="v2anc">Siloed communities</p><p class="v2bod">Artists and collectors treated as separate groups instead of a symbiotic ecosystem that builds sustainable cultural and economic value.</p></div>
+          <div class="card v2item"><span class="v2idx">04 —</span><p class="v2anc">History frozen in 2021</p><p class="v2bod">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule. No platform bridges that history with what's happening now.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V3  —  Lead card + 4 individual grid cards + footer card
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V3</span><span class="vd">Newspaper — dominant left lead + 2×2 grid right</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <span style="text-shadow:var(--ts);font-size:7.5px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.75)">VVV.SO — March 2, 2026</span>
+    </div>
+    <div class="s-panel">
+      <div class="card-row">
+        <div class="card v3-lead">
+          <div class="v3-eye">Core issue</div>
+          <div class="v3-q">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+          <p class="v3-sub">Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p>
+        </div>
+        <!-- Right: 4 individual cards in 2×2 -->
+        <div class="v3-right">
+          <div class="card v3item"><span class="inum">01 —</span><p class="v3deck">Viewing is broken</p><p class="v3bod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
+          <div class="card v3item"><span class="inum">02 —</span><p class="v3deck">No platform feels fun or intuitive</p><p class="v3bod">Nothing captures the instinctive trading energy of Pokemon cards — where experience matters more than material.</p></div>
+          <div class="card v3item"><span class="inum">03 —</span><p class="v3deck">Artists &amp; collectors — separate worlds</p><p class="v3bod">Instead of a symbiotic ecosystem that needs each other to build sustainable cultural and economic value.</p></div>
+          <div class="card v3item"><span class="inum">04 —</span><p class="v3deck">History frozen in 2021</p><p class="v3bod">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule, disconnected from artists pushing the space forward now.</p></div>
+        </div>
+      </div>
+      <div class="card v3-foot"><span class="arr">→</span><p>Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V4  —  Pink intro card + 4 individual column cards + footer
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V4</span><span class="vd">4-column grid — individual cards</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <span class="v4-kick">Why the market is stuck</span>
+    </div>
+    <div class="s-panel">
+      <div class="card pink-card"><p>The basics of a seamless experience for artists and collectors still aren't solved.</p></div>
+      <div class="card-row">
+        <div class="card v4-col"><span class="v4n">01 —</span><div class="v4head">Viewing<br>is<br>broken</div><p class="v4bod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
+        <div class="card v4-col"><span class="v4n">02 —</span><div class="v4head">No fun<br>platform</div><p class="v4bod">Nothing captures the instinctive trading energy of Pokemon cards — where experience matters more than material.</p></div>
+        <div class="card v4-col"><span class="v4n">03 —</span><div class="v4head">Artists<br>vs<br>collectors</div><p class="v4bod">Treated as separate groups instead of a symbiotic ecosystem that builds sustainable cultural and economic value.</p></div>
+        <div class="card v4-col"><span class="v4n">04 —</span><div class="v4head">History<br>frozen</div><p class="v4bod">Autoglyphs, Fidenza, CryptoPunks — trapped in a 2021 time capsule, disconnected from artists pushing the space forward.</p></div>
+      </div>
+      <div class="card v4-close"><span class="arr">→</span><p>Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V5  —  3 stacked hero cards left + 3 individual stack cards right
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V5</span><span class="vd">Weighted asymmetric — hero left, descending stack right</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <span class="v5-tr">VVV.SO — 4 / 41</span>
+    </div>
+    <div class="s-panel">
+      <div class="card-row">
+        <!-- Left: 3 separate stacked cards -->
+        <div class="v5-hero">
+          <div class="card v5-hdr"><p>The basics of a seamless experience for artists and collectors still aren't solved.</p></div>
+          <div class="card v5-main">
+            <div class="v5-eye">Root issue — 01</div>
+            <div class="v5big">Viewing<br>is<br>broken.</div>
+            <p class="v5sub">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship. This isn't secondary — it's the foundation everything else breaks on.</p>
+          </div>
+          <div class="card v5-foot"><span class="arr">→</span><p>Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+        </div>
+        <!-- Right: 3 individual stack cards -->
+        <div class="v5-stack">
+          <div class="card v5item feat"><span class="v5sn">02 —</span><div class="v5sh">No platform feels fun or intuitive</div><p class="v5sb">Nothing captures the instinctive trading energy people had with Pokemon cards, where experience matters more than material. The emotional layer is entirely missing.</p></div>
+          <div class="card v5item"><span class="v5sn">03 —</span><div class="v5sh">Siloed communities</div><p class="v5sb">Artists and collectors treated as separate groups instead of a symbiotic ecosystem that builds sustainable cultural and economic value.</p></div>
+          <div class="card v5item"><span class="v5sn">04 —</span><div class="v5sh">History frozen in 2021</div><p class="v5sb">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule, disconnected from the artists pushing the space forward now.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════
+     CONSOLIDATED VARIANTS  —  same layouts, bigger merged cards
+════════════════════════════════════════════════════════════════ -->
+
+<div class="sep" style="margin-top:32px"></div>
+<div style="padding:28px 0 10px;width:720px;max-width:100%">
+  <span style="font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#555">Consolidated card variants</span>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V1C  —  One merged card (pillar + grid) + closing card
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V1C</span><span class="vd">Left pillar + 2×2 grid — consolidated</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <div class="pbox"><p>The basics of a seamless experience for artists and collectors still aren't solved.</p></div>
+    </div>
+    <div class="s-panel">
+      <div class="card v1-cols">
+        <div class="v1-l" style="border-right:1px solid var(--div)">
+          <div class="v1big">The<br>basics<br>aren't<br>solved.</div>
+          <div class="v1tags">
+            <span>Artists</span><span>+ Collectors</span>
+            <span>+ Experience</span><span>+ Culture</span>
+          </div>
+        </div>
+        <div class="v1-r">
+          <div class="v1grid" style="gap:0">
+            <div class="v1item" style="border-top:1px solid var(--div)"><span class="inum">01 —</span><p class="ianc">Viewing is broken</p><p class="ibod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
+            <div class="v1item" style="border-top:1px solid var(--div);border-left:1px solid var(--div)"><span class="inum">02 —</span><p class="ianc">No platform feels fun</p><p class="ibod">Nothing captures the instinctive trading energy people had with Pokemon cards — where experience matters more than material.</p></div>
+            <div class="v1item" style="border-top:1px solid var(--div)"><span class="inum">03 —</span><p class="ianc">Artists vs. collectors</p><p class="ibod">Treated as separate groups instead of a symbiotic ecosystem that needs each other to build sustainable cultural and economic value.</p></div>
+            <div class="v1item" style="border-top:1px solid var(--div);border-left:1px solid var(--div)"><span class="inum">04 —</span><p class="ianc">History frozen in 2021</p><p class="ibod">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing forward.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="card v1clos"><p class="clos">Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V2C  —  Left card + one right card (pink top + stacked items)
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V2C</span><span class="vd">Big left statement + stacked right — consolidated</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+    </div>
+    <div class="s-panel">
+      <div class="card-row">
+        <div class="card v2-l">
+          <div class="v2big">The basics<br>of a seamless<br>experience<br>still <em>aren't</em><br>solved.</div>
+          <p class="clos v2clos">Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p>
+        </div>
+        <div class="card" style="width:245px;flex-shrink:0;display:flex;flex-direction:column">
+          <div style="background:var(--pink);padding:10px 14px"><p style="font-size:8.5px;font-weight:700;line-height:1.45;color:#1e0808">For artists &amp; collectors</p></div>
+          <div class="v2item" style="border-bottom:1px solid var(--div)"><span class="v2idx">01 —</span><div><p class="v2anc">Viewing is broken</p><p class="v2bod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div></div>
+          <div class="v2item" style="border-bottom:1px solid var(--div)"><span class="v2idx">02 —</span><div><p class="v2anc">No fun platform</p><p class="v2bod">Nothing captures the instinctive trading energy of Pokemon cards, where experience matters more than material.</p></div></div>
+          <div class="v2item" style="border-bottom:1px solid var(--div)"><span class="v2idx">03 —</span><div><p class="v2anc">Siloed communities</p><p class="v2bod">Artists and collectors treated as separate groups instead of a symbiotic ecosystem that builds sustainable cultural and economic value.</p></div></div>
+          <div class="v2item"><span class="v2idx">04 —</span><div><p class="v2anc">History frozen in 2021</p><p class="v2bod">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule. No platform bridges that history with what's happening now.</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V3C  —  Lead card + one 2×2 grid card + footer card
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V3C</span><span class="vd">Newspaper — left lead + 2×2 grid — consolidated</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <span style="text-shadow:var(--ts);font-size:7.5px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.75)">VVV.SO — March 2, 2026</span>
+    </div>
+    <div class="s-panel">
+      <div class="card-row">
+        <div class="card v3-lead">
+          <div class="v3-eye">Core issue</div>
+          <div class="v3-q">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+          <p class="v3-sub">Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p>
+        </div>
+        <div class="card v3-grid" style="flex:1">
+          <div class="v3item" style="border-left:1px solid var(--div);border-bottom:1px solid var(--div)"><span class="inum">01 —</span><p class="v3deck">Viewing is broken</p><p class="v3bod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
+          <div class="v3item" style="border-left:1px solid var(--div);border-bottom:1px solid var(--div)"><span class="inum">02 —</span><p class="v3deck">No platform feels fun or intuitive</p><p class="v3bod">Nothing captures the instinctive trading energy of Pokemon cards — where experience matters more than material.</p></div>
+          <div class="v3item" style="border-left:1px solid var(--div)"><span class="inum">03 —</span><p class="v3deck">Artists &amp; collectors — separate worlds</p><p class="v3bod">Instead of a symbiotic ecosystem that needs each other to build sustainable cultural and economic value.</p></div>
+          <div class="v3item" style="border-left:1px solid var(--div)"><span class="inum">04 —</span><p class="v3deck">History frozen in 2021</p><p class="v3bod">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule, disconnected from artists pushing the space forward now.</p></div>
+        </div>
+      </div>
+      <div class="card v3-foot"><span class="arr">→</span><p>Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V4C  —  Pink card + one 4-column card + footer card
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V4C</span><span class="vd">4-column grid — consolidated single card</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <span class="v4-kick">Why the market is stuck</span>
+    </div>
+    <div class="s-panel">
+      <div class="card pink-card"><p>The basics of a seamless experience for artists and collectors still aren't solved.</p></div>
+      <div class="card" style="display:grid;grid-template-columns:repeat(4,1fr)">
+        <div class="v4-col"><span class="v4n">01 —</span><div class="v4head">Viewing<br>is<br>broken</div><p class="v4bod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
+        <div class="v4-col" style="border-left:1px solid var(--div)"><span class="v4n">02 —</span><div class="v4head">No fun<br>platform</div><p class="v4bod">Nothing captures the instinctive trading energy of Pokemon cards — where experience matters more than material.</p></div>
+        <div class="v4-col" style="border-left:1px solid var(--div)"><span class="v4n">03 —</span><div class="v4head">Artists<br>vs<br>collectors</div><p class="v4bod">Treated as separate groups instead of a symbiotic ecosystem that builds sustainable cultural and economic value.</p></div>
+        <div class="v4-col" style="border-left:1px solid var(--div)"><span class="v4n">04 —</span><div class="v4head">History<br>frozen</div><p class="v4bod">Autoglyphs, Fidenza, CryptoPunks — trapped in a 2021 time capsule, disconnected from artists pushing the space forward.</p></div>
+      </div>
+      <div class="card v4-close"><span class="arr">→</span><p>Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     V5C  —  One hero card left + 3 individual stack cards right
+══════════════════════════════════════════════════════ -->
+<div class="block">
+  <div class="lbl"><span class="vn">V5C</span><span class="vd">Weighted asymmetric — hero consolidated, stack individual</span></div>
+  <div class="slide">
+    <div class="s-head">
+      <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
+      <span class="v5-tr">VVV.SO — 4 / 41</span>
+    </div>
+    <div class="s-panel">
+      <div class="card-row">
+        <div class="card" style="flex:3;display:flex;flex-direction:column">
+          <div class="v5-hdr" style="border-bottom:1px solid var(--div)"><p>The basics of a seamless experience for artists and collectors still aren't solved.</p></div>
+          <div class="v5-main">
+            <div class="v5-eye">Root issue — 01</div>
+            <div class="v5big">Viewing<br>is<br>broken.</div>
+            <p class="v5sub">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship. This isn't secondary — it's the foundation everything else breaks on.</p>
+          </div>
+          <div class="v5-foot" style="border-top:1px solid var(--div)"><span class="arr">→</span><p>Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p></div>
+        </div>
+        <div class="v5-stack">
+          <div class="card v5item feat"><span class="v5sn">02 —</span><div class="v5sh">No platform feels fun or intuitive</div><p class="v5sb">Nothing captures the instinctive trading energy people had with Pokemon cards, where experience matters more than material. The emotional layer is entirely missing.</p></div>
+          <div class="card v5item"><span class="v5sn">03 —</span><div class="v5sh">Siloed communities</div><p class="v5sb">Artists and collectors treated as separate groups instead of a symbiotic ecosystem that builds sustainable cultural and economic value.</p></div>
+          <div class="card v5item"><span class="v5sn">04 —</span><div class="v5sh">History frozen in 2021</div><p class="v5sb">Autoglyphs, Fidenza, CryptoPunks — trapped in a time capsule, disconnected from the artists pushing the space forward now.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="bbar"><span>VVV.SO</span><span>March 2, 2026</span><span>4 / 41</span></div>
+  </div>
+</div>
+
+</body>
+</html>
