@@ -72,14 +72,27 @@ body {
 }
 
 .card {
+  position: relative;
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,var(--card-border-op));
+  overflow: hidden;
+}
+/* Glass layer — blend mode lives here so text is unaffected */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background: hsla(var(--card-hue), var(--card-sat), var(--card-lit), var(--card-bg-opacity));
   backdrop-filter: blur(var(--card-blur));
   -webkit-backdrop-filter: blur(var(--card-blur));
   mix-blend-mode: var(--card-blend);
-  border-radius: 9px;
-  border: 1px solid rgba(255,255,255,var(--card-border-op));
-  overflow: hidden;
+  pointer-events: none;
   transition: background 0.08s, backdrop-filter 0.08s;
+}
+/* All direct card children float above the blend layer */
+.card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card-row { display: flex; gap: 8px; }
@@ -117,7 +130,7 @@ body {
 .pbox   { background: var(--pink); padding: 9px 13px; border-radius: 6px; max-width: 340px; }
 .pbox p { font-size: 9px; font-weight: 700; line-height: 1.55; color: #1e0808; text-align: center; }
 
-.pink-card { background: var(--pink) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+.pink-card::before { background: var(--pink) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; mix-blend-mode: normal !important; }
 .pink-card p { font-size: 9px; font-weight: 700; line-height: 1.5; color: #1e0808; padding: 10px 16px; }
 
 .inum  { font-size: 7px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
@@ -896,8 +909,20 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     <div class="cp-section-label">Text</div>
 
     <div class="cp-color-row">
-      <label>Color</label>
-      <input type="color" id="sl-text-color" value="#ffffff">
+      <label>Heading</label>
+      <input type="color" id="sl-text-main" value="#ffffff">
+    </div>
+    <div class="cp-color-row">
+      <label>Body</label>
+      <input type="color" id="sl-text-body" value="#ffffff">
+    </div>
+    <div class="cp-color-row">
+      <label>Muted</label>
+      <input type="color" id="sl-text-muted" value="#ffffff">
+    </div>
+    <div class="cp-color-row">
+      <label>Accent</label>
+      <input type="color" id="sl-text-accent" value="#cc1414">
     </div>
 
     <div class="cp-row">
@@ -921,18 +946,21 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
 
 <script>
 (function () {
-  const R = document.documentElement.style;
+  var R = document.documentElement.style;
 
-  const DEFAULTS = {
-    opacity:     0.50,
-    blur:        22,
-    border:      0.10,
-    hue:         0,
-    sat:         0,
-    lit:         0,
-    blend:       'normal',
-    textColor:   '#ffffff',
-    textOpacity: 1.00
+  var DEFAULTS = {
+    opacity:         0.50,
+    blur:            22,
+    border:          0.10,
+    hue:             0,
+    sat:             0,
+    lit:             0,
+    blend:           'normal',
+    textMainColor:   '#ffffff',
+    textBodyColor:   '#ffffff',
+    textMutedColor:  '#ffffff',
+    textAccentColor: '#cc1414',
+    textOpacity:     1.00
   };
 
   function hexToRgb(hex) {
@@ -940,6 +968,11 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     var g = parseInt(hex.slice(3, 5), 16);
     var b = parseInt(hex.slice(5, 7), 16);
     return [r, g, b];
+  }
+
+  function toRgba(hex, alpha) {
+    var c = hexToRgb(hex || '#ffffff');
+    return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + alpha.toFixed(2) + ')';
   }
 
   function applyAll(d) {
@@ -952,14 +985,16 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     R.setProperty('--card-lit',        d.lit + '%');
     R.setProperty('--card-blend',      d.blend);
 
-    // Text variables — compute three opacity tiers from hex + opacity
-    var tc = d.textColor || '#ffffff';
+    // Text variables — each tier has its own color + shared opacity scale
     var to = typeof d.textOpacity === 'number' ? d.textOpacity : 1;
-    var rgb = hexToRgb(tc);
-    var r = rgb[0], g = rgb[1], b = rgb[2];
-    R.setProperty('--text-main',  'rgba(' + r + ',' + g + ',' + b + ',' + to.toFixed(2) + ')');
-    R.setProperty('--text-body',  'rgba(' + r + ',' + g + ',' + b + ',' + (to * 0.68).toFixed(2) + ')');
-    R.setProperty('--text-muted', 'rgba(' + r + ',' + g + ',' + b + ',' + (to * 0.52).toFixed(2) + ')');
+    var mc = d.textMainColor   || d.textColor || '#ffffff';
+    var bc = d.textBodyColor   || d.textColor || '#ffffff';
+    var uc = d.textMutedColor  || d.textColor || '#ffffff';
+    var ac = d.textAccentColor || '#cc1414';
+    R.setProperty('--text-main',  toRgba(mc, to));
+    R.setProperty('--text-body',  toRgba(bc, to * 0.68));
+    R.setProperty('--text-muted', toRgba(uc, to * 0.52));
+    R.setProperty('--red',        ac);
 
     // Sync display values
     document.getElementById('val-opacity').textContent      = d.opacity.toFixed(2);
@@ -971,28 +1006,34 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     document.getElementById('val-text-opacity').textContent = to.toFixed(2);
 
     // Sync input positions
-    document.getElementById('sl-opacity').value      = d.opacity;
-    document.getElementById('sl-blur').value         = d.blur;
-    document.getElementById('sl-border').value       = d.border;
-    document.getElementById('sl-hue').value          = d.hue;
-    document.getElementById('sl-sat').value          = d.sat;
-    document.getElementById('sl-lit').value          = d.lit;
-    document.getElementById('sl-blend').value        = d.blend;
-    document.getElementById('sl-text-color').value   = tc;
-    document.getElementById('sl-text-opacity').value = to;
+    document.getElementById('sl-opacity').value          = d.opacity;
+    document.getElementById('sl-blur').value             = d.blur;
+    document.getElementById('sl-border').value           = d.border;
+    document.getElementById('sl-hue').value              = d.hue;
+    document.getElementById('sl-sat').value              = d.sat;
+    document.getElementById('sl-lit').value              = d.lit;
+    document.getElementById('sl-blend').value            = d.blend;
+    document.getElementById('sl-text-main').value        = mc;
+    document.getElementById('sl-text-body').value        = bc;
+    document.getElementById('sl-text-muted').value       = uc;
+    document.getElementById('sl-text-accent').value      = ac;
+    document.getElementById('sl-text-opacity').value     = to;
   }
 
   function readState() {
     return {
-      opacity:     +document.getElementById('sl-opacity').value,
-      blur:        +document.getElementById('sl-blur').value,
-      border:      +document.getElementById('sl-border').value,
-      hue:         +document.getElementById('sl-hue').value,
-      sat:         +document.getElementById('sl-sat').value,
-      lit:         +document.getElementById('sl-lit').value,
-      blend:        document.getElementById('sl-blend').value,
-      textColor:    document.getElementById('sl-text-color').value,
-      textOpacity: +document.getElementById('sl-text-opacity').value
+      opacity:         +document.getElementById('sl-opacity').value,
+      blur:            +document.getElementById('sl-blur').value,
+      border:          +document.getElementById('sl-border').value,
+      hue:             +document.getElementById('sl-hue').value,
+      sat:             +document.getElementById('sl-sat').value,
+      lit:             +document.getElementById('sl-lit').value,
+      blend:            document.getElementById('sl-blend').value,
+      textMainColor:    document.getElementById('sl-text-main').value,
+      textBodyColor:    document.getElementById('sl-text-body').value,
+      textMutedColor:   document.getElementById('sl-text-muted').value,
+      textAccentColor:  document.getElementById('sl-text-accent').value,
+      textOpacity:     +document.getElementById('sl-text-opacity').value
     };
   }
 
