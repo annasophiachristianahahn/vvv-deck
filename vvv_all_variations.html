@@ -15,6 +15,15 @@
   --pink: #f2c4d4;
   --ts:   0 1px 8px rgba(0,0,0,0.85);
   --div:  rgba(255,255,255,0.12);
+
+  /* ── Card control variables (live-edited by control panel) ── */
+  --card-bg-opacity:    0.50;
+  --card-blur:          22px;
+  --card-hue:           0;
+  --card-sat:           0%;
+  --card-lit:           0%;
+  --card-blend:         normal;
+  --card-border-op:     0.10;
 }
 
 body {
@@ -58,12 +67,14 @@ body {
 }
 
 .card {
-  background: rgba(0, 0, 0, 0.50);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  background: hsla(var(--card-hue), var(--card-sat), var(--card-lit), var(--card-bg-opacity));
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  mix-blend-mode: var(--card-blend);
   border-radius: 9px;
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,var(--card-border-op));
   overflow: hidden;
+  transition: background 0.08s, backdrop-filter 0.08s;
 }
 
 .card-row { display: flex; gap: 8px; }
@@ -202,6 +213,178 @@ body {
 /* ── Consolidated-version helpers ── */
 .v1-cols { display: grid; grid-template-columns: 165px 1fr; }
 .v3-grid { display: grid; grid-template-columns: 1fr 1fr; }
+
+/* ══════════════════════════════════════════════
+   CONTROL PANEL
+══════════════════════════════════════════════ */
+#ctrl-panel {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  width: 272px;
+  background: rgba(8, 8, 12, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  user-select: none;
+}
+#ctrl-panel.cp-visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0) scale(1);
+}
+.cp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 16px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.cp-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.60);
+}
+.cp-hint {
+  font-size: 9px;
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 4px;
+  padding: 2px 7px;
+  color: rgba(255,255,255,0.40);
+  letter-spacing: .06em;
+}
+.cp-body {
+  padding: 12px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.cp-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cp-row label {
+  font-size: 9.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.48);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  letter-spacing: .04em;
+}
+.cp-val {
+  color: rgba(255,255,255,0.80);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  font-size: 9px;
+}
+.cp-section-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+  margin-top: 2px;
+}
+.cp-sep {
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+  margin: 3px 0;
+}
+/* Range inputs */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.14);
+  outline: none;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  transition: transform 0.1s;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+#sl-hue {
+  background: linear-gradient(to right,
+    hsl(0,75%,50%), hsl(45,75%,50%), hsl(90,75%,50%),
+    hsl(135,75%,50%), hsl(180,75%,50%), hsl(225,75%,50%),
+    hsl(270,75%,50%), hsl(315,75%,50%), hsl(360,75%,50%));
+}
+/* Select */
+#sl-blend {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.11);
+  border-radius: 7px;
+  color: rgba(255,255,255,0.80);
+  font-size: 11px;
+  padding: 7px 10px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+}
+/* Reset button */
+#cp-reset {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.55);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 9px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s, color 0.12s;
+  margin-top: 2px;
+}
+#cp-reset:hover {
+  background: rgba(255,255,255,0.13);
+  color: rgba(255,255,255,0.85);
+}
+/* Spacebar nudge hint at bottom of page */
+#cp-nudge {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.20);
+  letter-spacing: .12em;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
 </style>
 </head>
 <body>
@@ -536,5 +719,158 @@ body {
   </div>
 </div>
 
+<!-- ── Spacebar hint ── -->
+<div id="cp-nudge">SPACE &nbsp;—&nbsp; card controls</div>
+
+<!-- ── Control panel ── -->
+<div id="ctrl-panel">
+  <div class="cp-header">
+    <span class="cp-title">Card Controls</span>
+    <span class="cp-hint">SPACE</span>
+  </div>
+  <div class="cp-body">
+
+    <div class="cp-row">
+      <label>Opacity <span class="cp-val" id="val-opacity">0.50</span></label>
+      <input type="range" id="sl-opacity" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+    <div class="cp-row">
+      <label>Blur <span class="cp-val" id="val-blur">22px</span></label>
+      <input type="range" id="sl-blur" min="0" max="50" step="1" value="22">
+    </div>
+
+    <div class="cp-row">
+      <label>Border <span class="cp-val" id="val-border">0.10</span></label>
+      <input type="range" id="sl-border" min="0" max="1" step="0.01" value="0.1">
+    </div>
+
+    <div class="cp-sep"></div>
+    <div class="cp-section-label">Color — HSL</div>
+
+    <div class="cp-row">
+      <label>Hue <span class="cp-val" id="val-hue">0°</span></label>
+      <input type="range" id="sl-hue" min="0" max="360" step="1" value="0">
+    </div>
+
+    <div class="cp-row">
+      <label>Saturation <span class="cp-val" id="val-sat">0%</span></label>
+      <input type="range" id="sl-sat" min="0" max="100" step="1" value="0">
+    </div>
+
+    <div class="cp-row">
+      <label>Lightness <span class="cp-val" id="val-lit">0%</span></label>
+      <input type="range" id="sl-lit" min="0" max="80" step="1" value="0">
+    </div>
+
+    <div class="cp-sep"></div>
+
+    <div class="cp-row">
+      <label>Blend Mode</label>
+      <select id="sl-blend">
+        <option value="normal">Normal</option>
+        <option value="multiply">Multiply</option>
+        <option value="screen">Screen</option>
+        <option value="overlay">Overlay</option>
+        <option value="darken">Darken</option>
+        <option value="lighten">Lighten</option>
+        <option value="color-dodge">Color Dodge</option>
+        <option value="color-burn">Color Burn</option>
+        <option value="hard-light">Hard Light</option>
+        <option value="soft-light">Soft Light</option>
+        <option value="difference">Difference</option>
+        <option value="exclusion">Exclusion</option>
+        <option value="hue">Hue</option>
+        <option value="saturation">Saturation</option>
+        <option value="color">Color</option>
+        <option value="luminosity">Luminosity</option>
+      </select>
+    </div>
+
+    <button id="cp-reset">Reset to Default</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  const R = document.documentElement.style;
+
+  const DEFAULTS = {
+    opacity: 0.50,
+    blur:    22,
+    border:  0.10,
+    hue:     0,
+    sat:     0,
+    lit:     0,
+    blend:   'normal'
+  };
+
+  function applyAll(d) {
+    R.setProperty('--card-bg-opacity', d.opacity);
+    R.setProperty('--card-blur',       d.blur + 'px');
+    R.setProperty('--card-border-op',  d.border);
+    R.setProperty('--card-hue',        d.hue);
+    R.setProperty('--card-sat',        d.sat + '%');
+    R.setProperty('--card-lit',        d.lit + '%');
+    R.setProperty('--card-blend',      d.blend);
+
+    document.getElementById('val-opacity').textContent = d.opacity.toFixed(2);
+    document.getElementById('val-blur').textContent    = d.blur + 'px';
+    document.getElementById('val-border').textContent  = d.border.toFixed(2);
+    document.getElementById('val-hue').textContent     = d.hue + '°';
+    document.getElementById('val-sat').textContent     = d.sat + '%';
+    document.getElementById('val-lit').textContent     = d.lit + '%';
+  }
+
+  function readState() {
+    return {
+      opacity: +document.getElementById('sl-opacity').value,
+      blur:    +document.getElementById('sl-blur').value,
+      border:  +document.getElementById('sl-border').value,
+      hue:     +document.getElementById('sl-hue').value,
+      sat:     +document.getElementById('sl-sat').value,
+      lit:     +document.getElementById('sl-lit').value,
+      blend:   document.getElementById('sl-blend').value
+    };
+  }
+
+  // Live update on any slider/select change
+  document.getElementById('ctrl-panel').addEventListener('input', function () {
+    applyAll(readState());
+  });
+  document.getElementById('sl-blend').addEventListener('change', function () {
+    applyAll(readState());
+  });
+
+  // Reset
+  document.getElementById('cp-reset').addEventListener('click', function () {
+    document.getElementById('sl-opacity').value = DEFAULTS.opacity;
+    document.getElementById('sl-blur').value    = DEFAULTS.blur;
+    document.getElementById('sl-border').value  = DEFAULTS.border;
+    document.getElementById('sl-hue').value     = DEFAULTS.hue;
+    document.getElementById('sl-sat').value     = DEFAULTS.sat;
+    document.getElementById('sl-lit').value     = DEFAULTS.lit;
+    document.getElementById('sl-blend').value   = DEFAULTS.blend;
+    applyAll(DEFAULTS);
+  });
+
+  // Spacebar toggle
+  const panel = document.getElementById('ctrl-panel');
+  const nudge = document.getElementById('cp-nudge');
+  let visible = false;
+
+  document.addEventListener('keydown', function (e) {
+    if (e.code !== 'Space') return;
+    const tag = document.activeElement ? document.activeElement.tagName : '';
+    if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
+    e.preventDefault();
+    visible = !visible;
+    panel.classList.toggle('cp-visible', visible);
+    nudge.style.opacity = visible ? '0' : '';
+  });
+
+  applyAll(DEFAULTS);
+})();
+</script>
 </body>
 </html>
