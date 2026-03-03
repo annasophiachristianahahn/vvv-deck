@@ -518,6 +518,39 @@ input[type=range]::-webkit-slider-thumb:hover {
   color: rgba(255,255,255,0.48);
   letter-spacing: .04em;
 }
+.cp-color-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+/* Hex value display */
+.cp-hex-val {
+  font-size: 8px;
+  font-family: 'JetBrains Mono', 'Space Mono', monospace;
+  color: rgba(255,255,255,0.36);
+  letter-spacing: .03em;
+  min-width: 48px;
+  text-align: right;
+}
+/* HSL computed color preview */
+.cp-hsl-preview-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cp-hsl-preview {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cp-hsl-swatch {
+  width: 22px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.16);
+  display: inline-block;
+  flex-shrink: 0;
+}
 input[type=color] {
   -webkit-appearance: none;
   width: 48px;
@@ -1149,6 +1182,13 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
       <label>Lightness <span class="cp-val" id="val-lit">0%</span></label>
       <input type="range" id="sl-lit" min="0" max="80" step="1" value="0">
     </div>
+    <div class="cp-hsl-preview-row">
+      <label style="font-size:9.5px;font-weight:500;color:rgba(255,255,255,0.48);letter-spacing:.04em">Result</label>
+      <div class="cp-hsl-preview">
+        <span class="cp-hsl-swatch" id="hsl1-swatch"></span>
+        <span class="cp-hex-val" id="hsl1-hex">#000000</span>
+      </div>
+    </div>
 
     <!-- ── BLEND ── -->
     <div class="cp-sep"></div>
@@ -1199,6 +1239,13 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
         <label>Lightness <span class="cp-val" id="val-card2-lit">100%</span></label>
         <input type="range" id="sl-card2-lit" min="0" max="100" step="1" value="100">
       </div>
+      <div class="cp-hsl-preview-row">
+        <label style="font-size:9.5px;font-weight:500;color:rgba(255,255,255,0.48);letter-spacing:.04em">Result</label>
+        <div class="cp-hsl-preview">
+          <span class="cp-hsl-swatch" id="hsl2-swatch"></span>
+          <span class="cp-hex-val" id="hsl2-hex">#000000</span>
+        </div>
+      </div>
       <div class="cp-row">
         <label>Blend Mode</label>
         <select id="sl-card2-blend" class="cp-blend-select">
@@ -1223,6 +1270,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
         <span class="cp-text-name">Heading</span>
         <div class="cp-text-meta">
           <span class="cp-val" id="val-text-main-opacity">1.00</span>
+          <span class="cp-hex-val" id="hex-text-main">#FFFFFF</span>
           <input type="color" id="sl-text-main" value="#ffffff">
         </div>
       </div>
@@ -1233,6 +1281,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
         <span class="cp-text-name">Body</span>
         <div class="cp-text-meta">
           <span class="cp-val" id="val-text-body-opacity">0.68</span>
+          <span class="cp-hex-val" id="hex-text-body">#FFFFFF</span>
           <input type="color" id="sl-text-body" value="#ffffff">
         </div>
       </div>
@@ -1243,6 +1292,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
         <span class="cp-text-name">Muted</span>
         <div class="cp-text-meta">
           <span class="cp-val" id="val-text-muted-opacity">0.52</span>
+          <span class="cp-hex-val" id="hex-text-muted">#FFFFFF</span>
           <input type="color" id="sl-text-muted" value="#ffffff">
         </div>
       </div>
@@ -1250,11 +1300,17 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     </div>
     <div class="cp-color-row">
       <label>Accent / Red</label>
-      <input type="color" id="sl-text-accent" value="#cc1414">
+      <div class="cp-color-right">
+        <span class="cp-hex-val" id="hex-text-accent">#CC1414</span>
+        <input type="color" id="sl-text-accent" value="#cc1414">
+      </div>
     </div>
     <div class="cp-color-row">
       <label>Pink</label>
-      <input type="color" id="sl-pink" value="#f2c4d4">
+      <div class="cp-color-right">
+        <span class="cp-hex-val" id="hex-pink">#F2C4D4</span>
+        <input type="color" id="sl-pink" value="#f2c4d4">
+      </div>
     </div>
 
     <!-- ── TEXT COLOR extras ── -->
@@ -1266,6 +1322,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
         <span class="cp-text-name">Kick / Super labels</span>
         <div class="cp-text-meta">
           <span class="cp-val" id="val-kick-opacity">0.60</span>
+          <span class="cp-hex-val" id="hex-kick-color">#FFFFFF</span>
           <input type="color" id="sl-kick-color" value="#ffffff">
         </div>
       </div>
@@ -1276,6 +1333,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
         <span class="cp-text-name">Footer bar</span>
         <div class="cp-text-meta">
           <span class="cp-val" id="val-bbar-opacity">0.42</span>
+          <span class="cp-hex-val" id="hex-bbar-color">#FFFFFF</span>
           <input type="color" id="sl-bbar-color" value="#ffffff">
         </div>
       </div>
@@ -1283,7 +1341,10 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     </div>
     <div class="cp-color-row">
       <label>Pink card text</label>
-      <input type="color" id="sl-pink-text-color" value="#1e0808">
+      <div class="cp-color-right">
+        <span class="cp-hex-val" id="hex-pink-text-color">#1E0808</span>
+        <input type="color" id="sl-pink-text-color" value="#1e0808">
+      </div>
     </div>
 
     <!-- ── TYPOGRAPHY ── -->
@@ -1795,6 +1856,31 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
   function n(key, def) { return typeof key === 'number' ? key : def; }
   function sv(id, val) { document.getElementById(id).value = val; }
   function st(id, val) { document.getElementById(id).textContent = val; }
+  // Convert HSL to hex string
+  function hslToHex(h, s, l) {
+    h = +h; s = +s / 100; l = +l / 100;
+    var a = s * Math.min(l, 1 - l);
+    function f(n) {
+      var k = (n + h / 30) % 12;
+      var c = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+      return Math.round(255 * c).toString(16).padStart(2, '0');
+    }
+    return '#' + f(0) + f(8) + f(4);
+  }
+  // Sync a color picker's hex value to its display span
+  function syncHex(inputId, spanId) {
+    var el = document.getElementById(inputId);
+    var sp = document.getElementById(spanId);
+    if (el && sp) sp.textContent = el.value.toUpperCase();
+  }
+  // Update an HSL computed color preview (swatch + hex)
+  function syncHslPreview(h, s, l, swatchId, hexId) {
+    var hex = hslToHex(h, s, l);
+    var sw = document.getElementById(swatchId);
+    var hx = document.getElementById(hexId);
+    if (sw) sw.style.background = 'hsl(' + h + ',' + s + '%,' + l + '%)';
+    if (hx) hx.textContent = hex.toUpperCase();
+  }
 
   // ── Apply state object → CSS vars + sync UI ──
   function applyAll(d) {
@@ -1956,6 +2042,18 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     sv('sl-bbar-opacity',   bo);
     sv('sl-bbar-color',     bc2);
     sv('sl-pink-text-color', ptc);
+
+    // ── Sync hex displays ──
+    syncHex('sl-text-main',       'hex-text-main');
+    syncHex('sl-text-body',       'hex-text-body');
+    syncHex('sl-text-muted',      'hex-text-muted');
+    syncHex('sl-text-accent',     'hex-text-accent');
+    syncHex('sl-pink',            'hex-pink');
+    syncHex('sl-kick-color',      'hex-kick-color');
+    syncHex('sl-bbar-color',      'hex-bbar-color');
+    syncHex('sl-pink-text-color', 'hex-pink-text-color');
+    syncHslPreview(d.hue, d.sat, d.lit, 'hsl1-swatch', 'hsl1-hex');
+    syncHslPreview(c2h,   c2s,   c2l,   'hsl2-swatch', 'hsl2-hex');
   }
 
   function readState() {
