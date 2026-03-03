@@ -147,24 +147,44 @@ body {
   border-radius: var(--card-radius);
   border: 1px solid rgba(255,255,255,var(--card-border-op));
   overflow: hidden;
+  transition: backdrop-filter 0.08s;
+  /* backdrop-filter applied directly via JS — only when blur > 0.
+     Never apply blur(0px): even blur(0) creates a GPU compositing layer
+     in Safari, causing mix-blend-mode children to composite against an
+     intermediate buffer instead of the raw slide background, producing
+     a different (darker) result vs Chrome. By moving blur to the parent
+     .card and only applying it when > 0, we guarantee:
+     - blur=0  → no compositing layer → identical blend results in all browsers
+     - blur>0  → parent has backdrop-filter, children blend against blurred
+                 backdrop (parent-child compositing, reliable in Safari) */
 }
-/* Layer 1 — blur only. NO background or mix-blend-mode here.
-   Safari bug: having backdrop-filter + mix-blend-mode on the same element
-   causes backdrop to composite against an opaque black buffer first.
-   Fix: separate the two onto different elements. */
-.card::before {
+/* Layer 2 blur (::before) — ONLY rendered when .layer2-blur class is on body,
+   which JS sets only when card2Blur > 0. No blur(0px) = no compositing layer. */
+.layer2-blur .card::before {
   content: '';
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(var(--card-blur));
-  -webkit-backdrop-filter: blur(var(--card-blur));
+  backdrop-filter: blur(var(--card2-blur));
+  -webkit-backdrop-filter: blur(var(--card2-blur));
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
   transition: backdrop-filter 0.08s;
 }
-/* Layer 1 color + blend — injected as .card-glass by JS.
+/* Layer 2 color + blend — injected as .card-glass2 by JS.
    Separated from ::before so backdrop-filter and mix-blend-mode
-   are never on the same element (Safari compositing fix). */
+   are never on the same element. Hidden until .layer2-on on body. */
+.card-glass2 {
+  position: absolute;
+  inset: 0;
+  background: hsla(var(--card2-hue), var(--card2-sat), var(--card2-lit), var(--card2-bg-opacity));
+  mix-blend-mode: var(--card2-blend);
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+  transition: background 0.08s;
+}
+.layer2-on .card-glass2 { display: block; }
+/* Layer 1 color + blend — injected as .card-glass by JS. */
 .card-glass {
   position: absolute;
   inset: 0;
@@ -174,26 +194,8 @@ body {
   z-index: 2;
   transition: background 0.08s;
 }
-/* Layer 2 glass — beneath layer 1, hidden until .layer2-on */
-.card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: hsla(var(--card2-hue), var(--card2-sat), var(--card2-lit), var(--card2-bg-opacity));
-  backdrop-filter: blur(var(--card2-blur));
-  -webkit-backdrop-filter: blur(var(--card2-blur));
-  mix-blend-mode: var(--card2-blend);
-  pointer-events: none;
-  z-index: 0;
-  display: none;
-  -webkit-backface-visibility: hidden; /* Safari: same fix as ::before */
-  transition: background 0.08s, backdrop-filter 0.08s;
-}
-.layer2-on .card::after {
-  display: block;
-}
 /* All direct card children float above all glass layers */
-.card > *:not(.card-glass) {
+.card > *:not(.card-glass):not(.card-glass2) {
   position: relative;
   z-index: 3;
 }
@@ -234,7 +236,9 @@ body {
 .pbox   { background: var(--pink); padding: 9px 13px; border-radius: 6px; max-width: 340px; }
 .pbox p { font-size: var(--pink-text-size); font-weight: var(--pink-text-weight); line-height: 1.55; color: var(--pink-text-color); text-align: center; }
 
-.pink-card::before { background: var(--pink) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; mix-blend-mode: normal !important; }
+.pink-card { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+.pink-card .card-glass  { background: var(--pink) !important; mix-blend-mode: normal !important; }
+.pink-card .card-glass2 { display: none !important; }
 .pink-card p { font-size: var(--pink-text-size); font-weight: var(--pink-text-weight); line-height: 1.5; color: var(--pink-text-color); padding: 10px 16px; }
 
 .inum  { font-size: var(--inum-size); font-weight: var(--inum-weight); letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
@@ -1824,6 +1828,18 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     R.setProperty('--card2-lit',        c2l + '%');
     R.setProperty('--card2-blend',      c2bl);
     document.body.classList.toggle('layer2-on', l2);
+
+    // Apply backdrop-filter directly on .card elements — only when blur > 0.
+    // blur(0px) creates a GPU compositing layer in Safari even though it does
+    // nothing visually, causing mix-blend-mode children to blend incorrectly.
+    var blurVal = n(d.blur, 0);
+    var blurStr = blurVal > 0 ? 'blur(' + blurVal + 'px)' : '';
+    document.querySelectorAll('.card').forEach(function(c) {
+      c.style.backdropFilter = blurStr;
+      c.style.webkitBackdropFilter = blurStr;
+    });
+    // Layer 2 blur: only activate ::before backdrop-filter when card2Blur > 0
+    document.body.classList.toggle('layer2-blur', l2 && c2b > 0);
     document.getElementById('layer2-controls').classList.toggle('l2-visible', l2);
 
     // Text (with old-preset fallback)
@@ -2173,9 +2189,14 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     nudge.style.opacity = visible ? '0' : '';
   });
 
-  // Inject .card-glass into every card — separates backdrop-filter (::before)
-  // from mix-blend-mode (.card-glass) so Safari doesn't composite them wrong.
+  // Inject .card-glass (layer 1 color+blend) and .card-glass2 (layer 2 color+blend)
+  // into every card. These are separate from the blur elements (backdrop-filter on
+  // .card parent for layer 1, ::before for layer 2) so that backdrop-filter and
+  // mix-blend-mode are NEVER on the same element — the Safari compositing fix.
   document.querySelectorAll('.card').forEach(function(card) {
+    var gl2 = document.createElement('div');
+    gl2.className = 'card-glass2';
+    card.insertBefore(gl2, card.firstChild);
     var gl = document.createElement('div');
     gl.className = 'card-glass';
     card.insertBefore(gl, card.firstChild);
