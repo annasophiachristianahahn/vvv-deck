@@ -158,9 +158,9 @@ body {
      - blur>0  → parent has backdrop-filter, children blend against blurred
                  backdrop (parent-child compositing, reliable in Safari) */
 }
-/* Layer 2 blur (::before) — ONLY rendered when .layer2-blur class is on body,
+/* Layer 2 blur (::before) — ONLY rendered when slide has data-layer2-blur="true",
    which JS sets only when card2Blur > 0. No blur(0px) = no compositing layer. */
-.layer2-blur .card::before {
+.slide[data-layer2-blur="true"] .card::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -183,7 +183,7 @@ body {
   display: none;
   transition: background 0.08s;
 }
-.layer2-on .card-glass2 { display: block; }
+.slide[data-layer2="true"] .card-glass2 { display: block; }
 /* Layer 1 color + blend — injected as .card-glass by JS. */
 .card-glass {
   position: absolute;
@@ -847,7 +847,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
 ══════════════════════════════════════════════════════ -->
 <div class="block">
   <div class="lbl"><span class="vn">V2</span><span class="vd">Big left statement + stacked right</span></div>
-  <div class="slide">
+  <div class="slide" data-slide="v2" data-pinned="true">
     <div class="s-head">
       <div class="s-hl"><div class="badge">02</div><span class="slide-title">Problem</span></div>
     </div>
@@ -1916,19 +1916,22 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     R.setProperty('--card2-sat',        c2s + '%');
     R.setProperty('--card2-lit',        c2l + '%');
     R.setProperty('--card2-blend',      c2bl);
-    document.body.classList.toggle('layer2-on', l2);
+    // Layer 2 state — set per-slide data attrs (skip pinned slides)
+    document.querySelectorAll('.slide:not([data-pinned])').forEach(function(sl) {
+      sl.dataset.layer2     = l2 ? 'true' : '';
+      sl.dataset.layer2Blur = (l2 && c2b > 0) ? 'true' : '';
+    });
 
     // Apply backdrop-filter directly on .card elements — only when blur > 0.
     // blur(0px) creates a GPU compositing layer in Safari even though it does
     // nothing visually, causing mix-blend-mode children to blend incorrectly.
+    // Skip cards inside pinned slides (they have their own blur state).
     var blurVal = n(d.blur, 0);
     var blurStr = blurVal > 0 ? 'blur(' + blurVal + 'px)' : '';
-    document.querySelectorAll('.card').forEach(function(c) {
+    document.querySelectorAll('.slide:not([data-pinned]) .card').forEach(function(c) {
       c.style.backdropFilter = blurStr;
       c.style.webkitBackdropFilter = blurStr;
     });
-    // Layer 2 blur: only activate ::before backdrop-filter when card2Blur > 0
-    document.body.classList.toggle('layer2-blur', l2 && c2b > 0);
     document.getElementById('layer2-controls').classList.toggle('l2-visible', l2);
 
     // Text (with old-preset fallback)
@@ -2303,7 +2306,56 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     card.insertBefore(gl, card.firstChild);
   });
 
+  // ── pinSlide: apply a preset's card-layer settings to a specific slide element.
+  // CSS custom properties set inline on the slide override :root for all
+  // descendants, so cards inside inherit the slide-specific vars.
+  // Global applyAll() skips [data-pinned] slides so they stay independent.
+  function pinSlide(d, slideEl) {
+    var l2  = !!d.layer2;
+    var c2b = n(d.card2Blur, 0);
+    // Card layer 1 CSS vars
+    slideEl.style.setProperty('--card-bg-opacity', n(d.opacity, 0.5));
+    slideEl.style.setProperty('--card-hue',        n(d.hue, 0));
+    slideEl.style.setProperty('--card-sat',         n(d.sat, 0) + '%');
+    slideEl.style.setProperty('--card-lit',         n(d.lit, 0) + '%');
+    slideEl.style.setProperty('--card-blend',       d.blend || 'normal');
+    slideEl.style.setProperty('--card-border-op',  n(d.border, 0.1));
+    slideEl.style.setProperty('--card-radius',     n(d.radius, 9) + 'px');
+    slideEl.style.setProperty('--card-gap',        n(d.gap, 8) + 'px');
+    // Card layer 2 CSS vars
+    slideEl.style.setProperty('--card2-bg-opacity', n(d.card2Opacity, 0.30));
+    slideEl.style.setProperty('--card2-blur',       c2b + 'px');
+    slideEl.style.setProperty('--card2-hue',        n(d.card2Hue, 0));
+    slideEl.style.setProperty('--card2-sat',        n(d.card2Sat, 0) + '%');
+    slideEl.style.setProperty('--card2-lit',        n(d.card2Lit, 100) + '%');
+    slideEl.style.setProperty('--card2-blend',      d.card2Blend || 'multiply');
+    // Layer 2 visibility
+    slideEl.dataset.layer2     = l2 ? 'true' : '';
+    slideEl.dataset.layer2Blur = (l2 && c2b > 0) ? 'true' : '';
+    // Blur on this slide's cards (only when > 0, Safari compositing fix)
+    var blurStr = n(d.blur, 0) > 0 ? 'blur(' + n(d.blur, 0) + 'px)' : '';
+    slideEl.querySelectorAll('.card').forEach(function(c) {
+      c.style.backdropFilter = blurStr;
+      c.style.webkitBackdropFilter = blurStr;
+    });
+  }
+
   applyAll(DEFAULTS);
+
+  // ── Pin slide V2 to "start 4" preset settings + layer 2
+  // Preset #4 on the server: hue 345, sat 49, lit 50, color-burn, blur 0.
+  // We add layer 2 (darken, warm rose) to match the target screenshot look.
+  var v2El = document.querySelector('.slide[data-slide="v2"]');
+  if (v2El) {
+    pinSlide({
+      opacity: 0.63, blur: 0, border: 0.1, radius: 9, gap: 8,
+      hue: 345, sat: 49, lit: 50, blend: 'color-burn',
+      layer2: true,
+      card2Hue: 345, card2Sat: 40, card2Lit: 65,
+      card2Blend: 'darken', card2Opacity: 0.58, card2Blur: 0
+    }, v2El);
+  }
+
   refreshPresets();
 })();
 </script>
