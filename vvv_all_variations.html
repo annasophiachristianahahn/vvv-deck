@@ -148,19 +148,31 @@ body {
   border: 1px solid rgba(255,255,255,var(--card-border-op));
   overflow: hidden;
 }
-/* Layer 1 glass — sits above layer 2, text floats above both */
+/* Layer 1 — blur only. NO background or mix-blend-mode here.
+   Safari bug: having backdrop-filter + mix-blend-mode on the same element
+   causes backdrop to composite against an opaque black buffer first.
+   Fix: separate the two onto different elements. */
 .card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: hsla(var(--card-hue), var(--card-sat), var(--card-lit), var(--card-bg-opacity));
   backdrop-filter: blur(var(--card-blur));
   -webkit-backdrop-filter: blur(var(--card-blur));
-  mix-blend-mode: var(--card-blend);
   pointer-events: none;
   z-index: 1;
-  -webkit-backface-visibility: hidden; /* Safari: force GPU layer so backdrop-filter samples correctly alongside mix-blend-mode */
-  transition: background 0.08s, backdrop-filter 0.08s;
+  transition: backdrop-filter 0.08s;
+}
+/* Layer 1 color + blend — injected as .card-glass by JS.
+   Separated from ::before so backdrop-filter and mix-blend-mode
+   are never on the same element (Safari compositing fix). */
+.card-glass {
+  position: absolute;
+  inset: 0;
+  background: hsla(var(--card-hue), var(--card-sat), var(--card-lit), var(--card-bg-opacity));
+  mix-blend-mode: var(--card-blend);
+  pointer-events: none;
+  z-index: 2;
+  transition: background 0.08s;
 }
 /* Layer 2 glass — beneath layer 1, hidden until .layer2-on */
 .card::after {
@@ -180,10 +192,10 @@ body {
 .layer2-on .card::after {
   display: block;
 }
-/* All direct card children float above both glass layers */
-.card > * {
+/* All direct card children float above all glass layers */
+.card > *:not(.card-glass) {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .card-row { display: flex; gap: var(--card-gap); }
@@ -2159,6 +2171,14 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     visible = !visible;
     panel.classList.toggle('cp-visible', visible);
     nudge.style.opacity = visible ? '0' : '';
+  });
+
+  // Inject .card-glass into every card — separates backdrop-filter (::before)
+  // from mix-blend-mode (.card-glass) so Safari doesn't composite them wrong.
+  document.querySelectorAll('.card').forEach(function(card) {
+    var gl = document.createElement('div');
+    gl.className = 'card-glass';
+    card.insertBefore(gl, card.firstChild);
   });
 
   applyAll(DEFAULTS);
