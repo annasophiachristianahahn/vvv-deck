@@ -118,6 +118,7 @@ body {
   width: 720px; max-width: 100%;
   position: relative; overflow: hidden;
   border-radius: 5px;
+  isolation: isolate;          /* Safari: gives backdrop-filter a defined stacking context */
   background:
     url('backgrounds/2b271d78-9739-459a-9319-5b6b6c23cd95.jpg') center / cover no-repeat,
     radial-gradient(circle 220px at 78% 28%, rgba(195,120,30,0.95)  0%, rgba(195,120,30,0)  60%),
@@ -158,6 +159,7 @@ body {
   mix-blend-mode: var(--card-blend);
   pointer-events: none;
   z-index: 1;
+  -webkit-backface-visibility: hidden; /* Safari: force GPU layer so backdrop-filter samples correctly alongside mix-blend-mode */
   transition: background 0.08s, backdrop-filter 0.08s;
 }
 /* Layer 2 glass — beneath layer 1, hidden until .layer2-on */
@@ -172,6 +174,7 @@ body {
   pointer-events: none;
   z-index: 0;
   display: none;
+  -webkit-backface-visibility: hidden; /* Safari: same fix as ::before */
   transition: background 0.08s, backdrop-filter 0.08s;
 }
 .layer2-on .card::after {
