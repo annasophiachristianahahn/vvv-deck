@@ -78,6 +78,27 @@
   --v5sub-size:   8.5px;   --v5sub-weight:   300;
   --v5sh-size:    11px;    --v5sh-weight:    700;
   --v5sb-size:    8px;     --v5sb-weight:    300;
+
+  /* ── Header font (independent from body) ── */
+  --font-family-head: 'Inter', sans-serif;
+
+  /* ── Typography — eyebrow labels (.v3-eye, .v5-eye) ── */
+  --eyebrow-size:     6.5px;  --eyebrow-weight:   700;
+
+  /* ── Typography — number labels (.v4n, .v5sn) ── */
+  --num-label-size:   7px;    --num-label-weight: 700;
+
+  /* ── Typography — kick / super labels (.v4-kick, .v5-tr) ── */
+  --kick-size:        7.5px;  --kick-weight:      300;
+  --kick-color:       rgba(255,255,255,0.60);
+
+  /* ── Typography — footer bar (.bbar span) ── */
+  --bbar-size:        7.5px;  --bbar-weight:      500;
+  --bbar-color:       rgba(255,255,255,0.42);
+
+  /* ── Typography — pink card text (.pbox p, .pink-card p) ── */
+  --pink-text-size:   9px;    --pink-text-weight: 700;
+  --pink-text-color:  #1e0808;
 }
 
 body {
@@ -176,9 +197,9 @@ body {
   border: 1px solid rgba(255,255,255,0.07);
 }
 .bbar span {
-  font-size: 7.5px; font-weight: 500;
+  font-size: var(--bbar-size); font-weight: var(--bbar-weight);
   letter-spacing: .12em; text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
+  color: var(--bbar-color);
 }
 
 .badge {
@@ -189,19 +210,20 @@ body {
   flex-shrink: 0;
 }
 .slide-title {
+  font-family: var(--font-family-head);
   font-size: var(--slide-title-size); font-weight: var(--slide-title-weight);
   letter-spacing: .14em; text-transform: uppercase;
   color: #fff; text-shadow: var(--ts);
 }
 
 .pbox   { background: var(--pink); padding: 9px 13px; border-radius: 6px; max-width: 340px; }
-.pbox p { font-size: 9px; font-weight: 700; line-height: 1.55; color: #1e0808; text-align: center; }
+.pbox p { font-size: var(--pink-text-size); font-weight: var(--pink-text-weight); line-height: 1.55; color: var(--pink-text-color); text-align: center; }
 
 .pink-card::before { background: var(--pink) !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; mix-blend-mode: normal !important; }
-.pink-card p { font-size: 9px; font-weight: 700; line-height: 1.5; color: #1e0808; padding: 10px 16px; }
+.pink-card p { font-size: var(--pink-text-size); font-weight: var(--pink-text-weight); line-height: 1.5; color: var(--pink-text-color); padding: 10px 16px; }
 
 .inum  { font-size: var(--inum-size); font-weight: var(--inum-weight); letter-spacing: .18em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
-.ianc  { font-size: var(--ianc-size); font-weight: var(--ianc-weight); line-height: 1.2; letter-spacing: -.01em; color: var(--text-main); margin-bottom: 4px; }
+.ianc  { font-family: var(--font-family-head); font-size: var(--ianc-size); font-weight: var(--ianc-weight); line-height: 1.2; letter-spacing: -.01em; color: var(--text-main); margin-bottom: 4px; }
 .ibod  { font-size: var(--ibod-size); font-weight: var(--ibod-weight); line-height: 1.72; color: var(--text-body); }
 .clos  { font-size: var(--clos-size); font-weight: var(--clos-weight); font-style: italic; line-height: 1.75; color: var(--text-muted); border-left: 2px solid var(--pink); padding-left: 10px; }
 .arr   { color: var(--red); font-size: 11px; flex-shrink: 0; }
@@ -216,6 +238,7 @@ body {
   width: 165px; flex-shrink: 0;
 }
 .v1big {
+  font-family: var(--font-family-head);
   font-size: var(--v1big-size); font-weight: var(--v1big-weight); line-height: 1.0;
   letter-spacing: -.03em; color: var(--text-main); flex: 1; margin-top: 2px;
 }
@@ -234,6 +257,7 @@ body {
   display: flex; flex-direction: column; flex: 1;
 }
 .v2big {
+  font-family: var(--font-family-head);
   font-size: var(--v2big-size); font-weight: var(--v2big-weight); line-height: 1.05;
   letter-spacing: -.03em; color: var(--text-main); flex: 1;
 }
@@ -242,7 +266,7 @@ body {
 .v2-r   { display: flex; flex-direction: column; gap: var(--card-gap); width: 245px; flex-shrink: 0; }
 .v2item { padding: 10px 14px; display: flex; flex-direction: column; gap: 3px; }
 .v2idx { font-size: var(--v2idx-size); font-weight: var(--v2idx-weight); letter-spacing: .10em; color: var(--red); }
-.v2anc { font-size: var(--v2anc-size); font-weight: var(--v2anc-weight); letter-spacing: .03em; text-transform: uppercase; color: var(--text-main); margin-bottom: 1px; }
+.v2anc { font-family: var(--font-family-head); font-size: var(--v2anc-size); font-weight: var(--v2anc-weight); letter-spacing: .03em; text-transform: uppercase; color: var(--text-main); margin-bottom: 1px; }
 .v2bod { font-size: var(--v2bod-size); font-weight: var(--v2bod-weight); line-height: 1.65; color: var(--text-body); }
 
 /* ============================================================
@@ -253,12 +277,12 @@ body {
   display: flex; flex-direction: column;
   width: 205px; flex-shrink: 0;
 }
-.v3-eye { font-size: 6.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
-.v3-q   { font-size: var(--v3q-size); font-weight: var(--v3q-weight); line-height: 1.15; letter-spacing: -.02em; color: var(--text-main); flex: 1; }
+.v3-eye { font-size: var(--eyebrow-size); font-weight: var(--eyebrow-weight); letter-spacing: .22em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
+.v3-q   { font-family: var(--font-family-head); font-size: var(--v3q-size); font-weight: var(--v3q-weight); line-height: 1.15; letter-spacing: -.02em; color: var(--text-main); flex: 1; }
 .v3-sub { font-size: var(--v3sub-size); font-weight: var(--v3sub-weight); font-style: italic; line-height: 1.78; color: var(--text-muted); margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--div); }
 .v3-right { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--card-gap); }
 .v3item { padding: 13px 12px; display: flex; flex-direction: column; gap: 4px; }
-.v3deck { font-size: var(--v3deck-size); font-weight: var(--v3deck-weight); line-height: 1.2; letter-spacing: -.01em; color: var(--text-main); }
+.v3deck { font-family: var(--font-family-head); font-size: var(--v3deck-size); font-weight: var(--v3deck-weight); line-height: 1.2; letter-spacing: -.01em; color: var(--text-main); }
 .v3bod  { font-size: var(--v3bod-size); font-weight: var(--v3bod-weight); line-height: 1.68; color: var(--text-body); }
 .v3-foot{ display: flex; align-items: center; gap: 8px; padding: 9px 14px; }
 .v3-foot p { font-size: var(--v3bod-size); font-weight: var(--v3bod-weight); font-style: italic; line-height: 1.5; color: var(--text-muted); }
@@ -266,10 +290,10 @@ body {
 /* ============================================================
    V4  —  Pink intro card  +  4 individual column cards  +  footer
    ============================================================ */
-.v4-kick { font-size: 7.5px; font-weight: 300; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-shadow: var(--ts); }
+.v4-kick { font-size: var(--kick-size); font-weight: var(--kick-weight); letter-spacing: .16em; text-transform: uppercase; color: var(--kick-color); text-shadow: var(--ts); }
 .v4-col  { flex: 1; padding: 14px 13px 16px; display: flex; flex-direction: column; gap: 7px; }
-.v4n    { font-size: 7px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
-.v4head { font-size: var(--v4head-size); font-weight: var(--v4head-weight); line-height: 1.08; letter-spacing: -.025em; color: var(--text-main); }
+.v4n    { font-size: var(--num-label-size); font-weight: var(--num-label-weight); letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.v4head { font-family: var(--font-family-head); font-size: var(--v4head-size); font-weight: var(--v4head-weight); line-height: 1.08; letter-spacing: -.025em; color: var(--text-main); }
 .v4bod  { font-size: var(--v4bod-size); font-weight: var(--v4bod-weight); line-height: 1.68; color: var(--text-body); flex: 1; }
 .v4-close { display: flex; gap: 8px; padding: 10px 13px; }
 .v4-close p { font-size: var(--v4bod-size); font-weight: var(--v4bod-weight); font-style: italic; line-height: 1.65; color: var(--text-muted); }
@@ -277,21 +301,21 @@ body {
 /* ============================================================
    V5  —  3 stacked hero cards left  +  3 individual stack cards right
    ============================================================ */
-.v5-tr  { font-size: 7.5px; font-weight: 300; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.62); text-shadow: var(--ts); }
+.v5-tr  { font-size: var(--kick-size); font-weight: var(--kick-weight); letter-spacing: .14em; text-transform: uppercase; color: var(--kick-color); text-shadow: var(--ts); }
 .v5-hero{ flex: 3; display: flex; flex-direction: column; gap: var(--card-gap); }
 .v5-hdr { padding: 10px 15px; }
 .v5-hdr p { font-size: var(--v5hdr-size); font-weight: var(--v5hdr-weight); line-height: 1.55; color: var(--text-body); font-style: italic; }
 .v5-main{ flex: 1; padding: 17px 15px 15px; }
-.v5-eye { font-size: 6.5px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
-.v5big  { font-size: var(--v5big-size); font-weight: var(--v5big-weight); line-height: .92; letter-spacing: -.04em; color: var(--text-main); }
+.v5-eye { font-size: var(--eyebrow-size); font-weight: var(--eyebrow-weight); letter-spacing: .22em; text-transform: uppercase; color: var(--red); margin-bottom: 9px; }
+.v5big  { font-family: var(--font-family-head); font-size: var(--v5big-size); font-weight: var(--v5big-weight); line-height: .92; letter-spacing: -.04em; color: var(--text-main); }
 .v5sub  { font-size: var(--v5sub-size); font-weight: var(--v5sub-weight); line-height: 1.75; color: var(--text-body); margin-top: 11px; }
 .v5-foot{ padding: 9px 15px; display: flex; gap: 8px; }
 .v5-foot p { font-size: var(--v5sb-size); font-weight: var(--v5sb-weight); font-style: italic; line-height: 1.6; color: var(--text-muted); }
 .v5-stack{ flex: 2; display: flex; flex-direction: column; gap: var(--card-gap); }
 .v5item { padding: 12px 13px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
 .v5item.feat { flex: 1.35; }
-.v5sn   { font-size: 7px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
-.v5sh   { font-size: var(--v5sh-size); font-weight: var(--v5sh-weight); line-height: 1.15; letter-spacing: -.015em; color: var(--text-main); }
+.v5sn   { font-size: var(--num-label-size); font-weight: var(--num-label-weight); letter-spacing: .2em; text-transform: uppercase; color: var(--red); }
+.v5sh   { font-family: var(--font-family-head); font-size: var(--v5sh-size); font-weight: var(--v5sh-weight); line-height: 1.15; letter-spacing: -.015em; color: var(--text-main); }
 .v5item.feat .v5sh { font-size: calc(var(--v5sh-size) + 2px); }
 .v5sb   { font-size: var(--v5sb-size); font-weight: var(--v5sb-weight); line-height: 1.65; color: var(--text-body); }
 
@@ -1214,12 +1238,41 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
       <input type="color" id="sl-pink" value="#f2c4d4">
     </div>
 
+    <!-- ── TEXT COLOR extras ── -->
+    <div class="cp-sep"></div>
+    <div class="cp-section-label">Text — extras</div>
+
+    <div class="cp-text-row">
+      <div class="cp-text-header">
+        <span class="cp-text-name">Kick / Super labels</span>
+        <div class="cp-text-meta">
+          <span class="cp-val" id="val-kick-opacity">0.60</span>
+          <input type="color" id="sl-kick-color" value="#ffffff">
+        </div>
+      </div>
+      <input type="range" id="sl-kick-opacity" min="0" max="1" step="0.01" value="0.6">
+    </div>
+    <div class="cp-text-row">
+      <div class="cp-text-header">
+        <span class="cp-text-name">Footer bar</span>
+        <div class="cp-text-meta">
+          <span class="cp-val" id="val-bbar-opacity">0.42</span>
+          <input type="color" id="sl-bbar-color" value="#ffffff">
+        </div>
+      </div>
+      <input type="range" id="sl-bbar-opacity" min="0" max="1" step="0.01" value="0.42">
+    </div>
+    <div class="cp-color-row">
+      <label>Pink card text</label>
+      <input type="color" id="sl-pink-text-color" value="#1e0808">
+    </div>
+
     <!-- ── TYPOGRAPHY ── -->
     <div class="cp-sep"></div>
     <div class="cp-section-label">Typography</div>
 
     <div class="cp-row">
-      <label>Font Family</label>
+      <label>Body Font</label>
       <select id="sl-font" class="cp-font-select">
         <optgroup label="Geometric Sans">
           <option value="'Inter', sans-serif">Inter</option>
@@ -1257,6 +1310,105 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
           <option value="'IBM Plex Mono', monospace">IBM Plex Mono</option>
         </optgroup>
       </select>
+    </div>
+
+    <div class="cp-row">
+      <label>Head Font</label>
+      <select id="sl-font-head" class="cp-font-select">
+        <optgroup label="Geometric Sans">
+          <option value="'Inter', sans-serif">Inter</option>
+          <option value="'DM Sans', sans-serif">DM Sans</option>
+          <option value="'Figtree', sans-serif">Figtree</option>
+          <option value="'Plus Jakarta Sans', sans-serif">Plus Jakarta Sans</option>
+          <option value="'Outfit', sans-serif">Outfit</option>
+          <option value="'Sora', sans-serif">Sora</option>
+          <option value="'Nunito Sans', sans-serif">Nunito Sans</option>
+        </optgroup>
+        <optgroup label="Distinctive Sans">
+          <option value="'Space Grotesk', sans-serif">Space Grotesk</option>
+          <option value="'Rubik', sans-serif">Rubik</option>
+          <option value="'Josefin Sans', sans-serif">Josefin Sans</option>
+        </optgroup>
+        <optgroup label="Condensed">
+          <option value="'Barlow Condensed', sans-serif">Barlow Condensed</option>
+          <option value="'Oswald', sans-serif">Oswald</option>
+          <option value="'Exo 2', sans-serif">Exo 2</option>
+          <option value="'Rajdhani', sans-serif">Rajdhani</option>
+        </optgroup>
+        <optgroup label="Display / Heavy">
+          <option value="'Bebas Neue', sans-serif">Bebas Neue</option>
+          <option value="'Black Han Sans', sans-serif">Black Han Sans</option>
+        </optgroup>
+        <optgroup label="Serif">
+          <option value="'Playfair Display', serif">Playfair Display</option>
+          <option value="'Libre Baskerville', serif">Libre Baskerville</option>
+          <option value="'Lora', serif">Lora</option>
+          <option value="'DM Serif Display', serif">DM Serif Display</option>
+        </optgroup>
+        <optgroup label="Monospace">
+          <option value="'JetBrains Mono', monospace">JetBrains Mono</option>
+          <option value="'Space Mono', monospace">Space Mono</option>
+          <option value="'IBM Plex Mono', monospace">IBM Plex Mono</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Labels & UI chrome -->
+    <div class="cp-type-group-label">Labels &amp; Chrome</div>
+    <div class="cp-type-row">
+      <div class="cp-type-header">
+        <span class="cp-type-name">.v3-eye / .v5-eye — eyebrow</span>
+        <div class="cp-type-vals">
+          <span class="cp-val" id="val-eyebrow-size">6.5px</span>
+          <span class="cp-val" id="val-eyebrow-weight">700</span>
+        </div>
+      </div>
+      <input type="range" id="sl-eyebrow-size" min="4" max="14" step="0.5" value="6.5" title="Size">
+      <input type="range" id="sl-eyebrow-weight" min="100" max="900" step="100" value="700" title="Weight">
+    </div>
+    <div class="cp-type-row">
+      <div class="cp-type-header">
+        <span class="cp-type-name">.v4n / .v5sn — num label</span>
+        <div class="cp-type-vals">
+          <span class="cp-val" id="val-num-label-size">7px</span>
+          <span class="cp-val" id="val-num-label-weight">700</span>
+        </div>
+      </div>
+      <input type="range" id="sl-num-label-size" min="4" max="14" step="0.5" value="7" title="Size">
+      <input type="range" id="sl-num-label-weight" min="100" max="900" step="100" value="700" title="Weight">
+    </div>
+    <div class="cp-type-row">
+      <div class="cp-type-header">
+        <span class="cp-type-name">.v4-kick / .v5-tr — super label</span>
+        <div class="cp-type-vals">
+          <span class="cp-val" id="val-kick-size">7.5px</span>
+          <span class="cp-val" id="val-kick-weight">300</span>
+        </div>
+      </div>
+      <input type="range" id="sl-kick-size" min="4" max="16" step="0.5" value="7.5" title="Size">
+      <input type="range" id="sl-kick-weight" min="100" max="900" step="100" value="300" title="Weight">
+    </div>
+    <div class="cp-type-row">
+      <div class="cp-type-header">
+        <span class="cp-type-name">.bbar span — footer bar</span>
+        <div class="cp-type-vals">
+          <span class="cp-val" id="val-bbar-size">7.5px</span>
+          <span class="cp-val" id="val-bbar-weight">500</span>
+        </div>
+      </div>
+      <input type="range" id="sl-bbar-size" min="4" max="14" step="0.5" value="7.5" title="Size">
+      <input type="range" id="sl-bbar-weight" min="100" max="900" step="100" value="500" title="Weight">
+    </div>
+    <div class="cp-type-row">
+      <div class="cp-type-header">
+        <span class="cp-type-name">.pbox p / .pink-card p</span>
+        <div class="cp-type-vals">
+          <span class="cp-val" id="val-pink-text-size">9px</span>
+          <span class="cp-val" id="val-pink-text-weight">700</span>
+        </div>
+      </div>
+      <input type="range" id="sl-pink-text-size" min="6" max="18" step="0.5" value="9" title="Size">
+      <input type="range" id="sl-pink-text-weight" min="100" max="900" step="100" value="700" title="Weight">
     </div>
 
     <!-- Slide chrome -->
@@ -1550,6 +1702,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
   var DEFAULTS = {
     // Font & structure
     fontFamily:       "'Inter', sans-serif",
+    headerFontFamily: "'Inter', sans-serif",
     radius:           9,
     gap:              8,
     // Layer 1
@@ -1602,7 +1755,13 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     v5hdrSize:  9.5, v5hdrWeight:  500,
     v5shSize:   11,  v5shWeight:   700,
     v5sbSize:   8,   v5sbWeight:   300,
-    v5subSize:  8.5, v5subWeight:  300
+    v5subSize:  8.5, v5subWeight:  300,
+    // Labels & chrome
+    eyebrowSize:  6.5, eyebrowWeight: 700,
+    numLabelSize: 7,   numLabelWeight: 700,
+    kickSize:     7.5, kickWeight:  300,  kickColor: '#ffffff', kickOpacity:  0.60,
+    bbarSize:     7.5, bbarWeight:  500,  bbarColor: '#ffffff', bbarOpacity:  0.42,
+    pinkTextSize: 9,   pinkTextWeight: 700, pinkTextColor: '#1e0808'
   };
 
   // ── Helpers ──
@@ -1623,6 +1782,8 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     // Font & structure
     var ff = d.fontFamily || "'Inter', sans-serif";
     R.setProperty('--font-family',  ff);
+    var hff = d.headerFontFamily || d.fontFamily || "'Inter', sans-serif";
+    R.setProperty('--font-family-head', hff);
     var radius = n(d.radius, 9), gap = n(d.gap, 8);
     R.setProperty('--card-radius',  radius + 'px');
     R.setProperty('--card-gap',     gap + 'px');
@@ -1698,6 +1859,19 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     typo('v5sh',   'v5shSize',   11,   'v5shWeight',   700);
     typo('v5sb',   'v5sbSize',   8,    'v5sbWeight',   300);
     typo('v5sub',  'v5subSize',  8.5,  'v5subWeight',  300);
+    // Labels & chrome
+    typo('eyebrow',   'eyebrowSize',   6.5, 'eyebrowWeight',   700);
+    typo('num-label', 'numLabelSize',  7,   'numLabelWeight',  700);
+    typo('kick',      'kickSize',      7.5, 'kickWeight',      300);
+    typo('bbar',      'bbarSize',      7.5, 'bbarWeight',      500);
+    typo('pink-text', 'pinkTextSize',  9,   'pinkTextWeight',  700);
+    // Kick & bbar colors
+    var kc  = d.kickColor  || '#ffffff',  ko  = n(d.kickOpacity,  0.60);
+    var bc2 = d.bbarColor  || '#ffffff',  bo  = n(d.bbarOpacity,  0.42);
+    var ptc = d.pinkTextColor || '#1e0808';
+    R.setProperty('--kick-color',      toRgba(kc,  ko));
+    R.setProperty('--bbar-color',      toRgba(bc2, bo));
+    R.setProperty('--pink-text-color', ptc);
 
     // ── Sync display vals ──
     st('val-opacity', d.opacity.toFixed(2));
@@ -1716,9 +1890,12 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     st('val-text-main-opacity',  mainOp.toFixed(2));
     st('val-text-body-opacity',  bodyOp.toFixed(2));
     st('val-text-muted-opacity', mutedOp.toFixed(2));
+    st('val-kick-opacity',  ko.toFixed(2));
+    st('val-bbar-opacity',  bo.toFixed(2));
 
     // ── Sync inputs ──
     sv('sl-font',              ff);
+    sv('sl-font-head',         hff);
     sv('sl-radius',            radius);
     sv('sl-gap',               gap);
     sv('sl-opacity',           d.opacity);
@@ -1743,6 +1920,11 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     sv('sl-text-main-opacity',  mainOp);
     sv('sl-text-body-opacity',  bodyOp);
     sv('sl-text-muted-opacity', mutedOp);
+    sv('sl-kick-opacity',   ko);
+    sv('sl-kick-color',     kc);
+    sv('sl-bbar-opacity',   bo);
+    sv('sl-bbar-color',     bc2);
+    sv('sl-pink-text-color', ptc);
   }
 
   function readState() {
@@ -1750,6 +1932,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     function gs(id) { return  document.getElementById(id).value; }
     return {
       fontFamily:       gs('sl-font'),
+      headerFontFamily: gs('sl-font-head'),
       radius:           gv('sl-radius'),
       gap:              gv('sl-gap'),
       opacity:          gv('sl-opacity'),
@@ -1796,7 +1979,16 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
       v5hdrSize: gv('sl-v5hdr-size'),  v5hdrWeight: gv('sl-v5hdr-weight'),
       v5shSize:  gv('sl-v5sh-size'),   v5shWeight:  gv('sl-v5sh-weight'),
       v5sbSize:  gv('sl-v5sb-size'),   v5sbWeight:  gv('sl-v5sb-weight'),
-      v5subSize: gv('sl-v5sub-size'),  v5subWeight: gv('sl-v5sub-weight')
+      v5subSize: gv('sl-v5sub-size'),  v5subWeight: gv('sl-v5sub-weight'),
+      // Labels & chrome
+      eyebrowSize:  gv('sl-eyebrow-size'),   eyebrowWeight:  gv('sl-eyebrow-weight'),
+      numLabelSize: gv('sl-num-label-size'),  numLabelWeight: gv('sl-num-label-weight'),
+      kickSize:     gv('sl-kick-size'),       kickWeight:     gv('sl-kick-weight'),
+      kickColor:    gs('sl-kick-color'),      kickOpacity:    gv('sl-kick-opacity'),
+      bbarSize:     gv('sl-bbar-size'),       bbarWeight:     gv('sl-bbar-weight'),
+      bbarColor:    gs('sl-bbar-color'),      bbarOpacity:    gv('sl-bbar-opacity'),
+      pinkTextSize: gv('sl-pink-text-size'),  pinkTextWeight: gv('sl-pink-text-weight'),
+      pinkTextColor: gs('sl-pink-text-color')
     };
   }
 
@@ -1946,6 +2138,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
   document.getElementById('sl-blend').addEventListener('change', function() { applyAll(readState()); });
   document.getElementById('sl-card2-blend').addEventListener('change', function() { applyAll(readState()); });
   document.getElementById('sl-font').addEventListener('change', function() { applyAll(readState()); });
+  document.getElementById('sl-font-head').addEventListener('change', function() { applyAll(readState()); });
   document.getElementById('layer2-toggle').addEventListener('change', function() { applyAll(readState()); });
 
   // ── Reset ──
