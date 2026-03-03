@@ -283,6 +283,7 @@ body {
 .v2big em { font-style: normal; color: var(--pink); }
 .v2clos { margin-top: 16px; }
 .v2-r   { display: flex; flex-direction: column; gap: var(--card-gap); width: 245px; flex-shrink: 0; }
+.v2-r .card { flex: 1; min-height: 0; }
 .v2item { padding: 10px 14px; display: flex; flex-direction: column; gap: 3px; }
 .v2idx { font-size: var(--v2idx-size); font-weight: var(--v2idx-weight); letter-spacing: .10em; color: var(--red); }
 .v2anc { font-family: var(--font-family-head); font-size: var(--v2anc-size); font-weight: var(--v2anc-weight); letter-spacing: .03em; text-transform: uppercase; color: var(--text-main); margin-bottom: 1px; }
@@ -857,9 +858,8 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
           <div class="v2big">The basics<br>of a seamless<br>experience<br>still <em>aren't</em><br>solved.</div>
           <p class="clos v2clos">Until these basics are solved, market growth is capped by what the tech can reach — not what the culture can sustain.</p>
         </div>
-        <!-- Right: pink label + 4 individual item cards -->
+        <!-- Right: 4 individual item cards, equally distributed -->
         <div class="v2-r">
-          <div class="card pink-card"><p>For artists &amp; collectors</p></div>
           <div class="card v2item"><span class="v2idx">01 —</span><p class="v2anc">Viewing is broken</p><p class="v2bod">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p></div>
           <div class="card v2item"><span class="v2idx">02 —</span><p class="v2anc">No fun platform</p><p class="v2bod">Nothing captures the instinctive trading energy of Pokemon cards, where experience matters more than material.</p></div>
           <div class="card v2item"><span class="v2idx">03 —</span><p class="v2anc">Siloed communities</p><p class="v2bod">Artists and collectors treated as separate groups instead of a symbiotic ecosystem that builds sustainable cultural and economic value.</p></div>
@@ -2265,6 +2265,12 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
   // ── Live update on any input ──
   document.getElementById('ctrl-panel').addEventListener('input', function(e) {
     if (e.target.id === 'cp-preset-name' || e.target.id === 'cp-import-file') return;
+    // When user manually moves the v2big size slider, release the auto-fitted
+    // line-height so the text renders at the CSS default (1.05) for that size.
+    if (e.target.id === 'sl-v2big-size') {
+      var v2b = document.querySelector('.v2big');
+      if (v2b) v2b.style.lineHeight = '';
+    }
     applyAll(readState());
   });
   document.getElementById('sl-blend').addEventListener('change', function() { applyAll(readState()); });
@@ -2332,7 +2338,10 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     while (hi - lo > 0.5) {
       var mid = (lo + hi) / 2;
       el.style.fontSize = mid + 'px';
-      if (el.scrollHeight <= availH) lo = mid; else hi = mid;
+      // Wrapping detection: if a <br>-separated line wraps, scrollHeight
+      // exceeds the expected N-line height by more than ~15%.
+      var expectedH = lines * mid * 1.05;
+      if (el.scrollHeight <= expectedH * 1.15) lo = mid; else hi = mid;
     }
     var size = Math.floor(lo);
     // Step 2: expand line-height so lines fill availH exactly
