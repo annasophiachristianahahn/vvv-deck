@@ -1590,7 +1590,7 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
           <span class="cp-val" id="val-v2big-weight">700</span>
         </div>
       </div>
-      <input type="range" id="sl-v2big-size" min="10" max="72" step="1" value="24" title="Size">
+      <input type="range" id="sl-v2big-size" min="10" max="100" step="1" value="24" title="Size">
       <input type="range" id="sl-v2big-weight" min="100" max="900" step="100" value="700" title="Weight">
     </div>
     <div class="cp-type-row">
@@ -2303,7 +2303,56 @@ input[type=color]::-webkit-color-swatch { border: none; border-radius: 3px; }
     card.insertBefore(gl, card.firstChild);
   });
 
+  // ── fitV2Big: scale the V2 headline to fill its card height.
+  // Step 1: binary-search for the largest font-size where NO line wraps
+  //         (the longest line "of a seamless" constrains the width).
+  // Step 2: expand line-height so the 5 lines fill the full available height.
+  function fitV2Big() {
+    var el = document.querySelector('.v2big');
+    if (!el) return;
+    var card = el.closest('.card');
+    if (!card || card.clientHeight === 0) return;
+    var cs = getComputedStyle(card);
+    var availH = card.clientHeight
+      - parseFloat(cs.paddingTop)
+      - parseFloat(cs.paddingBottom);
+    // Subtract in-flow siblings (skip absolute-positioned glass layers)
+    Array.from(card.children).forEach(function(child) {
+      if (child === el) return;
+      if (getComputedStyle(child).position === 'absolute') return;
+      var ccs = getComputedStyle(child);
+      availH -= child.offsetHeight + parseFloat(ccs.marginTop);
+    });
+    if (availH <= 0) return;
+    var lines = el.querySelectorAll('br').length + 1; // 5
+    // Step 1: max font-size without horizontal overflow (line wrap check)
+    el.style.flex = 'none';
+    el.style.lineHeight = '1.05';
+    var lo = 14, hi = 100;
+    while (hi - lo > 0.5) {
+      var mid = (lo + hi) / 2;
+      el.style.fontSize = mid + 'px';
+      if (el.scrollHeight <= availH) lo = mid; else hi = mid;
+    }
+    var size = Math.floor(lo);
+    // Step 2: expand line-height so lines fill availH exactly
+    var lh = (availH / (lines * size)).toFixed(3);
+    // Restore element
+    el.style.fontSize = '';
+    el.style.lineHeight = '';
+    el.style.flex = '1';
+    // Apply
+    R.setProperty('--v2big-size', size + 'px');
+    el.style.lineHeight = lh; // inline override of the 1.05 default
+    var slEl = document.getElementById('sl-v2big-size');
+    var stEl = document.getElementById('val-v2big-size');
+    if (slEl) slEl.value = size;
+    if (stEl) stEl.textContent = size + 'px';
+  }
+
   applyAll(DEFAULTS);
+  // Run fitV2Big after layout is painted so clientHeight is available
+  requestAnimationFrame(function() { requestAnimationFrame(fitV2Big); });
   refreshPresets();
 })();
 </script>
