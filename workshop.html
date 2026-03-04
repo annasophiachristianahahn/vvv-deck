@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVV Deck – Workshop v3 – Comic Sans Rainbow Monkey</title>
+    <style>
+        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Light.ttf'); font-weight: 300; font-style: normal; }
+        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Regular.ttf'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Italic.ttf'); font-weight: 400; font-style: italic; }
+        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Black.ttf'); font-weight: 900; font-style: normal; }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --slide-w: 1440px;
+            --slide-h: 810px;
+            --pad: 60px;
+
+            --bg: #add8e8;
+
+            --text-dark: #1a2836;
+            --text-mid: #3a4f5e;
+
+            /* ── Rainbow palette (saturated but legible on baby blue) ── */
+            --r-red: #cc1414;
+            --r-orange: #d4710a;
+            --r-yellow: #b89b00;
+            --r-green: #1a8a3e;
+            --r-blue: #1a5acc;
+            --r-purple: #7b2aba;
+            --r-pink: #c4289a;
+            --r-teal: #0a8a7a;
+
+            --comic: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive;
+            --selecta: 'Selecta', system-ui, sans-serif;
+        }
+
+        body {
+            background: #2a3a4a;
+            font-family: var(--selecta);
+            -webkit-font-smoothing: antialiased;
+            padding: 40px 0;
+        }
+
+        .variation {
+            margin: 0 auto 60px;
+            width: var(--slide-w);
+        }
+        .variation-label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #8aaabb;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+        .variation-label span {
+            font-weight: 900;
+            color: #c0dde8;
+        }
+        .variation-label em {
+            font-style: normal;
+            color: #6a8a9a;
+            font-size: 12px;
+        }
+
+        .slide {
+            width: var(--slide-w);
+            height: var(--slide-h);
+            position: relative;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .monkey { display: block; pointer-events: none; user-select: none; }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px var(--pad);
+            font-size: 11px;
+            font-family: var(--selecta);
+            color: var(--text-mid);
+            font-weight: 400;
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V1 — COMIC HEADERS + SELECTA BODY
+           Headers in Comic Sans rainbow, body in Selecta Light,
+           numbers in Selecta Black
+        ══════════════════════════════════════════════════════════════ */
+        .v1 .monkey-presenter {
+            position: absolute;
+            right: -20px; bottom: -30px;
+            height: 750px; z-index: 1;
+        }
+        .v1 .text-area {
+            position: absolute;
+            top: var(--pad); left: var(--pad);
+            width: 680px; z-index: 2;
+        }
+        .v1 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+        }
+        .v1 .section-title {
+            font-family: var(--comic);
+            font-size: 84px; font-weight: 700;
+            color: var(--r-blue);
+            line-height: 0.9; letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .v1 .hero-text {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 48px; color: var(--text-dark);
+            line-height: 1.05; letter-spacing: -0.02em;
+            margin-bottom: 36px; max-width: 580px;
+        }
+        .v1 .points { display: flex; flex-direction: column; gap: 16px; }
+        .v1 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+        }
+        .v1 .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 28px; text-transform: uppercase;
+            line-height: 0.9; margin-bottom: 3px;
+        }
+        .v1 .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 18px; color: var(--text-mid);
+            line-height: 1.35; max-width: 540px;
+        }
+        .v1 .p1 .point-num { color: var(--r-red); }
+        .v1 .p1 .point-title { color: var(--r-red); }
+        .v1 .p2 .point-num { color: var(--r-orange); }
+        .v1 .p2 .point-title { color: var(--r-orange); }
+        .v1 .p3 .point-num { color: var(--r-green); }
+        .v1 .p3 .point-title { color: var(--r-green); }
+        .v1 .p4 .point-num { color: var(--r-purple); }
+        .v1 .p4 .point-title { color: var(--r-purple); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V2 — SELECTA HEADERS + COMIC BODY
+           Flip: headers in Selecta Black, body in Comic Sans rainbow
+        ══════════════════════════════════════════════════════════════ */
+        .v2 .monkey-peek {
+            position: absolute;
+            bottom: -80px; left: 50%;
+            transform: translateX(-50%);
+            height: 520px; z-index: 2;
+        }
+        .v2 .top-band {
+            position: absolute;
+            top: 40px; left: var(--pad); right: var(--pad);
+            z-index: 3;
+        }
+        .v2 .section-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 100px; text-align: center;
+            color: var(--text-dark);
+            letter-spacing: -0.03em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 8px;
+        }
+        .v2 .hero-text {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 34px; text-align: center;
+            color: var(--r-purple);
+            max-width: 700px; margin: 0 auto 28px;
+            line-height: 1.15;
+        }
+        .v2 .point-row {
+            display: flex; gap: 30px; justify-content: center;
+        }
+        .v2 .point-col { width: 240px; }
+        .v2 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            color: var(--text-mid);
+        }
+        .v2 .point-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 22px; text-transform: uppercase;
+            color: var(--text-dark); line-height: 0.85;
+            margin-bottom: 6px;
+        }
+        .v2 .point-body {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 15px; line-height: 1.35;
+        }
+        .v2 .p1 .point-body { color: var(--r-red); }
+        .v2 .p2 .point-body { color: var(--r-green); }
+        .v2 .p3 .point-body { color: var(--r-blue); }
+        .v2 .p4 .point-body { color: var(--r-orange); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V3 — ALL COMIC, COLOR-CODED SECTIONS
+           Everything Comic Sans, each problem block one color
+        ══════════════════════════════════════════════════════════════ */
+        .v3 .header-area {
+            position: absolute; top: 30px; left: var(--pad); z-index: 2;
+        }
+        .v3 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+        }
+        .v3 .section-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 72px; color: var(--r-pink);
+            line-height: 0.95; text-transform: uppercase;
+        }
+        .v3 .hero-text {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 30px; color: var(--text-dark);
+            margin-top: 4px; line-height: 1.2;
+        }
+        .v3 .columns {
+            position: absolute; bottom: 30px;
+            left: 40px; right: 40px;
+            display: flex; gap: 20px; z-index: 2;
+        }
+        .v3 .col {
+            flex: 1; display: flex; flex-direction: column;
+            align-items: center; text-align: center;
+        }
+        .v3 .col .monkey-sticker { height: 180px; margin-bottom: 10px; }
+        .v3 .col .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+        }
+        .v3 .col .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 20px; text-transform: uppercase;
+            line-height: 0.95; margin-bottom: 4px;
+        }
+        .v3 .col .point-body {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 14px; line-height: 1.35; max-width: 280px;
+        }
+        .v3 .c1 .point-num, .v3 .c1 .point-title, .v3 .c1 .point-body { color: var(--r-red); }
+        .v3 .c2 .point-num, .v3 .c2 .point-title, .v3 .c2 .point-body { color: var(--r-blue); }
+        .v3 .c3 .point-num, .v3 .c3 .point-title, .v3 .c3 .point-body { color: var(--r-green); }
+        .v3 .c4 .point-num, .v3 .c4 .point-title, .v3 .c4 .point-body { color: var(--r-purple); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V4 — GIANT COMIC TITLE + SELECTA EVERYTHING ELSE
+           Watermark monkey, comic hero, selecta grid
+        ══════════════════════════════════════════════════════════════ */
+        .v4 .monkey-watermark {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            height: 900px; opacity: 0.15; z-index: 1;
+        }
+        .v4 .content {
+            position: absolute; inset: 0;
+            padding: var(--pad); z-index: 2;
+            display: flex; flex-direction: column;
+        }
+        .v4 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+        }
+        .v4 .section-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 96px; color: var(--r-orange);
+            letter-spacing: -0.02em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 6px;
+        }
+        .v4 .hero-text {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 32px; color: var(--r-teal);
+            line-height: 1.15; margin-bottom: 36px; max-width: 600px;
+        }
+        .v4 .points-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 60px; max-width: 1000px;
+        }
+        .v4 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em; color: var(--text-mid);
+        }
+        .v4 .point-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 30px; color: var(--text-dark);
+            text-transform: uppercase; line-height: 0.83;
+            letter-spacing: -0.01em; margin-bottom: 4px;
+        }
+        .v4 .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 18px; color: var(--text-mid); line-height: 1.35;
+        }
+        .v4 .callout {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 18px; color: var(--r-red);
+            line-height: 1.3; margin-top: auto; max-width: 700px;
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V5 — COMIC BULLET TITLES + SELECTA BODY
+           Sticker monkeys, comic titles cycle rainbow, body in selecta
+        ══════════════════════════════════════════════════════════════ */
+        .v5 .content {
+            position: absolute; inset: 0;
+            padding: var(--pad); z-index: 2;
+            display: flex; gap: 60px;
+        }
+        .v5 .left {
+            flex: 0 0 420px;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .v5 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+        }
+        .v5 .section-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 90px; color: var(--text-dark);
+            letter-spacing: -0.03em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 12px;
+        }
+        .v5 .hero-text {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 30px; color: var(--r-blue);
+            line-height: 1.2;
+        }
+        .v5 .right {
+            flex: 1; display: flex; flex-direction: column;
+            justify-content: center; gap: 26px;
+        }
+        .v5 .bullet-point {
+            display: flex; align-items: flex-start; gap: 18px;
+        }
+        .v5 .bullet-point .monkey-sticker {
+            width: 70px; flex-shrink: 0; margin-top: 2px;
+        }
+        .v5 .bullet-text .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 26px; text-transform: uppercase;
+            line-height: 0.95; margin-bottom: 3px;
+        }
+        .v5 .bullet-text .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 17px; color: var(--text-mid);
+            line-height: 1.35; max-width: 500px;
+        }
+        .v5 .p1 .point-title { color: var(--r-red); }
+        .v5 .p2 .point-title { color: var(--r-green); }
+        .v5 .p3 .point-title { color: var(--r-purple); }
+        .v5 .p4 .point-title { color: var(--r-orange); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V6 — MAGAZINE: SELECTA HERO + COMIC DETAILS
+           monkey2 left bleed, selecta title, comic body text
+        ══════════════════════════════════════════════════════════════ */
+        .v6 .monkey-hero {
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 500px; object-fit: cover;
+            object-position: top center; z-index: 1;
+        }
+        .v6 .text-side {
+            position: absolute;
+            left: 500px; top: 0; right: 0; bottom: 0;
+            padding: 50px 50px 50px 60px; z-index: 2;
+            display: flex; flex-direction: column;
+        }
+        .v6 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+        }
+        .v6 .section-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 78px; color: var(--text-dark);
+            letter-spacing: -0.03em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 4px;
+        }
+        .v6 .hero-text {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 24px; color: var(--r-purple);
+            line-height: 1.25; margin-bottom: 28px;
+        }
+        .v6 .points {
+            display: flex; flex-direction: column;
+            gap: 18px; flex: 1;
+        }
+        .v6 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+        }
+        .v6 .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 24px; text-transform: uppercase;
+            line-height: 0.95; margin-bottom: 2px;
+        }
+        .v6 .point-body {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 15px; line-height: 1.35;
+            color: var(--text-mid);
+        }
+        .v6 .p1 .point-num { color: var(--r-red); }
+        .v6 .p1 .point-title { color: var(--r-red); }
+        .v6 .p2 .point-num { color: var(--r-orange); }
+        .v6 .p2 .point-title { color: var(--r-orange); }
+        .v6 .p3 .point-num { color: var(--r-green); }
+        .v6 .p3 .point-title { color: var(--r-green); }
+        .v6 .p4 .point-num { color: var(--r-blue); }
+        .v6 .p4 .point-title { color: var(--r-blue); }
+        .v6 .callout {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 16px; color: var(--r-pink);
+            line-height: 1.3; margin-top: auto;
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V7 — CORNER CLUSTER: ALL COMIC EXCEPT NUMBERS
+           Everything Comic Sans, rainbow per-section,
+           numbers + footer in Selecta
+        ══════════════════════════════════════════════════════════════ */
+        .v7 .monkey-cluster-1 {
+            position: absolute; right: 20px; bottom: 30px;
+            height: 400px; z-index: 2;
+        }
+        .v7 .monkey-cluster-2 {
+            position: absolute; right: 300px; bottom: 10px;
+            height: 300px; z-index: 1;
+            transform: rotate(-12deg); opacity: 0.55;
+        }
+        .v7 .monkey-cluster-3 {
+            position: absolute; right: 160px; bottom: 280px;
+            height: 220px; z-index: 3;
+            transform: rotate(7deg); opacity: 0.75;
+        }
+        .v7 .content {
+            position: absolute; top: var(--pad); left: var(--pad);
+            width: 720px; z-index: 4;
+        }
+        .v7 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+        }
+        .v7 .section-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 80px; color: var(--r-green);
+            line-height: 0.9; text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .v7 .hero-text {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 28px; color: var(--text-dark);
+            line-height: 1.2; margin-bottom: 28px;
+        }
+        .v7 .points {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 18px 30px;
+        }
+        .v7 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+        }
+        .v7 .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 22px; text-transform: uppercase;
+            line-height: 0.95; margin-bottom: 2px;
+        }
+        .v7 .point-body {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 14px; line-height: 1.35;
+        }
+        .v7 .p1 .point-num, .v7 .p1 .point-title, .v7 .p1 .point-body { color: var(--r-red); }
+        .v7 .p2 .point-num, .v7 .p2 .point-title, .v7 .p2 .point-body { color: var(--r-orange); }
+        .v7 .p3 .point-num, .v7 .p3 .point-title, .v7 .p3 .point-body { color: var(--r-blue); }
+        .v7 .p4 .point-num, .v7 .p4 .point-title, .v7 .p4 .point-body { color: var(--r-purple); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V8 — SELECTA EVERYTHING + COMIC HERO ONLY
+           Clean Selecta layout, the one hero sentence in Comic Sans
+        ══════════════════════════════════════════════════════════════ */
+        .v8 .monkey-center {
+            position: absolute; top: 20px; left: 50%;
+            transform: translateX(-50%);
+            height: 320px; z-index: 2;
+        }
+        .v8 .title-behind {
+            position: absolute; top: 40px; left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 160px; color: var(--text-dark);
+            opacity: 0.06; letter-spacing: -0.04em;
+            text-transform: uppercase; white-space: nowrap;
+            z-index: 1;
+        }
+        .v8 .subtitle {
+            position: absolute; top: 348px; left: 50%;
+            transform: translateX(-50%);
+            text-align: center; z-index: 3; white-space: nowrap;
+        }
+        .v8 .subtitle .hero-text {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 32px; color: var(--r-pink);
+            line-height: 1.15;
+        }
+        .v8 .four-cols {
+            position: absolute; bottom: 40px;
+            left: 40px; right: 40px;
+            display: flex; gap: 30px; z-index: 3;
+        }
+        .v8 .four-cols .col { flex: 1; }
+        .v8 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            color: var(--text-mid); margin-bottom: 4px; display: block;
+        }
+        .v8 .point-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 22px; color: var(--text-dark);
+            text-transform: uppercase; line-height: 0.85;
+            margin-bottom: 6px;
+        }
+        .v8 .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 16px; color: var(--text-mid); line-height: 1.35;
+        }
+        .v8 .c1 .point-title { color: var(--r-red); }
+        .v8 .c2 .point-title { color: var(--r-green); }
+        .v8 .c3 .point-title { color: var(--r-blue); }
+        .v8 .c4 .point-title { color: var(--r-orange); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V9 — PLAYFUL SCATTER: COMIC TITLES + SELECTA BODY
+           Scattered stickers, Comic Sans titles, Selecta body
+           Each point title a different color, body neutral
+        ══════════════════════════════════════════════════════════════ */
+        .v9 .scatter-monkey { position: absolute; z-index: 1; }
+        .v9 .sm-1 { top: 20px; left: 30px; height: 160px; transform: rotate(-15deg); opacity: 0.4; }
+        .v9 .sm-2 { top: 40px; right: 40px; height: 200px; transform: rotate(10deg) scaleX(-1); opacity: 0.35; }
+        .v9 .sm-3 { bottom: 80px; left: 50px; height: 180px; transform: rotate(8deg); opacity: 0.35; }
+        .v9 .sm-4 { bottom: 20px; right: 80px; height: 150px; transform: rotate(-12deg) scaleX(-1); opacity: 0.45; }
+        .v9 .sm-5 { top: 300px; left: 200px; height: 120px; transform: rotate(20deg); opacity: 0.25; }
+        .v9 .sm-6 { top: 180px; right: 200px; height: 140px; transform: rotate(-6deg) scaleX(-1); opacity: 0.3; }
+
+        .v9 .center-column {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; text-align: center; z-index: 2;
+        }
+        .v9 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+        }
+        .v9 .section-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 88px; color: var(--r-red);
+            line-height: 0.9; text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .v9 .hero-text {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 28px; color: var(--text-dark);
+            margin-bottom: 32px; line-height: 1.15;
+        }
+        .v9 .points {
+            text-align: left; display: flex; flex-direction: column; gap: 14px;
+        }
+        .v9 .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 22px; line-height: 1;
+        }
+        .v9 .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 16px; color: var(--text-mid); line-height: 1.35;
+        }
+        .v9 .p1 .point-title { color: var(--r-orange); }
+        .v9 .p2 .point-title { color: var(--r-green); }
+        .v9 .p3 .point-title { color: var(--r-purple); }
+        .v9 .p4 .point-title { color: var(--r-blue); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V10 — LADDER: SELECTA TITLES + COMIC BODY
+           Stickers climbing left, Selecta Black headers,
+           Comic Sans body in rainbow
+        ══════════════════════════════════════════════════════════════ */
+        .v10 .ladder-monkey { position: absolute; left: 0; z-index: 1; }
+        .v10 .lm-1 { top: 0; height: 220px; opacity: 0.15; transform: translateX(-30px); }
+        .v10 .lm-2 { top: 180px; height: 260px; opacity: 0.3; transform: translateX(-15px) scaleX(-1); }
+        .v10 .lm-3 { top: 400px; height: 300px; opacity: 0.5; }
+        .v10 .lm-4 { top: 560px; height: 360px; opacity: 0.8; transform: translateX(20px) scaleX(-1); }
+
+        .v10 .content {
+            position: absolute; top: var(--pad); right: var(--pad);
+            width: 800px; bottom: 40px; z-index: 2;
+            display: flex; flex-direction: column;
+        }
+        .v10 .section-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 14px; color: var(--r-red);
+            letter-spacing: 0.05em; text-align: right;
+        }
+        .v10 .section-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 80px; text-align: right;
+            color: var(--text-dark);
+            letter-spacing: -0.03em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 4px;
+        }
+        .v10 .hero-text {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 28px; text-align: right;
+            color: var(--r-teal); line-height: 1.2;
+            margin-bottom: 28px;
+        }
+        .v10 .points {
+            display: flex; flex-direction: column;
+            gap: 16px; text-align: right;
+        }
+        .v10 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em; color: var(--text-mid);
+        }
+        .v10 .point-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 28px; color: var(--text-dark);
+            text-transform: uppercase; line-height: 0.85;
+            margin-bottom: 2px;
+        }
+        .v10 .point-body {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 16px; line-height: 1.35;
+            max-width: 600px; margin-left: auto;
+        }
+        .v10 .p1 .point-body { color: var(--r-red); }
+        .v10 .p2 .point-body { color: var(--r-green); }
+        .v10 .p3 .point-body { color: var(--r-purple); }
+        .v10 .p4 .point-body { color: var(--r-orange); }
+        .v10 .callout {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 18px; color: var(--r-pink);
+            line-height: 1.3; margin-top: auto; text-align: right;
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V11 — BILLBOARD: COMIC TITLE + HERO, SELECTA GRID
+           Big comic title behind monkey, selecta point columns
+        ══════════════════════════════════════════════════════════════ */
+        .v11 .billboard-title {
+            position: absolute; top: 30px; left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--comic); font-weight: 700;
+            font-size: 200px; color: var(--r-blue);
+            opacity: 0.08; letter-spacing: -0.02em;
+            text-transform: uppercase; white-space: nowrap;
+            z-index: 1; line-height: 1;
+        }
+        .v11 .monkey-billboard {
+            position: absolute; top: 0; left: 50%;
+            transform: translateX(-50%);
+            height: 380px; z-index: 2;
+        }
+        .v11 .content {
+            position: absolute; bottom: 40px;
+            left: var(--pad); right: var(--pad); z-index: 3;
+        }
+        .v11 .hero-text {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 36px; text-align: center;
+            color: var(--r-purple);
+            margin-bottom: 32px; max-width: 800px;
+            margin-left: auto; margin-right: auto;
+            line-height: 1.2;
+        }
+        .v11 .point-row {
+            display: flex; gap: 40px; justify-content: center;
+        }
+        .v11 .point-col { width: 280px; text-align: center; }
+        .v11 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            display: block; margin-bottom: 6px; color: var(--text-mid);
+        }
+        .v11 .point-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 22px; text-transform: uppercase;
+            line-height: 0.85; margin-bottom: 6px;
+        }
+        .v11 .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 16px; color: var(--text-mid); line-height: 1.35;
+        }
+        .v11 .c1 .point-title { color: var(--r-red); }
+        .v11 .c2 .point-title { color: var(--r-green); }
+        .v11 .c3 .point-title { color: var(--r-orange); }
+        .v11 .c4 .point-title { color: var(--r-blue); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V12 — MONO COLUMN: ALTERNATING FONTS PER POINT
+           Odd points: Comic Sans title + Selecta body
+           Even points: Selecta title + Comic Sans body
+           Each section a unique color
+        ══════════════════════════════════════════════════════════════ */
+        .v12 .content {
+            position: absolute; inset: 0;
+            padding: 50px 120px; z-index: 2;
+            display: flex; gap: 50px;
+        }
+        .v12 .left-col {
+            flex: 0 0 380px;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+        }
+        .v12 .monkey-inline { height: 360px; margin-bottom: 20px; }
+        .v12 .section-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 64px; text-align: center;
+            color: var(--r-pink); text-transform: uppercase;
+        }
+        .v12 .right-col {
+            flex: 1; display: flex; flex-direction: column;
+            justify-content: center;
+        }
+        .v12 .hero-text {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 36px; color: var(--text-dark);
+            line-height: 1.05; letter-spacing: -0.02em;
+            margin-bottom: 32px;
+        }
+        .v12 .points {
+            display: flex; flex-direction: column; gap: 18px;
+        }
+        .v12 .point {
+            padding-left: 20px;
+            border-left: 3px solid currentColor;
+        }
+        .v12 .point-num {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+        }
+        /* Odd: Comic title, Selecta body */
+        .v12 .p1, .v12 .p3 { color: initial; }
+        .v12 .p1 { border-color: var(--r-red); }
+        .v12 .p1 .point-num { color: var(--r-red); }
+        .v12 .p1 .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 26px; color: var(--r-red);
+            text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
+        }
+        .v12 .p1 .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 17px; color: var(--text-mid);
+            line-height: 1.35; max-width: 520px;
+        }
+        .v12 .p3 { border-color: var(--r-green); }
+        .v12 .p3 .point-num { color: var(--r-green); }
+        .v12 .p3 .point-title {
+            font-family: var(--comic); font-weight: 700;
+            font-size: 26px; color: var(--r-green);
+            text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
+        }
+        .v12 .p3 .point-body {
+            font-family: var(--selecta); font-weight: 300;
+            font-size: 17px; color: var(--text-mid);
+            line-height: 1.35; max-width: 520px;
+        }
+        /* Even: Selecta title, Comic body */
+        .v12 .p2 { border-color: var(--r-blue); }
+        .v12 .p2 .point-num { color: var(--r-blue); }
+        .v12 .p2 .point-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 26px; color: var(--r-blue);
+            text-transform: uppercase; line-height: 0.83;
+            letter-spacing: -0.01em; margin-bottom: 2px;
+        }
+        .v12 .p2 .point-body {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 16px; color: var(--text-mid);
+            line-height: 1.4; max-width: 520px;
+        }
+        .v12 .p4 { border-color: var(--r-purple); }
+        .v12 .p4 .point-num { color: var(--r-purple); }
+        .v12 .p4 .point-title {
+            font-family: var(--selecta); font-weight: 900;
+            font-size: 26px; color: var(--r-purple);
+            text-transform: uppercase; line-height: 0.83;
+            letter-spacing: -0.01em; margin-bottom: 2px;
+        }
+        .v12 .p4 .point-body {
+            font-family: var(--comic); font-weight: 400;
+            font-size: 16px; color: var(--text-mid);
+            line-height: 1.4; max-width: 520px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- V1 — COMIC HEADERS + SELECTA BODY -->
+    <div class="variation">
+        <div class="variation-label"><span>V1</span> — Comic Headers + Selecta Body <em>· headers=Comic Sans rainbow, body=Selecta Light, nums=Selecta Black</em></div>
+        <div class="slide v1">
+            <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-presenter" alt="">
+            <div class="text-area">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V2 — SELECTA HEADERS + COMIC BODY -->
+    <div class="variation">
+        <div class="variation-label"><span>V2</span> — Selecta Headers + Comic Body <em>· headers=Selecta Black, body=Comic Sans rainbow, hero=Comic Sans</em></div>
+        <div class="slide v2">
+            <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-peek" alt="">
+            <div class="top-band">
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics still aren't solved.</div>
+                <div class="point-row">
+                    <div class="point-col p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point-col p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point-col p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point-col p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V3 — ALL COMIC, COLOR-CODED SECTIONS -->
+    <div class="variation">
+        <div class="variation-label"><span>V3</span> — All Comic, Color-Coded Sections <em>· everything=Comic Sans, each problem=one rainbow color, nums=Selecta</em></div>
+        <div class="slide v3">
+            <div class="header-area">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics still aren't solved.</div>
+            </div>
+            <div class="columns">
+                <div class="col c1">
+                    <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" alt="">
+                    <span class="point-num">01</span>
+                    <div class="point-title">Viewing is broken</div>
+                    <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                </div>
+                <div class="col c2">
+                    <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" style="transform: scaleX(-1);" alt="">
+                    <span class="point-num">02</span>
+                    <div class="point-title">No platform feels fun</div>
+                    <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                </div>
+                <div class="col c3">
+                    <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" alt="">
+                    <span class="point-num">03</span>
+                    <div class="point-title">Artists VS. Collectors</div>
+                    <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                </div>
+                <div class="col c4">
+                    <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" style="transform: scaleX(-1);" alt="">
+                    <span class="point-num">04</span>
+                    <div class="point-title">History is frozen in 2021</div>
+                    <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V4 — GIANT COMIC TITLE + SELECTA EVERYTHING ELSE -->
+    <div class="variation">
+        <div class="variation-label"><span>V4</span> — Comic Title/Hero Only <em>· title+hero=Comic Sans colored, points=all Selecta, nums=Selecta</em></div>
+        <div class="slide v4">
+            <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-watermark" alt="">
+            <div class="content">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+                <div class="points-grid">
+                    <div class="point">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+                <div class="callout">Until these basics are solved, market growth is capped by what the tech can reach - not what the culture can sustain.</div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V5 — COMIC BULLET TITLES + SELECTA BODY -->
+    <div class="variation">
+        <div class="variation-label"><span>V5</span> — Comic Bullet Titles + Selecta Body <em>· section=Selecta, hero=Comic, point titles=Comic rainbow, body=Selecta</em></div>
+        <div class="slide v5">
+            <div class="content">
+                <div class="left">
+                    <div class="section-num">02</div>
+                    <div class="section-title">Problem</div>
+                    <div class="hero-text">The basics still aren't solved.</div>
+                </div>
+                <div class="right">
+                    <div class="bullet-point p1">
+                        <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" alt="">
+                        <div class="bullet-text">
+                            <div class="point-title">Viewing is broken</div>
+                            <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                        </div>
+                    </div>
+                    <div class="bullet-point p2">
+                        <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" style="transform: scaleX(-1);" alt="">
+                        <div class="bullet-text">
+                            <div class="point-title">No platform feels fun</div>
+                            <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                        </div>
+                    </div>
+                    <div class="bullet-point p3">
+                        <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" alt="">
+                        <div class="bullet-text">
+                            <div class="point-title">Artists VS. Collectors</div>
+                            <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                        </div>
+                    </div>
+                    <div class="bullet-point p4">
+                        <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-sticker" style="transform: scaleX(-1);" alt="">
+                        <div class="bullet-text">
+                            <div class="point-title">History is frozen in 2021</div>
+                            <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V6 — MAGAZINE: SELECTA HERO + COMIC DETAILS -->
+    <div class="variation">
+        <div class="variation-label"><span>V6</span> — Selecta Title + Comic Details <em>· title=Selecta Black, hero+points=Comic Sans, each point=rainbow color</em></div>
+        <div class="slide v6">
+            <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-hero" alt="">
+            <div class="text-side">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+                <div class="callout">Until these basics are solved, market growth is capped by what the tech can reach - not what the culture can sustain.</div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V7 — CORNER CLUSTER: ALL COMIC EXCEPT NUMBERS -->
+    <div class="variation">
+        <div class="variation-label"><span>V7</span> — All Comic Except Numbers <em>· everything=Comic Sans, each section=one solid color, nums+footer=Selecta</em></div>
+        <div class="slide v7">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-cluster-1" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-cluster-2" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-cluster-3" alt="">
+            <div class="content">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V8 — SELECTA EVERYTHING + COMIC HERO ONLY -->
+    <div class="variation">
+        <div class="variation-label"><span>V8</span> — Selecta Everything + Comic Hero Only <em>· only the hero sentence=Comic Sans pink, everything else=Selecta, colored titles</em></div>
+        <div class="slide v8">
+            <div class="title-behind">PROBLEM</div>
+            <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-center" alt="">
+            <div class="subtitle">
+                <div class="hero-text">The basics still aren't solved.</div>
+            </div>
+            <div class="four-cols">
+                <div class="col c1">
+                    <span class="point-num">01</span>
+                    <div class="point-title">Viewing is broken</div>
+                    <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                </div>
+                <div class="col c2">
+                    <span class="point-num">02</span>
+                    <div class="point-title">No platform feels fun</div>
+                    <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                </div>
+                <div class="col c3">
+                    <span class="point-num">03</span>
+                    <div class="point-title">Artists VS. Collectors</div>
+                    <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                </div>
+                <div class="col c4">
+                    <span class="point-num">04</span>
+                    <div class="point-title">History is frozen in 2021</div>
+                    <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V9 — PLAYFUL SCATTER: COMIC TITLES + SELECTA BODY -->
+    <div class="variation">
+        <div class="variation-label"><span>V9</span> — Comic Titles + Selecta Body <em>· section+point titles=Comic Sans rainbow, hero+body=Selecta Light</em></div>
+        <div class="slide v9">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-1" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-2" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-3" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-4" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-5" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-6" alt="">
+            <div class="center-column">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics still aren't solved.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <div class="point-title">01 — Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point p2">
+                        <div class="point-title">02 — No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point p3">
+                        <div class="point-title">03 — Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point p4">
+                        <div class="point-title">04 — History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V10 — LADDER: SELECTA TITLES + COMIC BODY -->
+    <div class="variation">
+        <div class="variation-label"><span>V10</span> — Selecta Titles + Comic Body <em>· title+point headers=Selecta Black, hero+body=Comic Sans rainbow</em></div>
+        <div class="slide v10">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-1" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-2" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-3" alt="">
+            <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-4" alt="">
+            <div class="content">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics still aren't solved.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+                <div class="callout">Until these basics are solved, market growth is capped by what the tech can reach - not what the culture can sustain.</div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V11 — BILLBOARD: COMIC TITLE + HERO, SELECTA GRID -->
+    <div class="variation">
+        <div class="variation-label"><span>V11</span> — Comic Title/Hero + Selecta Grid <em>· billboard+hero=Comic Sans, point grid=Selecta, colored titles only</em></div>
+        <div class="slide v11">
+            <div class="billboard-title">PROBLEM</div>
+            <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-billboard" alt="">
+            <div class="content">
+                <div class="hero-text">The basics still aren't solved.</div>
+                <div class="point-row">
+                    <div class="point-col c1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                    </div>
+                    <div class="point-col c2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                    </div>
+                    <div class="point-col c3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists VS. Collectors</div>
+                        <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                    </div>
+                    <div class="point-col c4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+    <!-- V12 — MONO COLUMN: ALTERNATING FONTS PER POINT -->
+    <div class="variation">
+        <div class="variation-label"><span>V12</span> — Alternating Fonts Per Point <em>· odd points=Comic title+Selecta body, even=Selecta title+Comic body, each=unique color</em></div>
+        <div class="slide v12">
+            <div class="content">
+                <div class="left-col">
+                    <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-inline" alt="">
+                    <div class="section-title">Problem</div>
+                </div>
+                <div class="right-col">
+                    <div class="hero-text">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+                    <div class="points">
+                        <div class="point p1">
+                            <span class="point-num">01</span>
+                            <div class="point-title">Viewing is broken</div>
+                            <p class="point-body">Collectors have nowhere to showcase their collection, killing the social proof loop that drives repeat collectorship.</p>
+                        </div>
+                        <div class="point p2">
+                            <span class="point-num">02</span>
+                            <div class="point-title">No platform feels fun</div>
+                            <p class="point-body">Nothing captures the instinctive trading energy people had with Pokémon cards, where experience matters more than the material.</p>
+                        </div>
+                        <div class="point p3">
+                            <span class="point-num">03</span>
+                            <div class="point-title">Artists VS. Collectors</div>
+                            <p class="point-body">Instead of a symbiotic ecosystem, they're treated as separate groups - stifling the cultural and economic value they build together.</p>
+                        </div>
+                        <div class="point p4">
+                            <span class="point-num">04</span>
+                            <div class="point-title">History is frozen in 2021</div>
+                            <p class="point-body">Autoglyphs, Fidenza, CryptoPunks - trapped in a time capsule, grouped with PFP projects, disconnected from artists pushing the space forward. No platform bridges that history with what's happening now.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>VVV.SO</span><span>March 3, 2026</span><span>8/50</span></div>
+        </div>
+    </div>
+
+</body>
+</html>

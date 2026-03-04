@@ -1,0 +1,194 @@
+%!Adobe-FontList 1.25
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/AdobeFnt25.lst
+FileLength:4417
+FileModTime:794219712
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+MenuName:Minion Pro
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Minion Pro
+WritingScript:Roman
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:794219712
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Modelo-Bold
+FamilyName:Modelo
+StyleName:Bold
+MenuName:Modelo
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Modelo Bold
+WritingScript:Roman
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/Modelo-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:81452
+FileModTime:794219712
+NameArray:0,Mac,4,Modelo Bold
+NameArray:0,Win,1,Modelo
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:OCR-XBETA-04-Bold
+FamilyName:OCR-X BETA-04
+StyleName:Bold
+MenuName:OCR-X BETA-04 Bold
+StyleBits:0
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:OCR-X BETA-04 Bold
+WritingScript:Roman
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/OCR-XBETA-04-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:147756
+FileModTime:794219712
+NameArray:0,Mac,4,OCR-X BETA-04 Bold
+NameArray:0,Win,1,OCR-X BETA-04 Bold
+NameArray:0,Win,16,OCR-X BETA-04
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Selecta-Black
+FamilyName:Selecta
+StyleName:Black
+MenuName:Selecta Black
+StyleBits:0
+WeightClass:900
+WidthClass:5
+AngleClass:0
+FullName:Selecta Black
+WritingScript:Roman
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/Selecta-Black.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:136676
+FileModTime:794219712
+NameArray:0,Win,1,Selecta Black
+NameArray:0,Win,16,Selecta
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Selecta-Italic
+FamilyName:Selecta
+StyleName:Italic
+MenuName:Selecta
+StyleBits:1
+WeightClass:400
+WidthClass:5
+AngleClass:1
+FullName:Selecta Italic
+WritingScript:Roman
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/Selecta-Italic.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:136608
+FileModTime:794219712
+NameArray:0,Win,1,Selecta
+NameArray:0,Win,16,Selecta
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Selecta-Light
+FamilyName:Selecta
+StyleName:Light
+MenuName:Selecta Light
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:0
+FullName:Selecta Light
+WritingScript:Roman
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/Selecta-Light.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:135516
+FileModTime:794219712
+NameArray:0,Win,1,Selecta Light
+NameArray:0,Win,16,Selecta
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Selecta-Regular
+FamilyName:Selecta
+StyleName:Regular
+MenuName:Selecta
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Selecta Regular
+WritingScript:Roman
+OutlineFileName:/Users/jaredmadere/Downloads/260302_VVV.SO_Deck/Document fonts/Selecta-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+hasSBIX:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:134136
+FileModTime:794219712
+NameArray:0,Win,1,Selecta
+NameArray:0,Win,16,Selecta
+%EndFont
+
