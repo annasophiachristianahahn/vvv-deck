@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VVV Deck – Workshop v3 – Coconat Rainbow Monkey</title>
+    <title>VVV Deck – Workshop v4 – Harmonized Editorial</title>
     <style>
         @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Light.ttf'); font-weight: 300; font-style: normal; }
         @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Regular.ttf'); font-weight: 400; font-style: normal; }
@@ -13,6 +13,9 @@
         @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Regular.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
         @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Demi.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Demi.woff') format('woff'); font-weight: 600; font-style: normal; }
         @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Bold.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Bold.woff') format('woff'); font-weight: 700; font-style: normal; }
+
+        @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 700; font-style: normal; }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -26,18 +29,17 @@
             --text-dark: #1a2836;
             --text-mid: #3a4f5e;
 
-            /* ── Rainbow palette (saturated but legible on baby blue) ── */
-            --r-red: #cc1414;
-            --r-orange: #d4710a;
-            --r-yellow: #b89b00;
-            --r-green: #1a8a3e;
-            --r-blue: #1a5acc;
-            --r-purple: #7b2aba;
-            --r-pink: #c4289a;
-            --r-teal: #0a8a7a;
+            /* ── Sophisticated palette (harmonized with rose on baby blue) ── */
+            --c-rose: #c4289a;
+            --c-crimson: #c42838;
+            --c-ochre: #a86030;
+            --c-plum: #6a2a72;
+            --c-ink: #2a3858;
+            --c-teal: #1a6060;
+            --c-sage: #3a6850;
 
-            --coconat: 'Coconat', 'Coconat MS', cursive;
-            --comic: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive;
+            --coconat: 'Coconat', Georgia, serif;
+            --carrig: 'CarrigPro DisplayItalic', Georgia, serif;
             --selecta: 'Selecta', system-ui, sans-serif;
         }
 
@@ -96,8 +98,8 @@
 
 
         /* ══════════════════════════════════════════════════════════════
-           V1 — COMIC HEADERS + SELECTA BODY
-           Headers in Coconat rainbow, body in Selecta Light,
+           V1 — COCONAT HEADERS + SELECTA BODY
+           Headers in Coconat rose, body in Selecta Light,
            numbers in Selecta Black
         ══════════════════════════════════════════════════════════════ */
         .v1 .monkey-presenter {
@@ -112,12 +114,12 @@
         }
         .v1 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v1 .section-title {
             font-family: var(--coconat);
             font-size: 84px; font-weight: 700;
-            color: var(--r-blue);
+            color: var(--c-rose);
             line-height: 0.9; letter-spacing: -0.02em;
             text-transform: uppercase;
             margin-bottom: 16px;
@@ -143,14 +145,14 @@
             font-size: 18px; color: var(--text-mid);
             line-height: 1.35; max-width: 540px;
         }
-        .v1 .p1 .point-num { color: var(--r-red); }
-        .v1 .p1 .point-title { color: var(--r-red); }
-        .v1 .p2 .point-num { color: var(--r-orange); }
-        .v1 .p2 .point-title { color: var(--r-orange); }
-        .v1 .p3 .point-num { color: var(--r-green); }
-        .v1 .p3 .point-title { color: var(--r-green); }
-        .v1 .p4 .point-num { color: var(--r-purple); }
-        .v1 .p4 .point-title { color: var(--r-purple); }
+        .v1 .p1 .point-num { color: var(--c-crimson); }
+        .v1 .p1 .point-title { color: var(--c-crimson); }
+        .v1 .p2 .point-num { color: var(--c-ochre); }
+        .v1 .p2 .point-title { color: var(--c-ochre); }
+        .v1 .p3 .point-num { color: var(--c-teal); }
+        .v1 .p3 .point-title { color: var(--c-teal); }
+        .v1 .p4 .point-num { color: var(--c-plum); }
+        .v1 .p4 .point-title { color: var(--c-plum); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -169,16 +171,16 @@
             z-index: 3;
         }
         .v2 .section-title {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 100px; text-align: center;
-            color: var(--text-dark);
+            color: var(--c-ink);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 8px;
         }
         .v2 .hero-text {
-            font-family: var(--coconat); font-weight: 700;
+            font-family: var(--carrig); font-weight: 400;
             font-size: 34px; text-align: center;
-            color: var(--r-purple);
+            color: var(--c-rose);
             max-width: 700px; margin: 0 auto 28px;
             line-height: 1.15;
         }
@@ -198,13 +200,10 @@
             margin-bottom: 6px;
         }
         .v2 .point-body {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--selecta); font-weight: 300;
             font-size: 15px; line-height: 1.35;
+            color: var(--text-mid);
         }
-        .v2 .p1 .point-body { color: var(--r-red); }
-        .v2 .p2 .point-body { color: var(--r-green); }
-        .v2 .p3 .point-body { color: var(--r-blue); }
-        .v2 .p4 .point-body { color: var(--r-orange); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -216,11 +215,11 @@
         }
         .v3 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v3 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 72px; color: var(--r-pink);
+            font-size: 72px; color: var(--c-rose);
             line-height: 0.95; text-transform: uppercase;
         }
         .v3 .hero-text {
@@ -248,13 +247,17 @@
             line-height: 0.95; margin-bottom: 4px;
         }
         .v3 .col .point-body {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--selecta); font-weight: 300;
             font-size: 14px; line-height: 1.35; max-width: 280px;
         }
-        .v3 .c1 .point-num, .v3 .c1 .point-title, .v3 .c1 .point-body { color: var(--r-red); }
-        .v3 .c2 .point-num, .v3 .c2 .point-title, .v3 .c2 .point-body { color: var(--r-blue); }
-        .v3 .c3 .point-num, .v3 .c3 .point-title, .v3 .c3 .point-body { color: var(--r-green); }
-        .v3 .c4 .point-num, .v3 .c4 .point-title, .v3 .c4 .point-body { color: var(--r-purple); }
+        .v3 .c1 .point-num, .v3 .c1 .point-title { color: var(--c-crimson); }
+        .v3 .c1 .point-body { color: var(--c-crimson); opacity: 0.85; }
+        .v3 .c2 .point-num, .v3 .c2 .point-title { color: var(--c-ink); }
+        .v3 .c2 .point-body { color: var(--c-ink); opacity: 0.85; }
+        .v3 .c3 .point-num, .v3 .c3 .point-title { color: var(--c-teal); }
+        .v3 .c3 .point-body { color: var(--c-teal); opacity: 0.85; }
+        .v3 .c4 .point-num, .v3 .c4 .point-title { color: var(--c-plum); }
+        .v3 .c4 .point-body { color: var(--c-plum); opacity: 0.85; }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -274,17 +277,17 @@
         }
         .v4 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v4 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 96px; color: var(--r-orange);
+            font-size: 96px; color: var(--c-ochre);
             letter-spacing: -0.02em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 6px;
         }
         .v4 .hero-text {
-            font-family: var(--coconat); font-weight: 400;
-            font-size: 32px; color: var(--r-teal);
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 32px; color: var(--c-teal);
             line-height: 1.15; margin-bottom: 36px; max-width: 600px;
         }
         .v4 .points-grid {
@@ -307,8 +310,8 @@
             font-size: 18px; color: var(--text-mid); line-height: 1.35;
         }
         .v4 .callout {
-            font-family: var(--selecta); font-weight: 900;
-            font-size: 18px; color: var(--r-red);
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 18px; color: var(--c-crimson);
             line-height: 1.3; margin-top: auto; max-width: 700px;
         }
 
@@ -328,17 +331,17 @@
         }
         .v5 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v5 .section-title {
-            font-family: var(--selecta); font-weight: 900;
-            font-size: 90px; color: var(--text-dark);
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 90px; color: var(--c-ink);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 12px;
         }
         .v5 .hero-text {
-            font-family: var(--coconat); font-weight: 700;
-            font-size: 30px; color: var(--r-blue);
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 30px; color: var(--c-rose);
             line-height: 1.2;
         }
         .v5 .right {
@@ -361,10 +364,10 @@
             font-size: 17px; color: var(--text-mid);
             line-height: 1.35; max-width: 500px;
         }
-        .v5 .p1 .point-title { color: var(--r-red); }
-        .v5 .p2 .point-title { color: var(--r-green); }
-        .v5 .p3 .point-title { color: var(--r-purple); }
-        .v5 .p4 .point-title { color: var(--r-orange); }
+        .v5 .p1 .point-title { color: var(--c-crimson); }
+        .v5 .p2 .point-title { color: var(--c-teal); }
+        .v5 .p3 .point-title { color: var(--c-plum); }
+        .v5 .p4 .point-title { color: var(--c-ochre); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -385,17 +388,17 @@
         }
         .v6 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v6 .section-title {
-            font-family: var(--selecta); font-weight: 900;
-            font-size: 78px; color: var(--text-dark);
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 78px; color: var(--c-ink);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 4px;
         }
         .v6 .hero-text {
-            font-family: var(--coconat); font-weight: 400;
-            font-size: 24px; color: var(--r-purple);
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 24px; color: var(--c-plum);
             line-height: 1.25; margin-bottom: 28px;
         }
         .v6 .points {
@@ -412,21 +415,21 @@
             line-height: 0.95; margin-bottom: 2px;
         }
         .v6 .point-body {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--selecta); font-weight: 300;
             font-size: 15px; line-height: 1.35;
             color: var(--text-mid);
         }
-        .v6 .p1 .point-num { color: var(--r-red); }
-        .v6 .p1 .point-title { color: var(--r-red); }
-        .v6 .p2 .point-num { color: var(--r-orange); }
-        .v6 .p2 .point-title { color: var(--r-orange); }
-        .v6 .p3 .point-num { color: var(--r-green); }
-        .v6 .p3 .point-title { color: var(--r-green); }
-        .v6 .p4 .point-num { color: var(--r-blue); }
-        .v6 .p4 .point-title { color: var(--r-blue); }
+        .v6 .p1 .point-num { color: var(--c-crimson); }
+        .v6 .p1 .point-title { color: var(--c-crimson); }
+        .v6 .p2 .point-num { color: var(--c-ochre); }
+        .v6 .p2 .point-title { color: var(--c-ochre); }
+        .v6 .p3 .point-num { color: var(--c-teal); }
+        .v6 .p3 .point-title { color: var(--c-teal); }
+        .v6 .p4 .point-num { color: var(--c-ink); }
+        .v6 .p4 .point-title { color: var(--c-ink); }
         .v6 .callout {
-            font-family: var(--selecta); font-weight: 900;
-            font-size: 16px; color: var(--r-pink);
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 18px; color: var(--c-rose);
             line-height: 1.3; margin-top: auto;
         }
 
@@ -456,11 +459,11 @@
         }
         .v7 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v7 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 80px; color: var(--r-green);
+            font-size: 80px; color: var(--c-sage);
             line-height: 0.9; text-transform: uppercase;
             margin-bottom: 8px;
         }
@@ -483,13 +486,17 @@
             line-height: 0.95; margin-bottom: 2px;
         }
         .v7 .point-body {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--selecta); font-weight: 300;
             font-size: 14px; line-height: 1.35;
         }
-        .v7 .p1 .point-num, .v7 .p1 .point-title, .v7 .p1 .point-body { color: var(--r-red); }
-        .v7 .p2 .point-num, .v7 .p2 .point-title, .v7 .p2 .point-body { color: var(--r-orange); }
-        .v7 .p3 .point-num, .v7 .p3 .point-title, .v7 .p3 .point-body { color: var(--r-blue); }
-        .v7 .p4 .point-num, .v7 .p4 .point-title, .v7 .p4 .point-body { color: var(--r-purple); }
+        .v7 .p1 .point-num, .v7 .p1 .point-title { color: var(--c-crimson); }
+        .v7 .p1 .point-body { color: var(--c-crimson); opacity: 0.85; }
+        .v7 .p2 .point-num, .v7 .p2 .point-title { color: var(--c-ochre); }
+        .v7 .p2 .point-body { color: var(--c-ochre); opacity: 0.85; }
+        .v7 .p3 .point-num, .v7 .p3 .point-title { color: var(--c-ink); }
+        .v7 .p3 .point-body { color: var(--c-ink); opacity: 0.85; }
+        .v7 .p4 .point-num, .v7 .p4 .point-title { color: var(--c-plum); }
+        .v7 .p4 .point-body { color: var(--c-plum); opacity: 0.85; }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -516,8 +523,8 @@
             text-align: center; z-index: 3; white-space: nowrap;
         }
         .v8 .subtitle .hero-text {
-            font-family: var(--coconat); font-weight: 700;
-            font-size: 32px; color: var(--r-pink);
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 34px; color: var(--c-rose);
             line-height: 1.15;
         }
         .v8 .four-cols {
@@ -541,10 +548,10 @@
             font-family: var(--selecta); font-weight: 300;
             font-size: 16px; color: var(--text-mid); line-height: 1.35;
         }
-        .v8 .c1 .point-title { color: var(--r-red); }
-        .v8 .c2 .point-title { color: var(--r-green); }
-        .v8 .c3 .point-title { color: var(--r-blue); }
-        .v8 .c4 .point-title { color: var(--r-orange); }
+        .v8 .c1 .point-title { color: var(--c-crimson); }
+        .v8 .c2 .point-title { color: var(--c-teal); }
+        .v8 .c3 .point-title { color: var(--c-ink); }
+        .v8 .c4 .point-title { color: var(--c-ochre); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -567,11 +574,11 @@
         }
         .v9 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v9 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 88px; color: var(--r-red);
+            font-size: 88px; color: var(--c-crimson);
             line-height: 0.9; text-transform: uppercase;
             margin-bottom: 8px;
         }
@@ -591,10 +598,10 @@
             font-family: var(--selecta); font-weight: 300;
             font-size: 16px; color: var(--text-mid); line-height: 1.35;
         }
-        .v9 .p1 .point-title { color: var(--r-orange); }
-        .v9 .p2 .point-title { color: var(--r-green); }
-        .v9 .p3 .point-title { color: var(--r-purple); }
-        .v9 .p4 .point-title { color: var(--r-blue); }
+        .v9 .p1 .point-title { color: var(--c-ochre); }
+        .v9 .p2 .point-title { color: var(--c-teal); }
+        .v9 .p3 .point-title { color: var(--c-plum); }
+        .v9 .p4 .point-title { color: var(--c-ink); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -615,20 +622,20 @@
         }
         .v10 .section-num {
             font-family: var(--selecta); font-weight: 900;
-            font-size: 14px; color: var(--r-red);
+            font-size: 14px; color: var(--c-crimson);
             letter-spacing: 0.05em; text-align: right;
         }
         .v10 .section-title {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 80px; text-align: right;
-            color: var(--text-dark);
+            color: var(--c-ink);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 4px;
         }
         .v10 .hero-text {
-            font-family: var(--coconat); font-weight: 700;
+            font-family: var(--carrig); font-weight: 400;
             font-size: 28px; text-align: right;
-            color: var(--r-teal); line-height: 1.2;
+            color: var(--c-teal); line-height: 1.2;
             margin-bottom: 28px;
         }
         .v10 .points {
@@ -640,23 +647,20 @@
             font-size: 11px; letter-spacing: 0.05em; color: var(--text-mid);
         }
         .v10 .point-title {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 28px; color: var(--text-dark);
             text-transform: uppercase; line-height: 0.85;
             margin-bottom: 2px;
         }
         .v10 .point-body {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--selecta); font-weight: 300;
             font-size: 16px; line-height: 1.35;
             max-width: 600px; margin-left: auto;
+            color: var(--text-mid);
         }
-        .v10 .p1 .point-body { color: var(--r-red); }
-        .v10 .p2 .point-body { color: var(--r-green); }
-        .v10 .p3 .point-body { color: var(--r-purple); }
-        .v10 .p4 .point-body { color: var(--r-orange); }
         .v10 .callout {
-            font-family: var(--comic); font-weight: 700;
-            font-size: 18px; color: var(--r-pink);
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 20px; color: var(--c-rose);
             line-height: 1.3; margin-top: auto; text-align: right;
         }
 
@@ -669,7 +673,7 @@
             position: absolute; top: 30px; left: 50%;
             transform: translateX(-50%);
             font-family: var(--coconat); font-weight: 700;
-            font-size: 200px; color: var(--r-blue);
+            font-size: 200px; color: var(--c-ink);
             opacity: 0.08; letter-spacing: -0.02em;
             text-transform: uppercase; white-space: nowrap;
             z-index: 1; line-height: 1;
@@ -684,9 +688,9 @@
             left: var(--pad); right: var(--pad); z-index: 3;
         }
         .v11 .hero-text {
-            font-family: var(--coconat); font-weight: 700;
+            font-family: var(--carrig); font-weight: 400;
             font-size: 36px; text-align: center;
-            color: var(--r-purple);
+            color: var(--c-rose);
             margin-bottom: 32px; max-width: 800px;
             margin-left: auto; margin-right: auto;
             line-height: 1.2;
@@ -709,10 +713,10 @@
             font-family: var(--selecta); font-weight: 300;
             font-size: 16px; color: var(--text-mid); line-height: 1.35;
         }
-        .v11 .c1 .point-title { color: var(--r-red); }
-        .v11 .c2 .point-title { color: var(--r-green); }
-        .v11 .c3 .point-title { color: var(--r-orange); }
-        .v11 .c4 .point-title { color: var(--r-blue); }
+        .v11 .c1 .point-title { color: var(--c-crimson); }
+        .v11 .c2 .point-title { color: var(--c-teal); }
+        .v11 .c3 .point-title { color: var(--c-ochre); }
+        .v11 .c4 .point-title { color: var(--c-ink); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -735,7 +739,7 @@
         .v12 .section-title {
             font-family: var(--coconat); font-weight: 700;
             font-size: 64px; text-align: center;
-            color: var(--r-pink); text-transform: uppercase;
+            color: var(--c-rose); text-transform: uppercase;
         }
         .v12 .right-col {
             flex: 1; display: flex; flex-direction: column;
@@ -760,11 +764,11 @@
         }
         /* Odd: Comic title, Selecta body */
         .v12 .p1, .v12 .p3 { color: initial; }
-        .v12 .p1 { border-color: var(--r-red); }
-        .v12 .p1 .point-num { color: var(--r-red); }
+        .v12 .p1 { border-color: var(--c-crimson); }
+        .v12 .p1 .point-num { color: var(--c-crimson); }
         .v12 .p1 .point-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 26px; color: var(--r-red);
+            font-size: 26px; color: var(--c-crimson);
             text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
         }
         .v12 .p1 .point-body {
@@ -772,11 +776,11 @@
             font-size: 17px; color: var(--text-mid);
             line-height: 1.35; max-width: 520px;
         }
-        .v12 .p3 { border-color: var(--r-green); }
-        .v12 .p3 .point-num { color: var(--r-green); }
+        .v12 .p3 { border-color: var(--c-teal); }
+        .v12 .p3 .point-num { color: var(--c-teal); }
         .v12 .p3 .point-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 26px; color: var(--r-green);
+            font-size: 26px; color: var(--c-teal);
             text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
         }
         .v12 .p3 .point-body {
@@ -785,29 +789,29 @@
             line-height: 1.35; max-width: 520px;
         }
         /* Even: Selecta title, Comic body */
-        .v12 .p2 { border-color: var(--r-blue); }
-        .v12 .p2 .point-num { color: var(--r-blue); }
+        .v12 .p2 { border-color: var(--c-ink); }
+        .v12 .p2 .point-num { color: var(--c-ink); }
         .v12 .p2 .point-title {
-            font-family: var(--selecta); font-weight: 900;
-            font-size: 26px; color: var(--r-blue);
-            text-transform: uppercase; line-height: 0.83;
-            letter-spacing: -0.01em; margin-bottom: 2px;
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 26px; color: var(--c-ink);
+            text-transform: uppercase; line-height: 0.95;
+            margin-bottom: 2px;
         }
         .v12 .p2 .point-body {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--selecta); font-weight: 300;
             font-size: 16px; color: var(--text-mid);
             line-height: 1.4; max-width: 520px;
         }
-        .v12 .p4 { border-color: var(--r-purple); }
-        .v12 .p4 .point-num { color: var(--r-purple); }
+        .v12 .p4 { border-color: var(--c-plum); }
+        .v12 .p4 .point-num { color: var(--c-plum); }
         .v12 .p4 .point-title {
-            font-family: var(--selecta); font-weight: 900;
-            font-size: 26px; color: var(--r-purple);
-            text-transform: uppercase; line-height: 0.83;
-            letter-spacing: -0.01em; margin-bottom: 2px;
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 26px; color: var(--c-plum);
+            text-transform: uppercase; line-height: 0.95;
+            margin-bottom: 2px;
         }
         .v12 .p4 .point-body {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--selecta); font-weight: 300;
             font-size: 16px; color: var(--text-mid);
             line-height: 1.4; max-width: 520px;
         }
@@ -818,7 +822,7 @@
 
     <!-- V1 — COMIC HEADERS + SELECTA BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V1</span> — Coconat Headers + Selecta Body <em>· headers=Coconat rainbow, body=Selecta Light, nums=Selecta Black</em></div>
+        <div class="variation-label"><span>V1</span> — Coconat Headers + Selecta Body <em>· headers=Coconat rose, body=Selecta Light, nums=Selecta Black</em></div>
         <div class="slide v1">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-presenter" alt="">
             <div class="text-area">
@@ -854,7 +858,7 @@
 
     <!-- V2 — SELECTA HEADERS + COMIC BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V2</span> — Selecta Headers + Coconat Body <em>· headers=Selecta Black, body=Coconat rainbow, hero=Coconat</em></div>
+        <div class="variation-label"><span>V2</span> — Coconat Headers + CarrigPro Hero <em>· headers=Coconat ink, hero=CarrigPro rose, body=Selecta Light</em></div>
         <div class="slide v2">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-peek" alt="">
             <div class="top-band">
@@ -889,7 +893,7 @@
 
     <!-- V3 — ALL COMIC, COLOR-CODED SECTIONS -->
     <div class="variation">
-        <div class="variation-label"><span>V3</span> — All Coconat, Color-Coded Sections <em>· everything=Coconat, each problem=one rainbow color, nums=Selecta</em></div>
+        <div class="variation-label"><span>V3</span> — Coconat Color-Coded Sections <em>· headers=Coconat rose, titles=Coconat jewel tones, body=Selecta Light</em></div>
         <div class="slide v3">
             <div class="header-area">
                 <div class="section-num">02</div>
@@ -928,7 +932,7 @@
 
     <!-- V4 — GIANT COMIC TITLE + SELECTA EVERYTHING ELSE -->
     <div class="variation">
-        <div class="variation-label"><span>V4</span> — Coconat Title/Hero Only <em>· title+hero=Coconat colored, points=all Selecta, nums=Selecta</em></div>
+        <div class="variation-label"><span>V4</span> — Coconat Title + CarrigPro Hero <em>· title=Coconat ochre, hero=CarrigPro teal, callout=CarrigPro, body=Selecta</em></div>
         <div class="slide v4">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-watermark" alt="">
             <div class="content">
@@ -965,7 +969,7 @@
 
     <!-- V5 — COMIC BULLET TITLES + SELECTA BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V5</span> — Coconat Bullet Titles + Selecta Body <em>· section=Selecta, hero=Coconat, point titles=Coconat rainbow, body=Selecta</em></div>
+        <div class="variation-label"><span>V5</span> — Coconat Titles + CarrigPro Hero <em>· section=Coconat ink, hero=CarrigPro rose, point titles=Coconat jewel, body=Selecta</em></div>
         <div class="slide v5">
             <div class="content">
                 <div class="left">
@@ -1010,7 +1014,7 @@
 
     <!-- V6 — MAGAZINE: SELECTA HERO + COMIC DETAILS -->
     <div class="variation">
-        <div class="variation-label"><span>V6</span> — Selecta Title + Coconat Details <em>· title=Selecta Black, hero+points=Coconat, each point=rainbow color</em></div>
+        <div class="variation-label"><span>V6</span> — Coconat Title + CarrigPro Hero <em>· title=Coconat ink, hero=CarrigPro plum, points=Coconat jewel, body=Selecta</em></div>
         <div class="slide v6">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-hero" alt="">
             <div class="text-side">
@@ -1047,7 +1051,7 @@
 
     <!-- V7 — CORNER CLUSTER: ALL COMIC EXCEPT NUMBERS -->
     <div class="variation">
-        <div class="variation-label"><span>V7</span> — All Coconat Except Numbers <em>· everything=Coconat, each section=one solid color, nums+footer=Selecta</em></div>
+        <div class="variation-label"><span>V7</span> — Coconat Titles + Selecta Body <em>· section=Coconat sage, titles=Coconat jewel, body=Selecta Light, nums=Selecta</em></div>
         <div class="slide v7">
             <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-cluster-1" alt="">
             <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-cluster-2" alt="">
@@ -1085,7 +1089,7 @@
 
     <!-- V8 — SELECTA EVERYTHING + COMIC HERO ONLY -->
     <div class="variation">
-        <div class="variation-label"><span>V8</span> — Selecta Everything + Coconat Hero Only <em>· only the hero sentence=Coconat pink, everything else=Selecta, colored titles</em></div>
+        <div class="variation-label"><span>V8</span> — Selecta Grid + CarrigPro Hero <em>· hero=CarrigPro rose, point titles=Selecta Black jewel, body=Selecta Light</em></div>
         <div class="slide v8">
             <div class="title-behind">PROBLEM</div>
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-center" alt="">
@@ -1120,7 +1124,7 @@
 
     <!-- V9 — PLAYFUL SCATTER: COMIC TITLES + SELECTA BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V9</span> — Coconat Titles + Selecta Body <em>· section+point titles=Coconat rainbow, hero+body=Selecta Light</em></div>
+        <div class="variation-label"><span>V9</span> — Coconat Crimson Title + Selecta Body <em>· section=Coconat crimson, point titles=Coconat jewel, hero+body=Selecta Light</em></div>
         <div class="slide v9">
             <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-1" alt="">
             <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-2" alt="">
@@ -1157,7 +1161,7 @@
 
     <!-- V10 — LADDER: SELECTA TITLES + COMIC BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V10</span> — Selecta Titles + Coconat Body <em>· title+point headers=Selecta Black, hero+body=Coconat rainbow</em></div>
+        <div class="variation-label"><span>V10</span> — Coconat Titles + CarrigPro Hero <em>· title=Coconat ink, hero=CarrigPro teal, body=Selecta Light, callout=CarrigPro rose</em></div>
         <div class="slide v10">
             <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-1" alt="">
             <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-2" alt="">
@@ -1197,7 +1201,7 @@
 
     <!-- V11 — BILLBOARD: COMIC TITLE + HERO, SELECTA GRID -->
     <div class="variation">
-        <div class="variation-label"><span>V11</span> — Coconat Title/Hero + Selecta Grid <em>· billboard+hero=Coconat, point grid=Selecta, colored titles only</em></div>
+        <div class="variation-label"><span>V11</span> — Coconat Billboard + CarrigPro Hero <em>· billboard=Coconat ink, hero=CarrigPro rose, grid=Selecta, colored titles</em></div>
         <div class="slide v11">
             <div class="billboard-title">PROBLEM</div>
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-billboard" alt="">
@@ -1232,7 +1236,7 @@
 
     <!-- V12 — MONO COLUMN: ALTERNATING FONTS PER POINT -->
     <div class="variation">
-        <div class="variation-label"><span>V12</span> — Alternating Fonts Per Point <em>· odd points=Coconat title+Selecta body, even=Selecta title+Comic Sans body, each=unique color</em></div>
+        <div class="variation-label"><span>V12</span> — Coconat Titles + Selecta Body <em>· all titles=Coconat jewel, body=Selecta Light, bordered left accent</em></div>
         <div class="slide v12">
             <div class="content">
                 <div class="left-col">
