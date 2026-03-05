@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VVV Deck – Workshop v4 – Harmonized Editorial</title>
     <style>
-        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Light.ttf'); font-weight: 300; font-style: normal; }
-        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Regular.ttf'); font-weight: 400; font-style: normal; }
-        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Italic.ttf'); font-weight: 400; font-style: italic; }
-        @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Black.ttf'); font-weight: 900; font-style: normal; }
-
+        /* ── Coconat (display headers) ── */
         @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Regular.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
         @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Demi.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Demi.woff') format('woff'); font-weight: 600; font-style: normal; }
         @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Bold.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Bold.woff') format('woff'); font-weight: 700; font-style: normal; }
 
+        /* ── CarrigPro (body text family) ── */
+        @font-face { font-family: 'CarrigPro'; src: url('fonts/font/CarrigPro-Light.woff2') format('woff2'), url('fonts/font/CarrigPro-Light.woff') format('woff'); font-weight: 300; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('fonts/font/CarrigPro-Regular.woff2') format('woff2'), url('fonts/font/CarrigPro-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('fonts/font/CarrigPro-Italic.woff2') format('woff2'), url('fonts/font/CarrigPro-Italic.woff') format('woff'); font-weight: 400; font-style: italic; }
+        @font-face { font-family: 'CarrigPro'; src: url('fonts/font/CarrigPro-Medium.woff2') format('woff2'), url('fonts/font/CarrigPro-Medium.woff') format('woff'); font-weight: 500; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('fonts/font/CarrigPro-Bold.woff2') format('woff2'), url('fonts/font/CarrigPro-Bold.woff') format('woff'); font-weight: 700; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('fonts/font/CarrigPro-Black.woff2') format('woff2'), url('fonts/font/CarrigPro-Black.woff') format('woff'); font-weight: 900; font-style: normal; }
+
+        /* ── CarrigPro Display Italic (hero accent) ── */
         @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 400; font-style: normal; }
         @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 700; font-style: normal; }
 
@@ -29,23 +34,21 @@
             --text-dark: #1a2836;
             --text-mid: #3a4f5e;
 
-            /* ── Sophisticated palette (harmonized with rose on baby blue) ── */
+            /* ── Palette: built from rose-pink + crimson, bright & editorial ── */
             --c-rose: #c4289a;
-            --c-crimson: #c42838;
-            --c-ochre: #a86030;
-            --c-plum: #6a2a72;
-            --c-ink: #2a3858;
-            --c-teal: #1a6060;
-            --c-sage: #3a6850;
+            --c-crimson: #c92d35;
+            --c-cobalt: #2d5cc9;
+            --c-saffron: #c99a2d;
+            --c-violet: #7a2dc9;
 
             --coconat: 'Coconat', Georgia, serif;
-            --carrig: 'CarrigPro DisplayItalic', Georgia, serif;
-            --selecta: 'Selecta', system-ui, sans-serif;
+            --carrig: 'CarrigPro', Georgia, serif;
+            --carrig-di: 'CarrigPro DisplayItalic', Georgia, serif;
         }
 
         body {
             background: #2a3a4a;
-            font-family: var(--selecta);
+            font-family: var(--carrig);
             -webkit-font-smoothing: antialiased;
             padding: 40px 0;
         }
@@ -91,7 +94,7 @@
             align-items: center;
             padding: 8px var(--pad);
             font-size: 11px;
-            font-family: var(--selecta);
+            font-family: var(--carrig);
             color: var(--text-mid);
             font-weight: 400;
         }
@@ -113,7 +116,7 @@
             width: 680px; z-index: 2;
         }
         .v1 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v1 .section-title {
@@ -125,14 +128,14 @@
             margin-bottom: 16px;
         }
         .v1 .hero-text {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 48px; color: var(--text-dark);
             line-height: 1.05; letter-spacing: -0.02em;
             margin-bottom: 36px; max-width: 580px;
         }
         .v1 .points { display: flex; flex-direction: column; gap: 16px; }
         .v1 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v1 .point-title {
@@ -141,18 +144,14 @@
             line-height: 0.9; margin-bottom: 3px;
         }
         .v1 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 18px; color: var(--text-mid);
             line-height: 1.35; max-width: 540px;
         }
-        .v1 .p1 .point-num { color: var(--c-crimson); }
-        .v1 .p1 .point-title { color: var(--c-crimson); }
-        .v1 .p2 .point-num { color: var(--c-ochre); }
-        .v1 .p2 .point-title { color: var(--c-ochre); }
-        .v1 .p3 .point-num { color: var(--c-teal); }
-        .v1 .p3 .point-title { color: var(--c-teal); }
-        .v1 .p4 .point-num { color: var(--c-plum); }
-        .v1 .p4 .point-title { color: var(--c-plum); }
+        .v1 .p1 .point-num, .v1 .p1 .point-title { color: var(--c-crimson); }
+        .v1 .p2 .point-num, .v1 .p2 .point-title { color: var(--c-crimson); }
+        .v1 .p3 .point-num, .v1 .p3 .point-title { color: var(--c-cobalt); }
+        .v1 .p4 .point-num, .v1 .p4 .point-title { color: var(--c-cobalt); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -173,12 +172,12 @@
         .v2 .section-title {
             font-family: var(--coconat); font-weight: 700;
             font-size: 100px; text-align: center;
-            color: var(--c-ink);
+            color: var(--c-cobalt);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 8px;
         }
         .v2 .hero-text {
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 34px; text-align: center;
             color: var(--c-rose);
             max-width: 700px; margin: 0 auto 28px;
@@ -189,18 +188,18 @@
         }
         .v2 .point-col { width: 240px; }
         .v2 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
             color: var(--text-mid);
         }
         .v2 .point-title {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 22px; text-transform: uppercase;
             color: var(--text-dark); line-height: 0.85;
             margin-bottom: 6px;
         }
         .v2 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 15px; line-height: 1.35;
             color: var(--text-mid);
         }
@@ -214,7 +213,7 @@
             position: absolute; top: 30px; left: var(--pad); z-index: 2;
         }
         .v3 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v3 .section-title {
@@ -223,7 +222,7 @@
             line-height: 0.95; text-transform: uppercase;
         }
         .v3 .hero-text {
-            font-family: var(--coconat); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 30px; color: var(--text-dark);
             margin-top: 4px; line-height: 1.2;
         }
@@ -238,7 +237,7 @@
         }
         .v3 .col .monkey-sticker { height: 180px; margin-bottom: 10px; }
         .v3 .col .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v3 .col .point-title {
@@ -247,17 +246,17 @@
             line-height: 0.95; margin-bottom: 4px;
         }
         .v3 .col .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 14px; line-height: 1.35; max-width: 280px;
         }
         .v3 .c1 .point-num, .v3 .c1 .point-title { color: var(--c-crimson); }
-        .v3 .c1 .point-body { color: var(--c-crimson); opacity: 0.85; }
-        .v3 .c2 .point-num, .v3 .c2 .point-title { color: var(--c-ink); }
-        .v3 .c2 .point-body { color: var(--c-ink); opacity: 0.85; }
-        .v3 .c3 .point-num, .v3 .c3 .point-title { color: var(--c-teal); }
-        .v3 .c3 .point-body { color: var(--c-teal); opacity: 0.85; }
-        .v3 .c4 .point-num, .v3 .c4 .point-title { color: var(--c-plum); }
-        .v3 .c4 .point-body { color: var(--c-plum); opacity: 0.85; }
+        .v3 .c1 .point-body { color: var(--c-crimson); opacity: 0.8; }
+        .v3 .c2 .point-num, .v3 .c2 .point-title { color: var(--c-cobalt); }
+        .v3 .c2 .point-body { color: var(--c-cobalt); opacity: 0.8; }
+        .v3 .c3 .point-num, .v3 .c3 .point-title { color: var(--c-violet); }
+        .v3 .c3 .point-body { color: var(--c-violet); opacity: 0.8; }
+        .v3 .c4 .point-num, .v3 .c4 .point-title { color: var(--c-crimson); }
+        .v3 .c4 .point-body { color: var(--c-crimson); opacity: 0.8; }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -276,18 +275,18 @@
             display: flex; flex-direction: column;
         }
         .v4 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v4 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 96px; color: var(--c-ochre);
+            font-size: 96px; color: var(--c-crimson);
             letter-spacing: -0.02em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 6px;
         }
         .v4 .hero-text {
-            font-family: var(--carrig); font-weight: 400;
-            font-size: 32px; color: var(--c-teal);
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 32px; color: var(--c-cobalt);
             line-height: 1.15; margin-bottom: 36px; max-width: 600px;
         }
         .v4 .points-grid {
@@ -296,22 +295,22 @@
             gap: 24px 60px; max-width: 1000px;
         }
         .v4 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em; color: var(--text-mid);
         }
         .v4 .point-title {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 30px; color: var(--text-dark);
             text-transform: uppercase; line-height: 0.83;
             letter-spacing: -0.01em; margin-bottom: 4px;
         }
         .v4 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 18px; color: var(--text-mid); line-height: 1.35;
         }
         .v4 .callout {
-            font-family: var(--carrig); font-weight: 400;
-            font-size: 18px; color: var(--c-crimson);
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 18px; color: var(--c-rose);
             line-height: 1.3; margin-top: auto; max-width: 700px;
         }
 
@@ -330,17 +329,17 @@
             display: flex; flex-direction: column; justify-content: center;
         }
         .v5 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v5 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 90px; color: var(--c-ink);
+            font-size: 90px; color: var(--c-violet);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 12px;
         }
         .v5 .hero-text {
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 30px; color: var(--c-rose);
             line-height: 1.2;
         }
@@ -360,14 +359,14 @@
             line-height: 0.95; margin-bottom: 3px;
         }
         .v5 .bullet-text .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 17px; color: var(--text-mid);
             line-height: 1.35; max-width: 500px;
         }
         .v5 .p1 .point-title { color: var(--c-crimson); }
-        .v5 .p2 .point-title { color: var(--c-teal); }
-        .v5 .p3 .point-title { color: var(--c-plum); }
-        .v5 .p4 .point-title { color: var(--c-ochre); }
+        .v5 .p2 .point-title { color: var(--c-crimson); }
+        .v5 .p3 .point-title { color: var(--c-crimson); }
+        .v5 .p4 .point-title { color: var(--c-crimson); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -387,18 +386,18 @@
             display: flex; flex-direction: column;
         }
         .v6 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v6 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 78px; color: var(--c-ink);
+            font-size: 78px; color: var(--c-cobalt);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 4px;
         }
         .v6 .hero-text {
-            font-family: var(--carrig); font-weight: 400;
-            font-size: 24px; color: var(--c-plum);
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 24px; color: var(--c-rose);
             line-height: 1.25; margin-bottom: 28px;
         }
         .v6 .points {
@@ -406,7 +405,7 @@
             gap: 18px; flex: 1;
         }
         .v6 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v6 .point-title {
@@ -415,20 +414,16 @@
             line-height: 0.95; margin-bottom: 2px;
         }
         .v6 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 15px; line-height: 1.35;
             color: var(--text-mid);
         }
-        .v6 .p1 .point-num { color: var(--c-crimson); }
-        .v6 .p1 .point-title { color: var(--c-crimson); }
-        .v6 .p2 .point-num { color: var(--c-ochre); }
-        .v6 .p2 .point-title { color: var(--c-ochre); }
-        .v6 .p3 .point-num { color: var(--c-teal); }
-        .v6 .p3 .point-title { color: var(--c-teal); }
-        .v6 .p4 .point-num { color: var(--c-ink); }
-        .v6 .p4 .point-title { color: var(--c-ink); }
+        .v6 .p1 .point-num, .v6 .p1 .point-title { color: var(--c-crimson); }
+        .v6 .p2 .point-num, .v6 .p2 .point-title { color: var(--c-crimson); }
+        .v6 .p3 .point-num, .v6 .p3 .point-title { color: var(--c-cobalt); }
+        .v6 .p4 .point-num, .v6 .p4 .point-title { color: var(--c-cobalt); }
         .v6 .callout {
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 18px; color: var(--c-rose);
             line-height: 1.3; margin-top: auto;
         }
@@ -458,17 +453,17 @@
             width: 720px; z-index: 4;
         }
         .v7 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v7 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 80px; color: var(--c-sage);
+            font-size: 80px; color: var(--c-rose);
             line-height: 0.9; text-transform: uppercase;
             margin-bottom: 8px;
         }
         .v7 .hero-text {
-            font-family: var(--coconat); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 28px; color: var(--text-dark);
             line-height: 1.2; margin-bottom: 28px;
         }
@@ -477,7 +472,7 @@
             gap: 18px 30px;
         }
         .v7 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v7 .point-title {
@@ -486,17 +481,17 @@
             line-height: 0.95; margin-bottom: 2px;
         }
         .v7 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 14px; line-height: 1.35;
         }
         .v7 .p1 .point-num, .v7 .p1 .point-title { color: var(--c-crimson); }
-        .v7 .p1 .point-body { color: var(--c-crimson); opacity: 0.85; }
-        .v7 .p2 .point-num, .v7 .p2 .point-title { color: var(--c-ochre); }
-        .v7 .p2 .point-body { color: var(--c-ochre); opacity: 0.85; }
-        .v7 .p3 .point-num, .v7 .p3 .point-title { color: var(--c-ink); }
-        .v7 .p3 .point-body { color: var(--c-ink); opacity: 0.85; }
-        .v7 .p4 .point-num, .v7 .p4 .point-title { color: var(--c-plum); }
-        .v7 .p4 .point-body { color: var(--c-plum); opacity: 0.85; }
+        .v7 .p1 .point-body { color: var(--c-crimson); opacity: 0.8; }
+        .v7 .p2 .point-num, .v7 .p2 .point-title { color: var(--c-crimson); }
+        .v7 .p2 .point-body { color: var(--c-crimson); opacity: 0.8; }
+        .v7 .p3 .point-num, .v7 .p3 .point-title { color: var(--c-violet); }
+        .v7 .p3 .point-body { color: var(--c-violet); opacity: 0.8; }
+        .v7 .p4 .point-num, .v7 .p4 .point-title { color: var(--c-violet); }
+        .v7 .p4 .point-body { color: var(--c-violet); opacity: 0.8; }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -506,16 +501,16 @@
         .v8 .monkey-center {
             position: absolute; top: 20px; left: 50%;
             transform: translateX(-50%);
-            height: 320px; z-index: 2;
+            height: 320px; z-index: 1;
         }
         .v8 .title-behind {
             position: absolute; top: 40px; left: 50%;
             transform: translateX(-50%);
-            font-family: var(--selecta); font-weight: 900;
-            font-size: 160px; color: var(--text-dark);
-            opacity: 0.06; letter-spacing: -0.04em;
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 160px; color: var(--c-rose);
+            opacity: 0.15; letter-spacing: -0.04em;
             text-transform: uppercase; white-space: nowrap;
-            z-index: 1;
+            z-index: 2;
         }
         .v8 .subtitle {
             position: absolute; top: 348px; left: 50%;
@@ -523,7 +518,7 @@
             text-align: center; z-index: 3; white-space: nowrap;
         }
         .v8 .subtitle .hero-text {
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 34px; color: var(--c-rose);
             line-height: 1.15;
         }
@@ -534,24 +529,24 @@
         }
         .v8 .four-cols .col { flex: 1; }
         .v8 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
             color: var(--text-mid); margin-bottom: 4px; display: block;
         }
         .v8 .point-title {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 22px; color: var(--text-dark);
             text-transform: uppercase; line-height: 0.85;
             margin-bottom: 6px;
         }
         .v8 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 16px; color: var(--text-mid); line-height: 1.35;
         }
         .v8 .c1 .point-title { color: var(--c-crimson); }
-        .v8 .c2 .point-title { color: var(--c-teal); }
-        .v8 .c3 .point-title { color: var(--c-ink); }
-        .v8 .c4 .point-title { color: var(--c-ochre); }
+        .v8 .c2 .point-title { color: var(--c-cobalt); }
+        .v8 .c3 .point-title { color: var(--c-crimson); }
+        .v8 .c4 .point-title { color: var(--c-cobalt); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -573,7 +568,7 @@
             width: 600px; text-align: center; z-index: 2;
         }
         .v9 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
         }
         .v9 .section-title {
@@ -583,7 +578,7 @@
             margin-bottom: 8px;
         }
         .v9 .hero-text {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 28px; color: var(--text-dark);
             margin-bottom: 32px; line-height: 1.15;
         }
@@ -595,13 +590,13 @@
             font-size: 22px; line-height: 1;
         }
         .v9 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 16px; color: var(--text-mid); line-height: 1.35;
         }
-        .v9 .p1 .point-title { color: var(--c-ochre); }
-        .v9 .p2 .point-title { color: var(--c-teal); }
-        .v9 .p3 .point-title { color: var(--c-plum); }
-        .v9 .p4 .point-title { color: var(--c-ink); }
+        .v9 .p1 .point-title { color: var(--c-rose); }
+        .v9 .p2 .point-title { color: var(--c-cobalt); }
+        .v9 .p3 .point-title { color: var(--c-violet); }
+        .v9 .p4 .point-title { color: var(--c-saffron); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -621,21 +616,21 @@
             display: flex; flex-direction: column;
         }
         .v10 .section-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson);
             letter-spacing: 0.05em; text-align: right;
         }
         .v10 .section-title {
             font-family: var(--coconat); font-weight: 700;
             font-size: 80px; text-align: right;
-            color: var(--c-ink);
+            color: var(--c-cobalt);
             letter-spacing: -0.03em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 4px;
         }
         .v10 .hero-text {
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 28px; text-align: right;
-            color: var(--c-teal); line-height: 1.2;
+            color: var(--c-rose); line-height: 1.2;
             margin-bottom: 28px;
         }
         .v10 .points {
@@ -643,7 +638,7 @@
             gap: 16px; text-align: right;
         }
         .v10 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em; color: var(--text-mid);
         }
         .v10 .point-title {
@@ -653,14 +648,14 @@
             margin-bottom: 2px;
         }
         .v10 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 16px; line-height: 1.35;
             max-width: 600px; margin-left: auto;
             color: var(--text-mid);
         }
         .v10 .callout {
-            font-family: var(--carrig); font-weight: 400;
-            font-size: 20px; color: var(--c-rose);
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 20px; color: var(--c-crimson);
             line-height: 1.3; margin-top: auto; text-align: right;
         }
 
@@ -673,7 +668,7 @@
             position: absolute; top: 30px; left: 50%;
             transform: translateX(-50%);
             font-family: var(--coconat); font-weight: 700;
-            font-size: 200px; color: var(--c-ink);
+            font-size: 200px; color: var(--c-violet);
             opacity: 0.08; letter-spacing: -0.02em;
             text-transform: uppercase; white-space: nowrap;
             z-index: 1; line-height: 1;
@@ -688,7 +683,7 @@
             left: var(--pad); right: var(--pad); z-index: 3;
         }
         .v11 .hero-text {
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 36px; text-align: center;
             color: var(--c-rose);
             margin-bottom: 32px; max-width: 800px;
@@ -700,23 +695,23 @@
         }
         .v11 .point-col { width: 280px; text-align: center; }
         .v11 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
             display: block; margin-bottom: 6px; color: var(--text-mid);
         }
         .v11 .point-title {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 22px; text-transform: uppercase;
             line-height: 0.85; margin-bottom: 6px;
         }
         .v11 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 16px; color: var(--text-mid); line-height: 1.35;
         }
         .v11 .c1 .point-title { color: var(--c-crimson); }
-        .v11 .c2 .point-title { color: var(--c-teal); }
-        .v11 .c3 .point-title { color: var(--c-ochre); }
-        .v11 .c4 .point-title { color: var(--c-ink); }
+        .v11 .c2 .point-title { color: var(--c-cobalt); }
+        .v11 .c3 .point-title { color: var(--c-crimson); }
+        .v11 .c4 .point-title { color: var(--c-cobalt); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -746,7 +741,7 @@
             justify-content: center;
         }
         .v12 .hero-text {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig-di); font-weight: 400;
             font-size: 36px; color: var(--text-dark);
             line-height: 1.05; letter-spacing: -0.02em;
             margin-bottom: 32px;
@@ -759,7 +754,7 @@
             border-left: 3px solid currentColor;
         }
         .v12 .point-num {
-            font-family: var(--selecta); font-weight: 900;
+            font-family: var(--carrig); font-weight: 900;
             font-size: 11px; letter-spacing: 0.05em;
         }
         /* Odd: Comic title, Selecta body */
@@ -772,46 +767,46 @@
             text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
         }
         .v12 .p1 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 17px; color: var(--text-mid);
             line-height: 1.35; max-width: 520px;
         }
-        .v12 .p3 { border-color: var(--c-teal); }
-        .v12 .p3 .point-num { color: var(--c-teal); }
+        .v12 .p3 { border-color: var(--c-cobalt); }
+        .v12 .p3 .point-num { color: var(--c-cobalt); }
         .v12 .p3 .point-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 26px; color: var(--c-teal);
+            font-size: 26px; color: var(--c-cobalt);
             text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
         }
         .v12 .p3 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 17px; color: var(--text-mid);
             line-height: 1.35; max-width: 520px;
         }
         /* Even: Selecta title, Comic body */
-        .v12 .p2 { border-color: var(--c-ink); }
-        .v12 .p2 .point-num { color: var(--c-ink); }
+        .v12 .p2 { border-color: var(--c-violet); }
+        .v12 .p2 .point-num { color: var(--c-violet); }
         .v12 .p2 .point-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 26px; color: var(--c-ink);
+            font-size: 26px; color: var(--c-violet);
             text-transform: uppercase; line-height: 0.95;
             margin-bottom: 2px;
         }
         .v12 .p2 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 16px; color: var(--text-mid);
             line-height: 1.4; max-width: 520px;
         }
-        .v12 .p4 { border-color: var(--c-plum); }
-        .v12 .p4 .point-num { color: var(--c-plum); }
+        .v12 .p4 { border-color: var(--c-saffron); }
+        .v12 .p4 .point-num { color: var(--c-saffron); }
         .v12 .p4 .point-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 26px; color: var(--c-plum);
+            font-size: 26px; color: var(--c-saffron);
             text-transform: uppercase; line-height: 0.95;
             margin-bottom: 2px;
         }
         .v12 .p4 .point-body {
-            font-family: var(--selecta); font-weight: 300;
+            font-family: var(--carrig); font-weight: 300;
             font-size: 16px; color: var(--text-mid);
             line-height: 1.4; max-width: 520px;
         }
