@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VVV Deck – Workshop v3 – Comic Sans Rainbow Monkey</title>
+    <title>VVV Deck – Workshop v3 – Coconat Rainbow Monkey</title>
     <style>
         @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Light.ttf'); font-weight: 300; font-style: normal; }
         @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Regular.ttf'); font-weight: 400; font-style: normal; }
         @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Italic.ttf'); font-weight: 400; font-style: italic; }
         @font-face { font-family: 'Selecta'; src: url('fonts/Selecta-Black.ttf'); font-weight: 900; font-style: normal; }
+
+        @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Regular.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Demi.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Demi.woff') format('woff'); font-weight: 600; font-style: normal; }
+        @font-face { font-family: 'Coconat'; src: url('fonts/coconat-main/fonts/Coconat-Bold.woff2') format('woff2'), url('fonts/coconat-main/fonts/Coconat-Bold.woff') format('woff'); font-weight: 700; font-style: normal; }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -32,6 +36,7 @@
             --r-pink: #c4289a;
             --r-teal: #0a8a7a;
 
+            --coconat: 'Coconat', 'Coconat MS', cursive;
             --comic: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive;
             --selecta: 'Selecta', system-ui, sans-serif;
         }
@@ -92,7 +97,7 @@
 
         /* ══════════════════════════════════════════════════════════════
            V1 — COMIC HEADERS + SELECTA BODY
-           Headers in Comic Sans rainbow, body in Selecta Light,
+           Headers in Coconat rainbow, body in Selecta Light,
            numbers in Selecta Black
         ══════════════════════════════════════════════════════════════ */
         .v1 .monkey-presenter {
@@ -110,7 +115,7 @@
             font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
         }
         .v1 .section-title {
-            font-family: var(--comic);
+            font-family: var(--coconat);
             font-size: 84px; font-weight: 700;
             color: var(--r-blue);
             line-height: 0.9; letter-spacing: -0.02em;
@@ -129,7 +134,7 @@
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v1 .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 28px; text-transform: uppercase;
             line-height: 0.9; margin-bottom: 3px;
         }
@@ -150,7 +155,7 @@
 
         /* ══════════════════════════════════════════════════════════════
            V2 — SELECTA HEADERS + COMIC BODY
-           Flip: headers in Selecta Black, body in Comic Sans rainbow
+           Flip: headers in Selecta Black, body in Coconat rainbow
         ══════════════════════════════════════════════════════════════ */
         .v2 .monkey-peek {
             position: absolute;
@@ -171,7 +176,7 @@
             text-transform: uppercase; margin-bottom: 8px;
         }
         .v2 .hero-text {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 34px; text-align: center;
             color: var(--r-purple);
             max-width: 700px; margin: 0 auto 28px;
@@ -204,7 +209,7 @@
 
         /* ══════════════════════════════════════════════════════════════
            V3 — ALL COMIC, COLOR-CODED SECTIONS
-           Everything Comic Sans, each problem block one color
+           Everything Coconat, each problem block one color
         ══════════════════════════════════════════════════════════════ */
         .v3 .header-area {
             position: absolute; top: 30px; left: var(--pad); z-index: 2;
@@ -214,12 +219,12 @@
             font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
         }
         .v3 .section-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 72px; color: var(--r-pink);
             line-height: 0.95; text-transform: uppercase;
         }
         .v3 .hero-text {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--coconat); font-weight: 400;
             font-size: 30px; color: var(--text-dark);
             margin-top: 4px; line-height: 1.2;
         }
@@ -238,7 +243,7 @@
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v3 .col .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 20px; text-transform: uppercase;
             line-height: 0.95; margin-bottom: 4px;
         }
@@ -272,13 +277,13 @@
             font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
         }
         .v4 .section-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 96px; color: var(--r-orange);
             letter-spacing: -0.02em; line-height: 0.9;
             text-transform: uppercase; margin-bottom: 6px;
         }
         .v4 .hero-text {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--coconat); font-weight: 400;
             font-size: 32px; color: var(--r-teal);
             line-height: 1.15; margin-bottom: 36px; max-width: 600px;
         }
@@ -332,7 +337,7 @@
             text-transform: uppercase; margin-bottom: 12px;
         }
         .v5 .hero-text {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 30px; color: var(--r-blue);
             line-height: 1.2;
         }
@@ -347,7 +352,7 @@
             width: 70px; flex-shrink: 0; margin-top: 2px;
         }
         .v5 .bullet-text .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 26px; text-transform: uppercase;
             line-height: 0.95; margin-bottom: 3px;
         }
@@ -389,7 +394,7 @@
             text-transform: uppercase; margin-bottom: 4px;
         }
         .v6 .hero-text {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--coconat); font-weight: 400;
             font-size: 24px; color: var(--r-purple);
             line-height: 1.25; margin-bottom: 28px;
         }
@@ -402,7 +407,7 @@
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v6 .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 24px; text-transform: uppercase;
             line-height: 0.95; margin-bottom: 2px;
         }
@@ -428,7 +433,7 @@
 
         /* ══════════════════════════════════════════════════════════════
            V7 — CORNER CLUSTER: ALL COMIC EXCEPT NUMBERS
-           Everything Comic Sans, rainbow per-section,
+           Everything Coconat, rainbow per-section,
            numbers + footer in Selecta
         ══════════════════════════════════════════════════════════════ */
         .v7 .monkey-cluster-1 {
@@ -454,13 +459,13 @@
             font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
         }
         .v7 .section-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 80px; color: var(--r-green);
             line-height: 0.9; text-transform: uppercase;
             margin-bottom: 8px;
         }
         .v7 .hero-text {
-            font-family: var(--comic); font-weight: 400;
+            font-family: var(--coconat); font-weight: 400;
             font-size: 28px; color: var(--text-dark);
             line-height: 1.2; margin-bottom: 28px;
         }
@@ -473,7 +478,7 @@
             font-size: 11px; letter-spacing: 0.05em;
         }
         .v7 .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 22px; text-transform: uppercase;
             line-height: 0.95; margin-bottom: 2px;
         }
@@ -489,7 +494,7 @@
 
         /* ══════════════════════════════════════════════════════════════
            V8 — SELECTA EVERYTHING + COMIC HERO ONLY
-           Clean Selecta layout, the one hero sentence in Comic Sans
+           Clean Selecta layout, the one hero sentence in Coconat
         ══════════════════════════════════════════════════════════════ */
         .v8 .monkey-center {
             position: absolute; top: 20px; left: 50%;
@@ -511,7 +516,7 @@
             text-align: center; z-index: 3; white-space: nowrap;
         }
         .v8 .subtitle .hero-text {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 32px; color: var(--r-pink);
             line-height: 1.15;
         }
@@ -544,7 +549,7 @@
 
         /* ══════════════════════════════════════════════════════════════
            V9 — PLAYFUL SCATTER: COMIC TITLES + SELECTA BODY
-           Scattered stickers, Comic Sans titles, Selecta body
+           Scattered stickers, Coconat titles, Selecta body
            Each point title a different color, body neutral
         ══════════════════════════════════════════════════════════════ */
         .v9 .scatter-monkey { position: absolute; z-index: 1; }
@@ -565,7 +570,7 @@
             font-size: 14px; color: var(--r-red); letter-spacing: 0.05em;
         }
         .v9 .section-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 88px; color: var(--r-red);
             line-height: 0.9; text-transform: uppercase;
             margin-bottom: 8px;
@@ -579,7 +584,7 @@
             text-align: left; display: flex; flex-direction: column; gap: 14px;
         }
         .v9 .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 22px; line-height: 1;
         }
         .v9 .point-body {
@@ -595,7 +600,7 @@
         /* ══════════════════════════════════════════════════════════════
            V10 — LADDER: SELECTA TITLES + COMIC BODY
            Stickers climbing left, Selecta Black headers,
-           Comic Sans body in rainbow
+           Coconat body in rainbow
         ══════════════════════════════════════════════════════════════ */
         .v10 .ladder-monkey { position: absolute; left: 0; z-index: 1; }
         .v10 .lm-1 { top: 0; height: 220px; opacity: 0.15; transform: translateX(-30px); }
@@ -621,7 +626,7 @@
             text-transform: uppercase; margin-bottom: 4px;
         }
         .v10 .hero-text {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 28px; text-align: right;
             color: var(--r-teal); line-height: 1.2;
             margin-bottom: 28px;
@@ -663,7 +668,7 @@
         .v11 .billboard-title {
             position: absolute; top: 30px; left: 50%;
             transform: translateX(-50%);
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 200px; color: var(--r-blue);
             opacity: 0.08; letter-spacing: -0.02em;
             text-transform: uppercase; white-space: nowrap;
@@ -679,7 +684,7 @@
             left: var(--pad); right: var(--pad); z-index: 3;
         }
         .v11 .hero-text {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 36px; text-align: center;
             color: var(--r-purple);
             margin-bottom: 32px; max-width: 800px;
@@ -712,8 +717,8 @@
 
         /* ══════════════════════════════════════════════════════════════
            V12 — MONO COLUMN: ALTERNATING FONTS PER POINT
-           Odd points: Comic Sans title + Selecta body
-           Even points: Selecta title + Comic Sans body
+           Odd points: Coconat title + Selecta body
+           Even points: Selecta title + Coconat body
            Each section a unique color
         ══════════════════════════════════════════════════════════════ */
         .v12 .content {
@@ -728,7 +733,7 @@
         }
         .v12 .monkey-inline { height: 360px; margin-bottom: 20px; }
         .v12 .section-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 64px; text-align: center;
             color: var(--r-pink); text-transform: uppercase;
         }
@@ -758,7 +763,7 @@
         .v12 .p1 { border-color: var(--r-red); }
         .v12 .p1 .point-num { color: var(--r-red); }
         .v12 .p1 .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 26px; color: var(--r-red);
             text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
         }
@@ -770,7 +775,7 @@
         .v12 .p3 { border-color: var(--r-green); }
         .v12 .p3 .point-num { color: var(--r-green); }
         .v12 .p3 .point-title {
-            font-family: var(--comic); font-weight: 700;
+            font-family: var(--coconat); font-weight: 700;
             font-size: 26px; color: var(--r-green);
             text-transform: uppercase; line-height: 0.95; margin-bottom: 2px;
         }
@@ -813,7 +818,7 @@
 
     <!-- V1 — COMIC HEADERS + SELECTA BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V1</span> — Comic Headers + Selecta Body <em>· headers=Comic Sans rainbow, body=Selecta Light, nums=Selecta Black</em></div>
+        <div class="variation-label"><span>V1</span> — Coconat Headers + Selecta Body <em>· headers=Coconat rainbow, body=Selecta Light, nums=Selecta Black</em></div>
         <div class="slide v1">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-presenter" alt="">
             <div class="text-area">
@@ -849,7 +854,7 @@
 
     <!-- V2 — SELECTA HEADERS + COMIC BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V2</span> — Selecta Headers + Comic Body <em>· headers=Selecta Black, body=Comic Sans rainbow, hero=Comic Sans</em></div>
+        <div class="variation-label"><span>V2</span> — Selecta Headers + Coconat Body <em>· headers=Selecta Black, body=Coconat rainbow, hero=Coconat</em></div>
         <div class="slide v2">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-peek" alt="">
             <div class="top-band">
@@ -884,7 +889,7 @@
 
     <!-- V3 — ALL COMIC, COLOR-CODED SECTIONS -->
     <div class="variation">
-        <div class="variation-label"><span>V3</span> — All Comic, Color-Coded Sections <em>· everything=Comic Sans, each problem=one rainbow color, nums=Selecta</em></div>
+        <div class="variation-label"><span>V3</span> — All Coconat, Color-Coded Sections <em>· everything=Coconat, each problem=one rainbow color, nums=Selecta</em></div>
         <div class="slide v3">
             <div class="header-area">
                 <div class="section-num">02</div>
@@ -923,7 +928,7 @@
 
     <!-- V4 — GIANT COMIC TITLE + SELECTA EVERYTHING ELSE -->
     <div class="variation">
-        <div class="variation-label"><span>V4</span> — Comic Title/Hero Only <em>· title+hero=Comic Sans colored, points=all Selecta, nums=Selecta</em></div>
+        <div class="variation-label"><span>V4</span> — Coconat Title/Hero Only <em>· title+hero=Coconat colored, points=all Selecta, nums=Selecta</em></div>
         <div class="slide v4">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-watermark" alt="">
             <div class="content">
@@ -960,7 +965,7 @@
 
     <!-- V5 — COMIC BULLET TITLES + SELECTA BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V5</span> — Comic Bullet Titles + Selecta Body <em>· section=Selecta, hero=Comic, point titles=Comic rainbow, body=Selecta</em></div>
+        <div class="variation-label"><span>V5</span> — Coconat Bullet Titles + Selecta Body <em>· section=Selecta, hero=Coconat, point titles=Coconat rainbow, body=Selecta</em></div>
         <div class="slide v5">
             <div class="content">
                 <div class="left">
@@ -1005,7 +1010,7 @@
 
     <!-- V6 — MAGAZINE: SELECTA HERO + COMIC DETAILS -->
     <div class="variation">
-        <div class="variation-label"><span>V6</span> — Selecta Title + Comic Details <em>· title=Selecta Black, hero+points=Comic Sans, each point=rainbow color</em></div>
+        <div class="variation-label"><span>V6</span> — Selecta Title + Coconat Details <em>· title=Selecta Black, hero+points=Coconat, each point=rainbow color</em></div>
         <div class="slide v6">
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-hero" alt="">
             <div class="text-side">
@@ -1042,7 +1047,7 @@
 
     <!-- V7 — CORNER CLUSTER: ALL COMIC EXCEPT NUMBERS -->
     <div class="variation">
-        <div class="variation-label"><span>V7</span> — All Comic Except Numbers <em>· everything=Comic Sans, each section=one solid color, nums+footer=Selecta</em></div>
+        <div class="variation-label"><span>V7</span> — All Coconat Except Numbers <em>· everything=Coconat, each section=one solid color, nums+footer=Selecta</em></div>
         <div class="slide v7">
             <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-cluster-1" alt="">
             <img src="backgrounds/monkeys/transparent.png" class="monkey monkey-cluster-2" alt="">
@@ -1080,7 +1085,7 @@
 
     <!-- V8 — SELECTA EVERYTHING + COMIC HERO ONLY -->
     <div class="variation">
-        <div class="variation-label"><span>V8</span> — Selecta Everything + Comic Hero Only <em>· only the hero sentence=Comic Sans pink, everything else=Selecta, colored titles</em></div>
+        <div class="variation-label"><span>V8</span> — Selecta Everything + Coconat Hero Only <em>· only the hero sentence=Coconat pink, everything else=Selecta, colored titles</em></div>
         <div class="slide v8">
             <div class="title-behind">PROBLEM</div>
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-center" alt="">
@@ -1115,7 +1120,7 @@
 
     <!-- V9 — PLAYFUL SCATTER: COMIC TITLES + SELECTA BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V9</span> — Comic Titles + Selecta Body <em>· section+point titles=Comic Sans rainbow, hero+body=Selecta Light</em></div>
+        <div class="variation-label"><span>V9</span> — Coconat Titles + Selecta Body <em>· section+point titles=Coconat rainbow, hero+body=Selecta Light</em></div>
         <div class="slide v9">
             <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-1" alt="">
             <img src="backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-2" alt="">
@@ -1152,7 +1157,7 @@
 
     <!-- V10 — LADDER: SELECTA TITLES + COMIC BODY -->
     <div class="variation">
-        <div class="variation-label"><span>V10</span> — Selecta Titles + Comic Body <em>· title+point headers=Selecta Black, hero+body=Comic Sans rainbow</em></div>
+        <div class="variation-label"><span>V10</span> — Selecta Titles + Coconat Body <em>· title+point headers=Selecta Black, hero+body=Coconat rainbow</em></div>
         <div class="slide v10">
             <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-1" alt="">
             <img src="backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-2" alt="">
@@ -1192,7 +1197,7 @@
 
     <!-- V11 — BILLBOARD: COMIC TITLE + HERO, SELECTA GRID -->
     <div class="variation">
-        <div class="variation-label"><span>V11</span> — Comic Title/Hero + Selecta Grid <em>· billboard+hero=Comic Sans, point grid=Selecta, colored titles only</em></div>
+        <div class="variation-label"><span>V11</span> — Coconat Title/Hero + Selecta Grid <em>· billboard+hero=Coconat, point grid=Selecta, colored titles only</em></div>
         <div class="slide v11">
             <div class="billboard-title">PROBLEM</div>
             <img src="backgrounds/monkeys/monkey2.jpg" class="monkey monkey-billboard" alt="">
@@ -1227,7 +1232,7 @@
 
     <!-- V12 — MONO COLUMN: ALTERNATING FONTS PER POINT -->
     <div class="variation">
-        <div class="variation-label"><span>V12</span> — Alternating Fonts Per Point <em>· odd points=Comic title+Selecta body, even=Selecta title+Comic body, each=unique color</em></div>
+        <div class="variation-label"><span>V12</span> — Alternating Fonts Per Point <em>· odd points=Coconat title+Selecta body, even=Selecta title+Comic Sans body, each=unique color</em></div>
         <div class="slide v12">
             <div class="content">
                 <div class="left-col">
