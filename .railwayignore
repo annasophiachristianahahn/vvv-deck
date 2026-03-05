@@ -1,0 +1,6 @@
+fonts/
+backgrounds/
+icons/
+*.psd
+*.glyphs
+node_modules/
