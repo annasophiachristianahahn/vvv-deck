@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-Regular.eot');
+    src: local('Carrig Pro Regular'), local('CarrigPro-Regular'),
+        url('CarrigPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-Regular.woff2') format('woff2'),
+        url('CarrigPro-Regular.woff') format('woff'),
+        url('CarrigPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-BlackItalic.eot');
+    src: local('Carrig Pro Black Italic'), local('CarrigPro-BlackItalic'),
+        url('CarrigPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-BlackItalic.woff2') format('woff2'),
+        url('CarrigPro-BlackItalic.woff') format('woff'),
+        url('CarrigPro-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-Italic.eot');
+    src: local('Carrig Pro Italic'), local('CarrigPro-Italic'),
+        url('CarrigPro-Italic.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-Italic.woff2') format('woff2'),
+        url('CarrigPro-Italic.woff') format('woff'),
+        url('CarrigPro-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-MediumItalic.eot');
+    src: local('Carrig Pro Medium Italic'), local('CarrigPro-MediumItalic'),
+        url('CarrigPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-MediumItalic.woff2') format('woff2'),
+        url('CarrigPro-MediumItalic.woff') format('woff'),
+        url('CarrigPro-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-Medium.eot');
+    src: local('Carrig Pro Medium'), local('CarrigPro-Medium'),
+        url('CarrigPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-Medium.woff2') format('woff2'),
+        url('CarrigPro-Medium.woff') format('woff'),
+        url('CarrigPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carrig Pro Display';
+    src: url('CarrigPro-DisplayItalic.eot');
+    src: local('Carrig Pro Display Italic'), local('CarrigPro-DisplayItalic'),
+        url('CarrigPro-DisplayItalic.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-DisplayItalic.woff2') format('woff2'),
+        url('CarrigPro-DisplayItalic.woff') format('woff'),
+        url('CarrigPro-DisplayItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Carrig Pro Display';
+    src: url('CarrigPro-Display.eot');
+    src: local('Carrig Pro Display'), local('CarrigPro-Display'),
+        url('CarrigPro-Display.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-Display.woff2') format('woff2'),
+        url('CarrigPro-Display.woff') format('woff'),
+        url('CarrigPro-Display.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-Bold.eot');
+    src: local('Carrig Pro Bold'), local('CarrigPro-Bold'),
+        url('CarrigPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-Bold.woff2') format('woff2'),
+        url('CarrigPro-Bold.woff') format('woff'),
+        url('CarrigPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-BoldItalic.eot');
+    src: local('Carrig Pro Bold Italic'), local('CarrigPro-BoldItalic'),
+        url('CarrigPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-BoldItalic.woff2') format('woff2'),
+        url('CarrigPro-BoldItalic.woff') format('woff'),
+        url('CarrigPro-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-Light.eot');
+    src: local('Carrig Pro Light'), local('CarrigPro-Light'),
+        url('CarrigPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-Light.woff2') format('woff2'),
+        url('CarrigPro-Light.woff') format('woff'),
+        url('CarrigPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-LightItalic.eot');
+    src: local('Carrig Pro Light Italic'), local('CarrigPro-LightItalic'),
+        url('CarrigPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-LightItalic.woff2') format('woff2'),
+        url('CarrigPro-LightItalic.woff') format('woff'),
+        url('CarrigPro-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Carrig Pro';
+    src: url('CarrigPro-Black.eot');
+    src: local('Carrig Pro Black'), local('CarrigPro-Black'),
+        url('CarrigPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('CarrigPro-Black.woff2') format('woff2'),
+        url('CarrigPro-Black.woff') format('woff'),
+        url('CarrigPro-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
