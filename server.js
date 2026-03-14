@@ -50,6 +50,11 @@ app.use((req, res, next) => {
 
 app.use(express.static(__dirname, { extensions: ['html'], etag: false, lastModified: false }));
 
+// Serve workshop.html as the root page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'workshop.html'));
+});
+
 // GET /api/presets — return preset list
 app.get('/api/presets', async (req, res) => {
   if (pool) {
