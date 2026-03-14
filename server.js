@@ -37,7 +37,18 @@ if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
 // ── Express setup ─────────────────────────────────────────────────────────────
 app.use(express.json());
-app.use(express.static(__dirname, { extensions: ['html'] }));
+
+// Kill caching for HTML files so edits show up immediately
+app.use((req, res, next) => {
+  if (req.path.endsWith('.html') || !req.path.includes('.')) {
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
+  }
+  next();
+});
+
+app.use(express.static(__dirname, { extensions: ['html'], etag: false, lastModified: false }));
 
 // GET /api/presets — return preset list
 app.get('/api/presets', async (req, res) => {
