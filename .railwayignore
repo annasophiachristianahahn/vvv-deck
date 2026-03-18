@@ -1,7 +1,5 @@
 fonts/
-backgrounds/monkeys/
 backgrounds/*.psd
-icons/
 *.psd
 *.glyphs
 node_modules/
