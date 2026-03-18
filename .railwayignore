@@ -1,5 +1,6 @@
 fonts/
-backgrounds/
+backgrounds/monkeys/
+backgrounds/*.psd
 icons/
 *.psd
 *.glyphs
