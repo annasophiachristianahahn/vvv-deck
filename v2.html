@@ -409,12 +409,12 @@
         .v7 .hero-text {
             font-family: var(--carrig-di); font-weight: 400;
             font-size: 20px; color: var(--text-dark);
-            line-height: 1.2; margin-bottom: 20px;
+            line-height: 1.2; margin-bottom: 12px;
         }
 
         /* ── Charts side by side ── */
         .v7 .charts-row {
-            display: flex; gap: 32px; flex: 1; margin-bottom: 16px;
+            display: flex; gap: 32px; flex: 0 0 auto; height: 320px; margin-bottom: 24px;
         }
         .v7 .chart-panel {
             flex: 1;
@@ -441,8 +441,9 @@
         }
         .v7 .chart-bars {
             display: flex; align-items: flex-end;
-            gap: 4px; flex: 1;
+            gap: 24px; flex: 1;
             position: relative;
+            max-width: 700px; margin: 0 auto;
         }
         .v7 .chart-bar-group {
             flex: 1; display: flex; flex-direction: column;
@@ -464,13 +465,13 @@
             margin-top: 4px; text-align: center;
             letter-spacing: 0.03em; align-self: stretch;
         }
-        /* Chart — muted bars for 2022/2024, accent for 2025 comeback */
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-fill { background: #8a8ab0; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-value { font-size: 22px; color: #8a8ab0; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-fill { background: #8a8ab0; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-value { font-size: 18px; color: #8a8ab0; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: var(--c-crimson); }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 40px; color: var(--c-crimson); }
+        /* Chart — fun colors: indigo, golden, hot pink for the comeback */
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-fill { background: #3a3a8c; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-value { font-size: 22px; color: #3a3a8c; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-fill { background: #F0D870; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-value { font-size: 18px; color: #c4a830; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: #E84393; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 40px; color: #E84393; }
         .v7 .chart-subtitle {
             font-family: var(--carrig-di); font-weight: 400;
             font-size: 10px; color: var(--text-mid);
