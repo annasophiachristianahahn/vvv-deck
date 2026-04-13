@@ -22,6 +22,9 @@
         @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 400; font-style: normal; }
         @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 700; font-style: normal; }
 
+        /* ── Instrument Sans (legible body text) ── */
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -40,11 +43,12 @@
             --coconat: 'Coconat', Georgia, serif;
             --carrig: 'CarrigPro', Georgia, serif;
             --carrig-di: 'CarrigPro DisplayItalic', Georgia, serif;
+            --body: 'Instrument Sans', sans-serif;
         }
 
         body {
             background: #2a3a4a;
-            font-family: var(--carrig);
+            font-family: var(--body);
             -webkit-font-smoothing: antialiased;
             padding: 40px 0;
         }
@@ -78,9 +82,9 @@
             align-items: center;
             padding: 8px var(--pad);
             font-size: 11px;
-            font-family: var(--carrig);
+            font-family: var(--body);
             color: var(--text-mid);
-            font-weight: 400;
+            font-weight: 500;
             z-index: 10;
         }
 
@@ -120,7 +124,7 @@
             margin-bottom: 6px;
         }
         .v1 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 36px; color: var(--text-dark);
             line-height: 1.1; letter-spacing: -0.02em;
             margin-bottom: 18px; max-width: 600px;
@@ -137,12 +141,12 @@
             line-height: 0.9; margin-bottom: 3px;
         }
         .v1 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; color: var(--text-dark);
             line-height: 1.35; max-width: 620px;
         }
         .v1 .callout {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 18px; color: var(--c-rose);
             line-height: 1.3; margin-top: 16px; max-width: 700px;
         }
@@ -215,7 +219,7 @@
             text-transform: uppercase; margin-bottom: 8px;
         }
         .v2 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 34px; text-align: center;
             color: var(--c-rose);
             max-width: 700px; margin: 0 auto 28px;
@@ -251,7 +255,7 @@
             margin-bottom: 6px;
         }
         .v2 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; line-height: 1.35;
             color: var(--text-dark);
         }
@@ -275,7 +279,7 @@
             margin-bottom: 4px;
         }
         .v2 .stat-label {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; color: var(--text-dark);
             line-height: 1.3; text-transform: uppercase;
             letter-spacing: 0.04em;
@@ -307,7 +311,7 @@
             margin-bottom: 6px;
         }
         .v2 .team-bio {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 14px; color: var(--text-dark);
             line-height: 1.35; text-align: left;
         }
@@ -353,7 +357,7 @@
             text-transform: uppercase; margin-bottom: 6px;
         }
         .v4 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 32px; color: var(--c-chartreuse);
             line-height: 1.15; margin-bottom: 36px; max-width: 600px;
         }
@@ -373,7 +377,7 @@
             letter-spacing: -0.01em; margin-bottom: 4px;
         }
         .v4 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; color: var(--text-dark); line-height: 1.35;
         }
         .v4 .p1 .point-title { color: var(--c-crimson); }
@@ -381,7 +385,7 @@
         .v4 .p3 .point-title { color: var(--c-chartreuse); }
         .v4 .p4 .point-title { color: var(--c-tangerine); }
         .v4 .callout {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 18px; color: var(--c-rose);
             line-height: 1.3; margin-top: auto; margin-bottom: 48px; max-width: 700px;
         }
@@ -407,7 +411,7 @@
             margin-bottom: 4px; white-space: nowrap;
         }
         .v7 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 20px; color: var(--text-dark);
             line-height: 1.2; margin-bottom: 12px;
         }
@@ -435,7 +439,7 @@
             letter-spacing: 0.08em;
         }
         .v7 .chart-source {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 9px; color: var(--text-mid);
             opacity: 0.5; position: absolute; right: 0;
         }
@@ -451,7 +455,7 @@
             height: 100%; position: relative;
         }
         .v7 .bar-value {
-            font-family: var(--carrig-di); font-weight: 700;
+            font-family: var(--body); font-weight: 700; font-style: italic;
             font-size: 26px; color: var(--text-dark);
             margin-bottom: 2px; white-space: nowrap;
             line-height: 1; text-align: center;
@@ -460,7 +464,7 @@
             width: 100%; min-height: 3px;
         }
         .v7 .bar-label {
-            font-family: var(--carrig); font-weight: 700;
+            font-family: var(--body); font-weight: 700;
             font-size: 11px; color: var(--text-mid);
             margin-top: 4px; text-align: center;
             letter-spacing: 0.03em;
@@ -475,7 +479,7 @@
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: #E84393; }
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 40px; color: #E84393; }
         .v7 .chart-subtitle {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 10px; color: var(--text-mid);
             text-align: center; margin-top: -2px; margin-bottom: 8px;
             opacity: 0.7;
@@ -502,7 +506,7 @@
             white-space: nowrap;
         }
         .v7 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 13px; line-height: 1.3;
             color: var(--text-mid);
         }
@@ -541,7 +545,7 @@
             text-align: center; z-index: 3; white-space: nowrap;
         }
         .v8 .subtitle .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 34px; color: var(--c-rose);
             line-height: 1.15;
         }
@@ -563,7 +567,7 @@
             margin-bottom: 6px;
         }
         .v8 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; color: var(--text-dark); line-height: 1.35;
         }
         .v8 .c1 .point-title { color: var(--c-crimson); }
@@ -590,7 +594,7 @@
             position: absolute; top: 40px; left: 50%;
             transform: translateX(-50%);
             text-align: center; z-index: 3;
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--body); font-weight: 500;
             font-size: 14px; color: var(--c-violet);
             line-height: 1.45; max-width: 860px;
             opacity: 0.75;
@@ -599,7 +603,7 @@
             position: absolute; bottom: 60px; left: 50%;
             transform: translateX(-50%);
             text-align: center; z-index: 3;
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 22px; color: var(--c-violet);
             line-height: 1.3; max-width: 900px;
         }
@@ -704,7 +708,7 @@
             position: absolute; bottom: 50px; left: 50%;
             transform: translateX(-50%);
             text-align: center; z-index: 5;
-            font-family: var(--carrig); font-weight: 400;
+            font-family: var(--body); font-weight: 500;
             font-size: 16px; color: var(--text-mid);
         }
 
@@ -736,7 +740,7 @@
             margin-bottom: 8px;
         }
         .v9 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 24px; color: var(--text-dark);
             margin-bottom: 20px; line-height: 1.15;
         }
@@ -748,7 +752,7 @@
             font-size: 20px; line-height: 1;
         }
         .v9 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; color: var(--text-dark); line-height: 1.35;
         }
         .v9 .p1 .point-title { color: var(--c-rose); }
@@ -784,7 +788,7 @@
             text-transform: uppercase; margin-bottom: 4px;
         }
         .v10 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 22px; text-align: right;
             color: var(--c-rose); line-height: 1.2;
             margin-bottom: 16px;
@@ -805,7 +809,7 @@
             white-space: nowrap;
         }
         .v10 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; line-height: 1.35;
             max-width: 700px; margin-left: auto;
             color: var(--text-dark);
@@ -816,7 +820,7 @@
         .v10 .p4 .point-title { color: var(--c-tangerine); }
         .v10 .p5 .point-title { color: var(--c-saffron); }
         .v10 .callout {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 18px; color: var(--c-crimson);
             line-height: 1.3; margin-top: auto; text-align: right;
         }
@@ -851,7 +855,7 @@
             left: var(--pad); right: var(--pad); z-index: 3;
         }
         .v11 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 36px; text-align: center;
             color: var(--c-rose);
             margin-bottom: 32px; max-width: 800px;
@@ -873,7 +877,7 @@
             line-height: 0.95; margin-bottom: 6px;
         }
         .v11 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; color: var(--text-dark); line-height: 1.35;
         }
         .v11 .c1 .point-title { color: var(--c-crimson); }
@@ -1013,7 +1017,7 @@
             justify-content: center;
         }
         .v12 .hero-text {
-            font-family: var(--carrig-di); font-weight: 400;
+            font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 34px; color: var(--text-dark);
             line-height: 1.05; letter-spacing: -0.02em;
             margin-bottom: 28px;
@@ -1036,7 +1040,7 @@
             line-height: 0.95; margin-bottom: 3px;
         }
         .v12 .point-body {
-            font-family: var(--carrig); font-weight: 300;
+            font-family: var(--body); font-weight: 500;
             font-size: 18px; color: var(--text-dark);
             line-height: 1.35; max-width: 580px;
         }
