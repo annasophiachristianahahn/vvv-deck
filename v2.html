@@ -649,6 +649,33 @@
         .v8.interface-slide .point-body { display: none; }
         .v8.interface-slide .point-num { flex: 0 0 auto; margin-bottom: 0; }
 
+        /* V8 interface-2up — two large images per slide */
+        .v8.interface-2up .two-cols {
+            position: absolute;
+            top: 80px; bottom: 30px; left: 40px; right: 40px;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+        .v8.interface-2up .two-cols .col {
+            text-align: left; display: flex; flex-direction: column;
+            min-height: 0;
+        }
+        .v8.interface-2up .two-cols .col .interface-img {
+            width: 100%; flex: 1 1 0; min-height: 0; object-fit: cover; object-position: top left;
+            border-radius: 8px; margin-bottom: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .v8.interface-2up .point-title { font-size: 20px; white-space: nowrap; flex: 0 0 auto; }
+        .v8.interface-2up .point-num { flex: 0 0 auto; margin-bottom: 0; }
+        .v8.interface-2up .title-behind { display: none; }
+        .v8.interface-2up .monkey-center { display: none; }
+        .v8.interface-2up .subtitle { top: 28px; left: 50%; transform: translateX(-50%); text-align: center; }
+        .v8.interface-2up .subtitle .hero-text { font-size: 24px; }
+        .v8.interface-2up .section-num {
+            position: absolute; top: 14px; left: 50%;
+            transform: translateX(-50%); text-align: center;
+        }
+
         /* V8 thank-you — big centered title */
         .v8.thankyou-slide .title-behind {
             display: none;
@@ -1115,7 +1142,7 @@
         <div class="slide-label"><span>01</span> — Intro</div>
         <div class="slide v8 intro-slide" style="background: url('backgrounds/intro%20copy-shadow.png') center/cover no-repeat, #add8e8;">
             <div class="callout">$124 trillion is changing hands.<br>The next generation collects differently.<br>No platform is built for them — until now.<br><span style="opacity:0.45; font-size:0.55em; font-style: normal;">(Cerulli Associates, 2024)</span></div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>1/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>1/14</span></div>
         </div>
     </div>
 
@@ -1172,7 +1199,7 @@
                 <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
                 <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="monkey" alt="">
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>2/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>2/14</span></div>
         </div>
     </div>
 
@@ -1213,7 +1240,7 @@
                 </div>
                 <div class="callout">Until these basics are solved, market growth is capped<br>by what the tech can reach — not what the culture can sustain.</div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>3/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>3/14</span></div>
         </div>
     </div>
 
@@ -1253,53 +1280,60 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>4/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>4/14</span></div>
         </div>
     </div>
 
 
     <!-- ═══════════════════════════════════════════════════════════
-         SLIDE 5 — INTERFACE (V8)
+         SLIDE 5 — INTERFACE: Grid + Mint (V8)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
         <div class="slide-label"><span>05</span> — Interface</div>
-        <div class="slide v8 interface-slide">
-            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+        <div class="slide v8 interface-2up">
             <div class="section-num">04</div>
-            <div class="title-behind">VVV.SO INTERFACE</div>
-            <img src="backgrounds/monkeys/shadow/monkey2%20copy.png" class="monkey monkey-center" alt="">
             <div class="subtitle">
                 <div class="hero-text">VVV.SO Interface</div>
             </div>
-            <div class="four-cols">
+            <div class="two-cols">
                 <div class="col c1">
-                    <img src="interface/discovery.png" class="interface-img" alt="Discovery Grid">
+                    <img src="interface2/discovery-grid.png" class="interface-img" alt="Discovery Grid">
                     <span class="point-num">01</span>
                     <div class="point-title">Discovery Grid</div>
-                    <p class="point-body">Curated feed of new drops, trending collections, and culturally-aligned recommendations.</p>
                 </div>
                 <div class="col c2">
-                    <img src="interface/mint-page.png" class="interface-img" alt="Mint Pages">
+                    <img src="interface2/mint-page.png" class="interface-img" alt="Mint Pages">
                     <span class="point-num">02</span>
                     <div class="point-title">Mint Pages</div>
-                    <p class="point-body">Artists craft unique launch experiences with custom visuals, pricing, and allowlists.</p>
-                </div>
-                <div class="col c3">
-                    <img src="interface/profile.png" class="interface-img" alt="User Profiles">
-                    <span class="point-num">03</span>
-                    <div class="point-title">User Profiles</div>
-                    <p class="point-body">Wallets become identities — showcasing taste, activity, and reputation across chains.</p>
-                </div>
-                <div class="col c4">
-                    <img src="interface/gallery.png" class="interface-img" alt="User Galleries">
-                    <span class="point-num">04</span>
-                    <div class="point-title">User Galleries</div>
-                    <p class="point-body">Personalized artwork viewers optimized for desktop and mobile — viewing finally works.</p>
                 </div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>5/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>5/14</span></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 6 — INTERFACE: Profiles + Galleries (V8)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>06</span> — Interface</div>
+        <div class="slide v8 interface-2up">
+            <div class="section-num">04</div>
+            <div class="subtitle">
+                <div class="hero-text">VVV.SO Interface</div>
+            </div>
+            <div class="two-cols">
+                <div class="col c1">
+                    <img src="interface2/user-profile.png" class="interface-img" alt="User Profiles">
+                    <span class="point-num">03</span>
+                    <div class="point-title">User Profiles</div>
+                </div>
+                <div class="col c2">
+                    <img src="interface2/gallery.png" class="interface-img" alt="User Galleries">
+                    <span class="point-num">04</span>
+                    <div class="point-title">User Galleries</div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>6/14</span></div>
         </div>
     </div>
 
@@ -1308,7 +1342,7 @@
          SLIDE 6 — THE VVVIRAL LOOP (V11)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>06</span> — The VVViral Loop</div>
+        <div class="slide-label"><span>07</span> — The VVViral Loop</div>
         <div class="slide v11 loop-slide">
             <div class="section-num">05</div>
             <div class="billboard-title">THE VVVIRAL LOOP</div>
@@ -1349,7 +1383,7 @@
                     <div class="loop-center-logo"><img src="backgrounds/intro%20copy-shadow.png" alt="VVV.SO"></div>
                 </div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>6/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>7/14</span></div>
         </div>
     </div>
 
@@ -1358,7 +1392,7 @@
          SLIDE 7 — PRODUCT OVERVIEW (V11)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>07</span> — Product Overview</div>
+        <div class="slide-label"><span>08</span> — Product Overview</div>
         <div class="slide v11 product-slide">
             <div class="section-num">06</div>
             <div class="billboard-title">PRODUCT</div>
@@ -1406,7 +1440,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>7/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>8/14</span></div>
         </div>
     </div>
 
@@ -1415,7 +1449,7 @@
          SLIDE 8 — MARKET OPPORTUNITY (V7)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>08</span> — Market Opportunity</div>
+        <div class="slide-label"><span>09</span> — Market Opportunity</div>
         <div class="slide v7">
             <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
             <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
@@ -1479,7 +1513,7 @@
                 </div>
                 <div class="callout" style="text-align: center; margin-top: 49px;">80%+ of volume flows through platforms with zero social layer or focus on expanding the culture.</div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>8/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>9/14</span></div>
         </div>
     </div>
 
@@ -1488,7 +1522,7 @@
          SLIDE 9 — COMPETITION (V9)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>09</span> — Competition</div>
+        <div class="slide-label"><span>10</span> — Competition</div>
         <div class="slide v9">
             <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
             <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
@@ -1521,7 +1555,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>9/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>10/14</span></div>
         </div>
     </div>
 
@@ -1530,7 +1564,7 @@
          SLIDE 10 — BUSINESS MODEL (V4)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>10</span> — Business Model</div>
+        <div class="slide-label"><span>11</span> — Business Model</div>
         <div class="slide v4">
             <img src="backgrounds/monkeys/isolate/fc4d4ef0-1715-407f-b359-d68691d6905e%20copy.png" class="monkey monkey-watermark" alt="">
             <div class="content">
@@ -1561,7 +1595,7 @@
                 </div>
                 <div class="callout">An end-to-end hub for the entire ecosystem. Everything flows through VVV.</div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>10/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>11/14</span></div>
         </div>
     </div>
 
@@ -1570,7 +1604,7 @@
          SLIDE 11 — PRODUCT ROADMAP (V12)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>11</span> — Product Roadmap</div>
+        <div class="slide-label"><span>12</span> — Product Roadmap</div>
         <div class="slide v12">
             <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
             <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
@@ -1601,7 +1635,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>11/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>12/14</span></div>
         </div>
     </div>
 
@@ -1610,7 +1644,7 @@
          SLIDE 12 — TEAM (V2)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>12</span> — Team</div>
+        <div class="slide-label"><span>13</span> — Team</div>
         <div class="slide v2 team-slide">
             <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey monkey-peek" alt="">
             <div class="top-band">
@@ -1637,7 +1671,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>12/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>13/14</span></div>
         </div>
     </div>
 
@@ -1646,7 +1680,7 @@
          SLIDE 13 — THANK YOU (V8)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>13</span> — Thank You</div>
+        <div class="slide-label"><span>14</span> — Thank You</div>
         <div class="slide v8 thankyou-slide">
             <div class="title-behind">THANK YOU</div>
             <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey monkey-center" alt="">
@@ -1655,7 +1689,7 @@
             </div>
             <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-big" alt="VVV.SO">
             <div class="contact-info">vvv.so</div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>13/13</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>14/14</span></div>
         </div>
     </div>
 
