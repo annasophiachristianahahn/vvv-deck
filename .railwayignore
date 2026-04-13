@@ -2,4 +2,5 @@ fonts/
 backgrounds/*.psd
 *.psd
 *.glyphs
+*.heic
 node_modules/

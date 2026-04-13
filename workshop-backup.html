@@ -151,18 +151,19 @@
         .v1 .p3 .point-title { color: var(--c-violet); }
         .v1 .p4 .point-title { color: var(--c-tangerine); }
 
-        /* V1 problem-slide — poolside blue (default) */
-        .v1.problem-slide .section-num { color: var(--c-crimson); }
-        .v1.problem-slide .section-title { color: var(--c-crimson); }
-        .v1.problem-slide .hero-text { color: var(--text-dark); }
-        .v1.problem-slide .point-num { color: #000; }
-        .v1.problem-slide .point-body { color: var(--text-dark); }
-        .v1.problem-slide .p1 .point-title { color: var(--c-crimson); }
-        .v1.problem-slide .p2 .point-title { color: var(--c-violet); }
-        .v1.problem-slide .p3 .point-title { color: var(--c-chartreuse); }
-        .v1.problem-slide .p4 .point-title { color: var(--c-tangerine); }
-        .v1.problem-slide .callout { color: var(--c-rose); margin-top: 24px; }
+        /* V1 problem-slide — coral-red background color overrides */
+        .v1.problem-slide .section-num { color: #fff; }
+        .v1.problem-slide .section-title { color: #fff; }
+        .v1.problem-slide .hero-text { color: #fff; }
+        .v1.problem-slide .point-num { color: #fff; }
+        .v1.problem-slide .point-body { color: #fff; }
+        .v1.problem-slide .p1 .point-title { color: #fff176; }
+        .v1.problem-slide .p2 .point-title { color: #b9f6ca; }
+        .v1.problem-slide .p3 .point-title { color: #fff; }
+        .v1.problem-slide .p4 .point-title { color: #ffecb3; }
+        .v1.problem-slide .callout { color: #fff; margin-top: 24px; }
         .v1.problem-slide .points { flex: 0 1 auto; }
+        .v1.problem-slide .logo-corner { filter: brightness(1.3) drop-shadow(1px 1px 2px rgba(0,0,0,0.4)); }
 
         /* V1 flipped — monkey left, text right-justified, logo top-left */
         .v1.v1-flip .monkey-presenter {
@@ -289,10 +290,10 @@
 
         /* V2 — Team adaptation */
         .v2 .team-row {
-            display: flex; gap: 48px; justify-content: center;
+            display: flex; gap: 28px; justify-content: center;
         }
         .v2 .team-col {
-            width: 320px; text-align: center;
+            width: 400px; text-align: center;
         }
         .v2 .team-name {
             font-family: var(--coconat); font-weight: 700;
@@ -320,12 +321,12 @@
         /* V2 team — give bios full slide height */
         .v2.team-slide .monkey-peek { display: none; }
         .v2.team-slide .top-band { top: 46px; }
-        .v2.team-slide .section-title { font-size: 80px; margin-bottom: 12px; }
+        .v2.team-slide .section-title { font-size: 80px; margin-bottom: 20px; }
         .v2.team-slide .team-col { display: flex; flex-direction: column; align-items: center; }
         .v2.team-slide .team-bio { align-self: stretch; }
-        .v2.team-slide .team-monkey { height: 200px; margin-bottom: 10px; object-fit: contain; }
-        .v2.team-slide .team-col.t1 .team-monkey { transform: none; }
-        .v2.team-slide .team-col.t3 .team-monkey { transform: none; }
+        .v2.team-slide .team-monkey { height: 100px; margin-bottom: 6px; }
+        .v2.team-slide .team-col.t1 .team-monkey { transform: scaleX(-1); }
+        .v2.team-slide .team-col.t3 .team-monkey { transform: scaleX(-1); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -383,7 +384,7 @@
         .v4 .callout {
             font-family: var(--carrig-di); font-weight: 400;
             font-size: 18px; color: var(--c-rose);
-            line-height: 1.3; margin-top: auto; margin-bottom: 48px; max-width: 700px;
+            line-height: 1.3; margin-top: auto; max-width: 700px;
         }
 
 
@@ -467,22 +468,22 @@
         /* Chart 1 — indigo → electric blue → sky → green → chartreuse */
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-fill { background: #3a3a8c; }
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-value { font-size: 14px; color: var(--text-dark); }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-fill { background: #A4C828; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-fill { background: #5B65E8; }
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-value { font-size: 24px; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: #3a3a8c; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: #5AACE8; }
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 28px; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(4) .bar-fill { background: #A4C828; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(4) .bar-fill { background: #6AAA44; }
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(4) .bar-value { font-size: 34px; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(5) .bar-fill { background: #3a3a8c; }
-        .v7 .chart-panel.c1 .chart-bar-group:last-child .bar-value { color: #3a3a8c; font-size: 40px; }
-        /* Chart 2 — alternating golden + hot pink */
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(1) .bar-fill { background: #E84393; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(5) .bar-fill { background: #A4C828; }
+        .v7 .chart-panel.c1 .chart-bar-group:last-child .bar-value { color: #6AAA44; font-size: 40px; }
+        /* Chart 2 — sienna → amber → golden → hot pink */
+        .v7 .chart-panel.c2 .chart-bar-group:nth-child(1) .bar-fill { background: #C4622A; }
         .v7 .chart-panel.c2 .chart-bar-group:nth-child(1) .bar-value { font-size: 22px; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(2) .bar-fill { background: #F0D870; }
+        .v7 .chart-panel.c2 .chart-bar-group:nth-child(2) .bar-fill { background: #E8B830; }
         .v7 .chart-panel.c2 .chart-bar-group:nth-child(2) .bar-value { font-size: 26px; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(3) .bar-fill { background: #E84393; }
+        .v7 .chart-panel.c2 .chart-bar-group:nth-child(3) .bar-fill { background: #F0D870; }
         .v7 .chart-panel.c2 .chart-bar-group:nth-child(3) .bar-value { font-size: 34px; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(4) .bar-fill { background: #F0D870; }
+        .v7 .chart-panel.c2 .chart-bar-group:nth-child(4) .bar-fill { background: #E84393; }
         .v7 .chart-panel.c2 .chart-bar-group:last-child .bar-value { color: #E84393; font-size: 46px; }
 
         /* ── 3-column bullet points below charts ── */
@@ -593,9 +594,9 @@
             transform: translateX(-50%);
             text-align: center; z-index: 3;
             font-family: var(--carrig); font-weight: 400;
-            font-size: 14px; color: var(--c-violet);
+            font-size: 18px; color: var(--c-violet);
             line-height: 1.45; max-width: 860px;
-            opacity: 0.75;
+            opacity: 0.85;
         }
         .v8.intro-slide .callout {
             position: absolute; bottom: 60px; left: 50%;
@@ -625,31 +626,17 @@
             z-index: 5;
         }
         .v8.interface-slide .section-num {
-            position: absolute; top: 14px; left: 50%;
-            transform: translateX(-50%); text-align: center;
+            position: absolute; top: 36px; left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
         }
         .v8.interface-slide .title-behind { display: none; }
         .v8.interface-slide .monkey-center { display: none; }
-        .v8.interface-slide .subtitle { top: 28px; left: 50%; transform: translateX(-50%); text-align: center; }
-        .v8.interface-slide .subtitle .hero-text { font-size: 24px; }
-        .v8.interface-slide .four-cols {
-            position: absolute;
-            top: 80px; bottom: 30px; left: 40px; right: 40px;
-            display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
-            gap: 14px 40px;
-        }
-        .v8.interface-slide .four-cols .col {
-            text-align: left; display: flex; flex-direction: column;
-            min-height: 0;
-        }
-        .v8.interface-slide .four-cols .col .interface-img {
-            width: 100%; flex: 1 1 0; min-height: 0; object-fit: cover; object-position: top left;
-            border-radius: 8px; margin-bottom: 4px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-        }
-        .v8.interface-slide .point-title { font-size: 18px; white-space: nowrap; flex: 0 0 auto; }
-        .v8.interface-slide .point-body { display: none; }
-        .v8.interface-slide .point-num { flex: 0 0 auto; margin-bottom: 0; }
+        .v8.interface-slide .subtitle { top: 60px; }
+        .v8.interface-slide .subtitle .hero-text { font-size: 28px; }
+        .v8.interface-slide .four-cols { bottom: 40px; top: 200px; display: flex; align-items: center; }
+        .v8.interface-slide .four-cols .col { text-align: center; }
+        .v8.interface-slide .point-title { font-size: 22px; }
 
         /* V8 thank-you — big centered title */
         .v8.thankyou-slide .title-behind {
@@ -695,10 +682,10 @@
         .v9 .sm-5 { top: 300px; left: 200px; height: 120px; transform: rotate(20deg); opacity: 0.25; }
         .v9 .sm-6 { top: 180px; right: 200px; height: 140px; transform: rotate(-6deg) scaleX(-1); opacity: 0.3; }
 
-        .v9 { display: flex; align-items: center; justify-content: center; }
         .v9 .center-column {
+            position: absolute; top: 44%; left: 50%;
+            transform: translate(-50%, -50%);
             width: 860px; text-align: center; z-index: 2;
-            margin-top: -40px;
         }
         .v9 .section-num {
             font-family: var(--carrig); font-weight: 900;
@@ -713,10 +700,10 @@
         .v9 .hero-text {
             font-family: var(--carrig-di); font-weight: 400;
             font-size: 24px; color: var(--text-dark);
-            margin-bottom: 20px; line-height: 1.15;
+            margin-bottom: 40px; line-height: 1.15;
         }
         .v9 .points {
-            text-align: left; display: flex; flex-direction: column; gap: 14px; max-width: 720px; margin: 0 auto;
+            text-align: left; display: flex; flex-direction: column; gap: 32px; max-width: 720px; margin: 0 auto;
         }
         .v9 .point-title {
             font-family: var(--coconat); font-weight: 700;
@@ -801,8 +788,7 @@
            V11 — Billboard giant title behind monkey, columns bottom
         ══════════════════════════════════════════════════════════════ */
         .v11 .section-num {
-            position: absolute; top: 16px; left: 50%;
-            transform: translateX(-50%);
+            position: absolute; top: 28px; left: var(--pad);
             font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
             z-index: 5;
@@ -858,79 +844,28 @@
         .v11 .c5 .point-title { color: var(--c-tangerine); }
         .v11 .c6 .point-title { color: var(--c-rose); }
 
-        /* V11 loop — circular flow layout */
-        .v11.loop-slide .billboard-title {
-            position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
-            font-family: var(--coconat); font-weight: 700;
-            font-size: 52px; text-transform: uppercase;
-            color: var(--c-rose); z-index: 3; white-space: nowrap;
-        }
-        .v11.loop-slide .monkey-billboard { display: none; }
-        .v11.loop-slide .section-num {
-            display: block; position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
-            font-family: var(--carrig); font-weight: 900;
-            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em; z-index: 3; text-align: center;
-        }
-        .v11.loop-slide .content {
-            position: absolute; top: 80px; bottom: 0; left: 0; right: 0; z-index: 2;
-        }
+        /* V11 loop — 6 steps in 3x2 grid */
+        .v11.loop-slide .billboard-title { font-size: 100px; top: 10px; }
+        .v11.loop-slide .monkey-billboard { height: 240px; top: -10px; }
+        .v11.loop-slide .content { top: 260px; bottom: 30px; left: var(--pad); right: var(--pad); }
         .v11.loop-slide .hero-text { display: none; }
         .v11.loop-slide .step-grid {
-            position: relative;
-            width: 100%; height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 36px;
         }
-        .v11.loop-slide .step-grid .point-col {
-            position: absolute;
-            width: 340px;
-            text-align: center;
-            padding: 8px 14px;
+        .v11.loop-slide .step-grid .point-col { width: auto; }
+        .v11.loop-slide .step-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 28px; color: #000; line-height: 1;
+            margin-bottom: 2px;
         }
-        .v11.loop-slide .step-monkey {
-            height: 50px; margin-bottom: 4px; object-fit: contain;
-        }
-        .v11.loop-slide .step-num { display: none; }
         .v11.loop-slide .point-title { font-size: 20px; margin-bottom: 4px; }
         .v11.loop-slide .point-body { font-size: 18px; }
-        .v11.loop-slide .loop-arrow {
-            position: absolute; z-index: 3;
-        }
-        .v11.loop-slide .loop-arrow img {
-            width: 50px; height: auto;
-        }
-        /* Box positions — clockwise: 1=top-center, 2=top-right, 3=mid-right, 4=bottom-center, 5=mid-left, 6=top-left */
-        .v11.loop-slide .c1 { top: 6px; left: 50%; transform: translateX(-50%); }
-        .v11.loop-slide .c6 { top: 55px; left: 30px; }
-        .v11.loop-slide .c2 { top: 55px; right: 30px; }
-        .v11.loop-slide .c5 { top: 370px; left: 30px; }
-        .v11.loop-slide .c3 { top: 370px; right: 30px; }
-        .v11.loop-slide .c4 { bottom: 36px; left: 50%; transform: translateX(-50%); }
-        /* Arrow positions — between each pair, clockwise */
-        .v11.loop-slide .arrow-1-2 { top: 40px; left: 920px; }
-        .v11.loop-slide .arrow-1-2 img { transform: rotate(45deg); }
-        .v11.loop-slide .arrow-2-3 { top: 290px; right: 170px; }
-        .v11.loop-slide .arrow-2-3 img { transform: rotate(90deg); }
-        .v11.loop-slide .arrow-3-4 { top: 510px; right: 420px; }
-        .v11.loop-slide .arrow-3-4 img { transform: rotate(135deg) scaleY(-1); }
-        .v11.loop-slide .arrow-4-5 { top: 515px; left: 420px; }
-        .v11.loop-slide .arrow-4-5 img { transform: rotate(-135deg) scaleY(-1); }
-        .v11.loop-slide .arrow-5-6 { top: 295px; left: 170px; }
-        .v11.loop-slide .arrow-5-6 img { transform: rotate(-90deg); }
-        .v11.loop-slide .arrow-6-1 { top: 35px; left: 420px; }
-        .v11.loop-slide .arrow-6-1 img { transform: rotate(-45deg); }
-        .v11.loop-slide .loop-center-logo {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, calc(-50% - 40px));
-            z-index: 1;
-        }
-        .v11.loop-slide .loop-center-logo img {
-            width: 280px; height: auto;
-        }
 
         /* V11 product overview — 3 layer columns */
-        .v11.product-slide .section-num { top: 10px; }
-        .v11.product-slide .billboard-title { font-size: 100px; top: 28px; color: var(--c-saffron); }
-        .v11.product-slide .monkey-billboard { height: 220px; top: -10px; opacity: 0.08; }
+        .v11.product-slide .billboard-title { font-size: 100px; top: 10px; color: var(--c-saffron); }
+        .v11.product-slide .monkey-billboard { height: 220px; top: -10px; }
         .v11.product-slide .content { top: 220px; bottom: 30px; left: var(--pad); right: var(--pad); }
         .v11.product-slide .hero-text { display: none; }
         .v11.product-slide .point-row { gap: 40px; }
@@ -974,7 +909,7 @@
         .v12 .section-num {
             font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
-            text-align: left; align-self: flex-start; margin-bottom: 2px;
+            text-align: center;
         }
         .v12 .monkey-inline { height: 420px; margin-bottom: 16px; }
         .v12 .section-title {
@@ -1032,67 +967,6 @@
             margin-bottom: 2px;
         }
 
-        /* ══════════════════════════════════════════════════════════════
-           DARK BACKGROUND OVERRIDES
-        ══════════════════════════════════════════════════════════════ */
-
-        /* ── Slide 6: VVViral Loop — electric blue #5B65E8 ── */
-        .v11.loop-slide .section-num { color: var(--c-crimson); }
-        .v11.loop-slide .billboard-title { color: var(--c-rose); opacity: 0.2; }
-        .v11.loop-slide .step-num { color: var(--c-crimson); }
-        .v11.loop-slide .point-body { color: var(--text-dark); }
-        .v11.loop-slide .c1 .point-title { color: var(--c-crimson); }
-        .v11.loop-slide .c2 .point-title { color: var(--c-violet); }
-        .v11.loop-slide .c3 .point-title { color: var(--c-chartreuse); }
-        .v11.loop-slide .c4 .point-title { color: var(--c-saffron); }
-        .v11.loop-slide .c5 .point-title { color: var(--c-tangerine); }
-        .v11.loop-slide .c6 .point-title { color: var(--c-rose); }
-
-        /* ── Coconut accents for poolside blue slides ── */
-        .coconut-accent {
-            position: absolute;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.22;
-            mix-blend-mode: multiply;
-        }
-        .coconut-accent img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Slide 5 — Interface: diagonal scatter, 3 coconuts descending L→R like bouncing */
-        .interface-slide .coco-1 { top: 30px; left: 80px; width: 140px; height: 140px; transform: rotate(-20deg); }
-        .interface-slide .coco-2 { top: 200px; left: 420px; width: 100px; height: 100px; transform: rotate(45deg) scaleX(-1); opacity: 0.16; }
-        .interface-slide .coco-3 { bottom: 60px; right: 100px; width: 180px; height: 180px; transform: rotate(12deg); }
-
-        /* Slide 8 — Market: no coconuts */
-
-        /* Slide 9 — Competition: two big coconuts flanking the title like sentinels */
-        .v9 .coco-1 { top: 60px; left: 30px; width: 220px; height: 220px; transform: rotate(-10deg); }
-        .v9 .coco-2 { bottom: 40px; right: 30px; width: 200px; height: 200px; transform: rotate(15deg) scaleX(-1); }
-
-        /* Slide 10 — Why Now: ascending trail of 5 coconuts, starting near bottom monkey going up-right */
-        .v10 .coco-1 { bottom: 220px; left: 270px; width: 130px; height: 130px; transform: rotate(5deg); }
-        .v10 .coco-2 { bottom: 330px; left: 420px; width: 105px; height: 105px; transform: rotate(-25deg) scaleX(-1); opacity: 0.19; }
-        .v10 .coco-3 { bottom: 420px; left: 560px; width: 80px; height: 80px; transform: rotate(40deg); opacity: 0.16; }
-        .v10 .coco-4 { top: 180px; left: 680px; width: 60px; height: 60px; transform: rotate(-50deg) scaleX(-1); opacity: 0.13; }
-        .v10 .coco-5 { top: 90px; left: 790px; width: 45px; height: 45px; transform: rotate(70deg); opacity: 0.10; }
-
-        /* Slide 12 — Roadmap: row of 3 along bottom edge like rolling, progressively bigger */
-        .v12 .coco-1 { bottom: 20px; right: 500px; width: 80px; height: 80px; transform: rotate(-30deg); opacity: 0.14; }
-        .v12 .coco-2 { bottom: 15px; right: 300px; width: 120px; height: 120px; transform: rotate(20deg) scaleX(-1); opacity: 0.18; }
-        .v12 .coco-3 { bottom: 10px; right: 80px; width: 170px; height: 170px; transform: rotate(-5deg); }
-
-        /* ── Slide 9: Competition — poolside blue (default) ── */
-        .v9 .section-num { color: var(--c-crimson); }
-
-        /* ── Slide 11: Business Model — poolside blue (default) ── */
-
-        /* ── Slide 14: Thank You — poolside blue (default) ── */
-
-
     </style>
 </head>
 <body>
@@ -1102,8 +976,8 @@
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
         <div class="slide-label"><span>01</span> — Intro</div>
-        <div class="slide v8 intro-slide" style="background: url('backgrounds/intro%20copy-shadow.png') center/cover no-repeat, #add8e8;">
-            <div class="intro-text">An $83 trillion wealth transfer is reshaping art collecting for digital-native generations, yet every existing platform treats art like a trading terminal. VVV.SO is the only platform built around what actually drives lasting value in this market: culture, identity, and community.<br><span style="opacity:0.5; font-size:0.7em;">(UBS Global Wealth Report, Art Basel &amp; UBS Survey 2025)</span></div>
+        <div class="slide v8 intro-slide" style="background: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/intro.jpg') center/cover no-repeat;">
+            <div class="intro-text">A $1 trillion wealth transfer is reshaping art collecting for digital-native generations, yet every existing platform treats art like a trading terminal. VVV.SO is the only platform built around what actually drives lasting value in this market: culture, identity, and community.</div>
             <div class="callout">We're not only building a better marketplace —<br>we're building the cultural infrastructure that turns<br>collectors into fanatics and artists into movements.</div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>1/14</span></div>
         </div>
@@ -1116,7 +990,7 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>02</span> — Traction</div>
         <div class="slide v2 traction-slide">
-            <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey monkey-peek" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-peek" alt="">
             <div class="top-band">
                 <div class="section-num">01</div>
                 <div class="section-title">Traction</div>
@@ -1150,17 +1024,17 @@
                 </div>
             </div>
             <div class="monkey-row">
-                <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey" alt="">
-                <img src="backgrounds/monkeys/isolate/03ae7b3b-7903-46e8-9297-ea8cb112283b%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
-                <img src="backgrounds/monkeys/isolate/561671a0-7683-43c7-a85b-d782380031e2%20copy.png" class="monkey" alt="">
-                <img src="backgrounds/monkeys/isolate/19e62c2c-ee8c-4914-8f49-3cdb8c55141d%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
-                <img src="backgrounds/monkeys/isolate/ff99e1f5-7a58-4f63-a9fc-5b59b553773b%20copy.png" class="monkey" alt="">
-                <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
-                <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey" alt="">
-                <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
-                <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey" alt="">
-                <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
-                <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="monkey" alt="">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey" alt="">
             </div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>2/14</span></div>
         </div>
@@ -1172,9 +1046,9 @@
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
         <div class="slide-label"><span>03</span> — Problem</div>
-        <div class="slide v1 problem-slide">
+        <div class="slide v1 problem-slide" style="background: #ee5572;">
             <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
-            <img src="backgrounds/monkeys/shadow/problem-shadow.png" class="monkey monkey-presenter" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/red-shadow.png" class="monkey monkey-presenter" alt="">
             <div class="text-area">
                 <div class="section-num">02</div>
                 <div class="section-title">Problem</div>
@@ -1215,7 +1089,7 @@
         <div class="slide-label"><span>04</span> — Solution</div>
         <div class="slide v1 v1-flip">
             <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
-            <img src="backgrounds/monkeys/shadow/monkey2%20copy.png" class="monkey monkey-presenter" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-presenter" alt="">
             <div class="text-area">
                 <div class="section-num">03</div>
                 <div class="section-title">Solution</div>
@@ -1259,36 +1133,29 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>05</span> — Interface</div>
         <div class="slide v8 interface-slide">
-            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
             <div class="section-num">04</div>
             <div class="title-behind">VVV.SO INTERFACE</div>
-            <img src="backgrounds/monkeys/shadow/monkey2%20copy.png" class="monkey monkey-center" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-center" alt="">
             <div class="subtitle">
                 <div class="hero-text">VVV.SO Interface</div>
             </div>
             <div class="four-cols">
                 <div class="col c1">
-                    <img src="interface/discovery.png" class="interface-img" alt="Discovery Grid">
                     <span class="point-num">01</span>
                     <div class="point-title">Discovery Grid</div>
                     <p class="point-body">Curated feed of new drops, trending collections, and culturally-aligned recommendations.</p>
                 </div>
                 <div class="col c2">
-                    <img src="interface/mint-page.png" class="interface-img" alt="Mint Pages">
                     <span class="point-num">02</span>
-                    <div class="point-title">Mint Pages</div>
+                    <div class="point-title">Customizable Mint Pages</div>
                     <p class="point-body">Artists craft unique launch experiences with custom visuals, pricing, and allowlists.</p>
                 </div>
                 <div class="col c3">
-                    <img src="interface/profile.png" class="interface-img" alt="User Profiles">
                     <span class="point-num">03</span>
                     <div class="point-title">User Profiles</div>
                     <p class="point-body">Wallets become identities — showcasing taste, activity, and reputation across chains.</p>
                 </div>
                 <div class="col c4">
-                    <img src="interface/gallery.png" class="interface-img" alt="User Galleries">
                     <span class="point-num">04</span>
                     <div class="point-title">User Galleries</div>
                     <p class="point-body">Personalized artwork viewers optimized for desktop and mobile — viewing finally works.</p>
@@ -1307,47 +1174,39 @@
         <div class="slide v11 loop-slide">
             <div class="section-num">05</div>
             <div class="billboard-title">THE VVVIRAL LOOP</div>
-            <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey monkey-billboard" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-billboard" alt="">
             <div class="content">
                 <div class="step-grid">
                     <div class="point-col c1">
-                        <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="step-monkey" alt="">
+                        <div class="step-num">1</div>
                         <div class="point-title">Artists launch new work on VVV</div>
-                        <p class="point-body">Collectors get<br>primary market access.</p>
+                        <p class="point-body">Collectors get primary market access.</p>
                     </div>
                     <div class="point-col c2">
-                        <img src="backgrounds/monkeys/isolate/561671a0-7683-43c7-a85b-d782380031e2%20copy.png" class="step-monkey" alt="">
+                        <div class="step-num">2</div>
                         <div class="point-title">Collectors mint and immediately display pieces</div>
                         <p class="point-body">Profiles, galleries, and activity feeds turn every mint into a visible cultural signal.</p>
                     </div>
                     <div class="point-col c3">
-                        <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="step-monkey" alt="">
+                        <div class="step-num">3</div>
                         <div class="point-title">Discovery spreads through the network</div>
-                        <p class="point-body">Following, notifications, and social feeds pull in friends and aligned&nbsp;collectors.</p>
+                        <p class="point-body">Following, notifications, and social feeds pull in friends and aligned collectors.</p>
                     </div>
                     <div class="point-col c4">
-                        <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="step-monkey" alt="">
+                        <div class="step-num">4</div>
                         <div class="point-title">Secondary market activates</div>
                         <p class="point-body">Profile-based buying, social signals, and P2P escrow deals create a natural FOMO loop that strengthens demand and visibility.</p>
                     </div>
                     <div class="point-col c5">
-                        <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="step-monkey" alt="">
-                        <div class="point-title">Reputation<br>builds the culture</div>
+                        <div class="step-num">5</div>
+                        <div class="point-title">Reputation builds the culture</div>
                         <p class="point-body">Proof-of-Tastemaker highlights who finds great work early, reinforcing identity and taste.</p>
                     </div>
                     <div class="point-col c6">
-                        <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="step-monkey" alt="">
-                        <div class="point-title">Artists expand into<br>new formats</div>
-                        <p class="point-body">Merch, physical redemptions, books, and additional releases give collectors more ways to engage and deepen their relationship with&nbsp;the&nbsp;artist.</p>
+                        <div class="step-num">6</div>
+                        <div class="point-title">Artists expand into new formats</div>
+                        <p class="point-body">Merch, physical redemptions, books, and additional releases give collectors more ways to engage and deepen their relationship with the artist.</p>
                     </div>
-                    <!-- Arrows -->
-                    <div class="loop-arrow arrow-1-2"><img src="icons/arrow.png" alt="→"></div>
-                    <div class="loop-arrow arrow-2-3"><img src="icons/arrow.png" alt="→"></div>
-                    <div class="loop-arrow arrow-3-4"><img src="icons/arrow.png" alt="→"></div>
-                    <div class="loop-arrow arrow-4-5"><img src="icons/arrow.png" alt="→"></div>
-                    <div class="loop-arrow arrow-5-6"><img src="icons/arrow.png" alt="→"></div>
-                    <div class="loop-arrow arrow-6-1"><img src="icons/arrow.png" alt="→"></div>
-                    <div class="loop-center-logo"><img src="backgrounds/intro%20copy-shadow.png" alt="VVV.SO"></div>
                 </div>
             </div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>6/14</span></div>
@@ -1363,7 +1222,7 @@
         <div class="slide v11 product-slide">
             <div class="section-num">06</div>
             <div class="billboard-title">PRODUCT</div>
-            <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey monkey-billboard" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-billboard" alt="">
             <div class="content">
                 <div class="hero-text">Three product layers building<br>the cultural infrastructure.</div>
                 <div class="point-row">
@@ -1495,7 +1354,7 @@
                     <div class="point p1">
                         <span class="point-num">01</span>
                         <div class="point-title">$48.7B market, 2025</div>
-                        <p class="point-body">All trading, no culture. 85% of volume flows through platforms with no social layer, no identity, no community. Just trading. <span style="opacity:0.6; font-size:0.85em;">(Source: Precedence Research, 2025)</span></p>
+                        <p class="point-body">All trading, no culture. 85% of volume flows through platforms with no social layer, no identity, no community. Just trading.</p>
                     </div>
                     <div class="point p2">
                         <span class="point-num">02</span>
@@ -1530,14 +1389,12 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>09</span> — Competition</div>
         <div class="slide v9">
-            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <img src="backgrounds/monkeys/isolate/03ae7b3b-7903-46e8-9297-ea8cb112283b%20copy.png" class="monkey scatter-monkey sm-1" alt="">
-            <img src="backgrounds/monkeys/isolate/19e62c2c-ee8c-4914-8f49-3cdb8c55141d%20copy.png" class="monkey scatter-monkey sm-2" alt="">
-            <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey scatter-monkey sm-3" alt="">
-            <img src="backgrounds/monkeys/isolate/561671a0-7683-43c7-a85b-d782380031e2%20copy.png" class="monkey scatter-monkey sm-4" alt="">
-            <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey scatter-monkey sm-5" alt="">
-            <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey scatter-monkey sm-6" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-1" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-2" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-3" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-4" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-5" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey scatter-monkey sm-6" alt="">
             <div class="center-column">
                 <div class="section-num">08</div>
                 <div class="section-title">Competition</div>
@@ -1572,15 +1429,10 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>10</span> — Why Now</div>
         <div class="slide v10">
-            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-4"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-5"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey ladder-monkey lm-1" alt="">
-            <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="monkey ladder-monkey lm-2" alt="">
-            <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="monkey ladder-monkey lm-3" alt="">
-            <img src="backgrounds/monkeys/isolate/fc4d4ef0-1715-407f-b359-d68691d6905e%20copy.png" class="monkey ladder-monkey lm-4" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-1" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-2" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-3" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="monkey ladder-monkey lm-4" alt="">
             <div class="content">
                 <div class="section-num">09</div>
                 <div class="section-title">Why Now</div>
@@ -1624,7 +1476,7 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>11</span> — Business Model</div>
         <div class="slide v4">
-            <img src="backgrounds/monkeys/isolate/fc4d4ef0-1715-407f-b359-d68691d6905e%20copy.png" class="monkey monkey-watermark" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-watermark" alt="">
             <div class="content">
                 <div class="section-num">10</div>
                 <div class="section-title">Business<br>Model</div>
@@ -1651,7 +1503,6 @@
                         <p class="point-body">Fees on premium profile and gallery customization features.</p>
                     </div>
                 </div>
-                <div class="callout">An end-to-end hub for the entire ecosystem. Everything flows through VVV.</div>
             </div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>11/14</span></div>
         </div>
@@ -1664,13 +1515,10 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>12</span> — Product Roadmap</div>
         <div class="slide v12">
-            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
             <div class="content">
                 <div class="left-col">
-                    <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey monkey-inline" alt="">
                     <div class="section-num">11</div>
+                    <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-inline" alt="">
                     <div class="section-title">Product<br>Roadmap</div>
                 </div>
                 <div class="right-col">
@@ -1704,25 +1552,25 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>13</span> — Team</div>
         <div class="slide v2 team-slide">
-            <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey monkey-peek" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-peek" alt="">
             <div class="top-band">
                 <div class="section-num">12</div>
                 <div class="section-title">Team</div>
                 <div class="team-row">
                     <div class="team-col t1">
-                        <img src="backgrounds/monkeys/isolate/jared-monkey%20copy.png" class="team-monkey" alt="">
+                        <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="team-monkey" alt="">
                         <div class="team-name">Jared Madere</div>
                         <div class="team-role">Co-Founder &amp; CEO</div>
                         <div class="team-bio"><p>Jared is an artist, curator, gallerist, and writer. His work has been shown at the Whitney Museum, Le Magasin, La Panacée, The Istanbul Biennial and other venues internationally. He has been featured in The New York Times, Interview, Spike, and Artforum.</p><p>In 2021, Madere opened Yeche Lange, an NFT gallery with a physical space in New York. Prior to that he ran the galleries Bed-Stuy Love Affair and Mother Culture in New York and Los Angeles.</p><p>He has spoken about AI media synthesis at Art Basel Switzerland and written numerous essays on the subject. He has also spoken about NFTs at FWB Festival and Commons New York.</p></div>
                     </div>
                     <div class="team-col t2">
-                        <img src="backgrounds/monkeys/isolate/ramon-monkey%20copy.png" class="team-monkey" alt="">
+                        <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="team-monkey" alt="">
                         <div class="team-name">Ramon Hungerbühler</div>
                         <div class="team-role">Co-Founder &amp; COO</div>
                         <div class="team-bio"><p>Ramon co-founded the Swiss skateboard brand The Straight and Narrow in 2012, serving as Creative Director, Brand Strategist &amp; Operations Lead until 2020.</p><p>He entered the NFT space in March 2021 with his debut collection THEM Hats, going on to release multiple collections since. Since 2024, he has launched and consulted memecoin projects, scaling multiple to multi-million dollar market caps.</p><p>Ramon holds a Master's degree from the Zurich University of the Arts, where he led an independent study in blockchain and crypto culture.</p></div>
                     </div>
                     <div class="team-col t3">
-                        <img src="backgrounds/monkeys/isolate/miles-monkey%20copy.png" class="team-monkey" alt="">
+                        <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/transparent.png" class="team-monkey" alt="">
                         <div class="team-name">Miles Peyton</div>
                         <div class="team-role">Co-Founder &amp; CTO</div>
                         <div class="team-bio"><p>Prior to VVV, Miles founded and led development of Purity Finance, scaling it to thousands of users. At Galerie Yeche Lange, he bridged contemporary art with blockchain culture through bespoke minting experiences and immersive virtual exhibitions.</p><p>As a graphics engineer at The New York Times, he developed award-winning interactive and AR journalism.</p><p>With five years in crypto, Miles holds a degree in Computer Science and Art from Carnegie Mellon and an MFA in media art from UCLA, where he studied under Casey Reas.</p></div>
@@ -1741,7 +1589,7 @@
         <div class="slide-label"><span>14</span> — Thank You</div>
         <div class="slide v8 thankyou-slide">
             <div class="title-behind">THANK YOU</div>
-            <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey monkey-center" alt="">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/backgrounds/monkeys/monkey2.jpg" class="monkey monkey-center" alt="">
             <div class="subtitle">
                 <div class="hero-text">Thank you!</div>
             </div>

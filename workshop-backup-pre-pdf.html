@@ -695,10 +695,10 @@
         .v9 .sm-5 { top: 300px; left: 200px; height: 120px; transform: rotate(20deg); opacity: 0.25; }
         .v9 .sm-6 { top: 180px; right: 200px; height: 140px; transform: rotate(-6deg) scaleX(-1); opacity: 0.3; }
 
-        .v9 { display: flex; align-items: center; justify-content: center; }
         .v9 .center-column {
+            position: absolute; top: 44%; left: 50%;
+            transform: translate(-50%, -50%);
             width: 860px; text-align: center; z-index: 2;
-            margin-top: -40px;
         }
         .v9 .section-num {
             font-family: var(--carrig); font-weight: 900;
@@ -713,10 +713,10 @@
         .v9 .hero-text {
             font-family: var(--carrig-di); font-weight: 400;
             font-size: 24px; color: var(--text-dark);
-            margin-bottom: 20px; line-height: 1.15;
+            margin-bottom: 40px; line-height: 1.15;
         }
         .v9 .points {
-            text-align: left; display: flex; flex-direction: column; gap: 14px; max-width: 720px; margin: 0 auto;
+            text-align: left; display: flex; flex-direction: column; gap: 32px; max-width: 720px; margin: 0 auto;
         }
         .v9 .point-title {
             font-family: var(--coconat); font-weight: 700;
