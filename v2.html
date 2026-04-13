@@ -447,13 +447,15 @@
         }
         .v7 .chart-bar-group {
             flex: 1; display: flex; flex-direction: column;
-            align-items: flex-end; justify-content: flex-end;
+            align-items: stretch; justify-content: flex-end;
             height: 100%; position: relative;
         }
         .v7 .bar-value {
             font-family: var(--carrig-di); font-weight: 700;
             font-size: 26px; color: var(--text-dark);
-            margin-bottom: 2px; white-space: nowrap;
+            position: absolute; bottom: 100%; left: 0; right: 0;
+            text-align: center;
+            margin-bottom: 4px; white-space: nowrap;
             line-height: 1; text-align: right;
         }
         .v7 .bar-fill {
@@ -464,6 +466,8 @@
             font-size: 11px; color: var(--text-mid);
             margin-top: 4px; text-align: center;
             letter-spacing: 0.03em; align-self: stretch;
+            white-space: nowrap;
+            position: absolute; top: 100%; left: 0; right: 0;
         }
         /* Chart — fun colors: indigo, golden, hot pink for the comeback */
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-fill { background: #3a3a8c; }
@@ -1434,6 +1438,7 @@
                 </div>
 
                 <!-- ── Key Stats ── -->
+                <div style="flex: 1;"></div>
                 <div class="points">
                     <div class="point p1">
                         <div class="point-title" style="font-size: 48px; color: var(--c-crimson);">$57.5B</div>
@@ -1448,7 +1453,7 @@
                         <p class="point-body">of HNW collectors already buy digital art<br>(Art Basel &amp; UBS 2025)</p>
                     </div>
                 </div>
-                <div class="callout" style="text-align: center; margin-top: 12px;">80%+ of this volume flows through platforms with zero social layer.</div>
+                <div class="callout" style="text-align: center; margin-top: 24px;">80%+ of this volume flows through platforms with zero social layer.</div>
             </div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>8/14</span></div>
         </div>
