@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVV.SO – Pitch Deck 2026</title>
+    <style>
+        /* ── Coconat (display headers) ── */
+        @font-face { font-family: 'Coconat'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/coconat-main/fonts/Coconat-Regular.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/coconat-main/fonts/Coconat-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'Coconat'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/coconat-main/fonts/Coconat-Demi.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/coconat-main/fonts/Coconat-Demi.woff') format('woff'); font-weight: 600; font-style: normal; }
+        @font-face { font-family: 'Coconat'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/coconat-main/fonts/Coconat-Bold.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/coconat-main/fonts/Coconat-Bold.woff') format('woff'); font-weight: 700; font-style: normal; }
+
+        /* ── CarrigPro (body text family) ── */
+        @font-face { font-family: 'CarrigPro'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Light.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Light.woff') format('woff'); font-weight: 300; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Regular.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Regular.woff') format('woff'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Italic.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Italic.woff') format('woff'); font-weight: 400; font-style: italic; }
+        @font-face { font-family: 'CarrigPro'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Medium.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Medium.woff') format('woff'); font-weight: 500; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Bold.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Bold.woff') format('woff'); font-weight: 700; font-style: normal; }
+        @font-face { font-family: 'CarrigPro'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Black.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-Black.woff') format('woff'); font-weight: 900; font-style: normal; }
+
+        /* ── CarrigPro Display Italic (hero accent) ── */
+        @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 400; font-style: normal; }
+        @font-face { font-family: 'CarrigPro DisplayItalic'; src: url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff2') format('woff2'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.woff') format('woff'), url('https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/fonts/font/CarrigPro-DisplayItalic.ttf') format('truetype'); font-weight: 700; font-style: normal; }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --slide-w: 1440px;
+            --slide-h: 810px;
+            --pad: 60px;
+            --bg: #add8e8;
+            --text-dark: #1a2836;
+            --text-mid: #3a4f5e;
+            --c-rose: #c4289a;
+            --c-crimson: #c92d35;
+            --c-chartreuse: #6a9a1a;
+            --c-saffron: #c99a2d;
+            --c-violet: #7a2dc9;
+            --c-tangerine: #d06a20;
+            --coconat: 'Coconat', Georgia, serif;
+            --carrig: 'CarrigPro', Georgia, serif;
+            --carrig-di: 'CarrigPro DisplayItalic', Georgia, serif;
+        }
+
+        body {
+            background: #2a3a4a;
+            font-family: var(--carrig);
+            -webkit-font-smoothing: antialiased;
+            padding: 40px 0;
+        }
+
+        .slide-wrapper {
+            margin: 0 auto 60px;
+            width: var(--slide-w);
+        }
+        .slide-label {
+            font-size: 13px; font-weight: 400; color: #6a8a9a;
+            letter-spacing: 0.06em; text-transform: uppercase;
+            margin-bottom: 10px; padding-left: 4px;
+        }
+        .slide-label span { font-weight: 900; color: #c0dde8; }
+
+        .slide {
+            width: var(--slide-w);
+            height: var(--slide-h);
+            position: relative;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .monkey { display: block; pointer-events: none; user-select: none; }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px var(--pad);
+            font-size: 11px;
+            font-family: var(--carrig);
+            color: var(--text-mid);
+            font-weight: 400;
+            z-index: 10;
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V1 — Left text + right monkey presenter
+        ══════════════════════════════════════════════════════════════ */
+        .v1 .monkey-presenter {
+            position: absolute;
+            right: 80px; top: 50%;
+            transform: translateY(-50%);
+            height: 790px; z-index: 1;
+        }
+        .v1 .logo-corner {
+            position: absolute;
+            top: 24px; right: 32px;
+            height: 56px; z-index: 5;
+            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.25));
+        }
+        .v1 .text-area {
+            position: absolute;
+            top: 36px; left: var(--pad);
+            width: 800px; bottom: 36px;
+            z-index: 3;
+            display: flex; flex-direction: column;
+        }
+        .v1 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+        }
+        .v1 .section-title {
+            font-family: var(--coconat);
+            font-size: 78px; font-weight: 700;
+            color: var(--c-rose);
+            line-height: 0.9; letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .v1 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 36px; color: var(--text-dark);
+            line-height: 1.1; letter-spacing: -0.02em;
+            margin-bottom: 18px; max-width: 600px;
+        }
+        .v1 .points { display: flex; flex-direction: column; gap: 8px; flex: 1; overflow: hidden; }
+        .v1 .point-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            color: #000;
+        }
+        .v1 .point-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 28px; text-transform: uppercase;
+            line-height: 0.9; margin-bottom: 3px;
+        }
+        .v1 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; color: var(--text-dark);
+            line-height: 1.35; max-width: 620px;
+        }
+        .v1 .callout {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 18px; color: var(--c-rose);
+            line-height: 1.3; margin-top: 16px; max-width: 700px;
+        }
+        .v1 .p1 .point-title { color: var(--c-crimson); }
+        .v1 .p2 .point-title { color: var(--c-chartreuse); }
+        .v1 .p3 .point-title { color: var(--c-violet); }
+        .v1 .p4 .point-title { color: var(--c-tangerine); }
+
+        /* V1 problem-slide — poolside blue (default) */
+        .v1.problem-slide .section-num { color: var(--c-crimson); }
+        .v1.problem-slide .section-title { color: var(--c-crimson); }
+        .v1.problem-slide .hero-text { color: var(--text-dark); }
+        .v1.problem-slide .point-num { color: #000; }
+        .v1.problem-slide .point-body { color: var(--text-dark); }
+        .v1.problem-slide .p1 .point-title { color: var(--c-crimson); }
+        .v1.problem-slide .p2 .point-title { color: var(--c-violet); }
+        .v1.problem-slide .p3 .point-title { color: var(--c-chartreuse); }
+        .v1.problem-slide .p4 .point-title { color: var(--c-tangerine); }
+        .v1.problem-slide .callout { color: var(--c-rose); margin-top: 24px; }
+        .v1.problem-slide .points { flex: 0 1 auto; }
+
+        /* V1 flipped — monkey left, text right-justified, logo top-left */
+        .v1.v1-flip .monkey-presenter {
+            right: auto; left: 31px;
+            transform: translateY(-50%) scaleX(-1);
+        }
+        .v1.v1-flip .logo-corner {
+            right: auto; left: 32px;
+        }
+        .v1.v1-flip .text-area {
+            left: auto; right: var(--pad);
+            text-align: right;
+        }
+        .v1.v1-flip .hero-text { margin-left: auto; }
+        .v1.v1-flip .point-body { margin-left: auto; }
+        .v1.v1-flip .callout { margin-left: auto; }
+        .v1.v1-flip .point-title { white-space: nowrap; }
+        .v1.v1-flip .section-title { color: var(--c-chartreuse); }
+        .v1.v1-flip .p1 .point-title { color: var(--c-crimson); }
+        .v1.v1-flip .p2 .point-title { color: var(--c-violet); }
+        .v1.v1-flip .p3 .point-title { color: var(--c-chartreuse); }
+        .v1.v1-flip .p4 .point-title { color: var(--c-tangerine); }
+        .v1.v1-flip .p5 .point-title { color: var(--c-saffron); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V2 — Centered title + monkey peek from bottom, columns
+        ══════════════════════════════════════════════════════════════ */
+        .v2 .monkey-peek {
+            position: absolute;
+            bottom: -80px; left: 50%;
+            transform: translateX(-50%);
+            height: 520px; z-index: 2;
+        }
+        .v2 .top-band {
+            position: absolute;
+            top: 40px; left: var(--pad); right: var(--pad);
+            z-index: 3;
+        }
+        .v2 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+            text-align: center;
+        }
+        .v2 .section-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 100px; text-align: center;
+            color: var(--c-tangerine);
+            letter-spacing: -0.03em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 8px;
+        }
+        .v2 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 34px; text-align: center;
+            color: var(--c-rose);
+            max-width: 700px; margin: 0 auto 28px;
+            line-height: 1.15;
+        }
+        .v2.traction-slide .hero-text {
+            font-size: 24px; margin-bottom: 20px;
+        }
+        .v2.traction-slide .top-band { top: 66px; }
+        .v2.traction-slide .stat-grid { margin-bottom: 0; margin-top: 80px; }
+        .v2.traction-slide .monkey-peek { display: none; }
+        .v2.traction-slide .monkey-row {
+            position: absolute; bottom: 30px; left: 0; right: 0;
+            display: flex; justify-content: space-between;
+            z-index: 1;
+        }
+        .v2.traction-slide .monkey-row img {
+            height: 170px; display: block;
+        }
+        .v2 .point-row {
+            display: flex; gap: 30px; justify-content: center;
+        }
+        .v2 .point-col { width: 240px; }
+        .v2 .point-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            color: #000;
+        }
+        .v2 .point-title {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 22px; text-transform: uppercase;
+            line-height: 0.85;
+            margin-bottom: 6px;
+        }
+        .v2 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; line-height: 1.35;
+            color: var(--text-dark);
+        }
+        .v2 .p1 .point-title { color: var(--c-crimson); }
+        .v2 .p2 .point-title { color: var(--c-chartreuse); }
+        .v2 .p3 .point-title { color: var(--c-violet); }
+        .v2 .p4 .point-title { color: var(--c-tangerine); }
+
+        /* V2 — Traction stat grid (6 items) */
+        .v2 .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .v2 .stat-item { text-align: center; }
+        .v2 .stat-value {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 38px; line-height: 1;
+            margin-bottom: 4px;
+        }
+        .v2 .stat-label {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; color: var(--text-dark);
+            line-height: 1.3; text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .v2 .s1 .stat-value { color: var(--c-crimson); }
+        .v2 .s2 .stat-value { color: var(--c-chartreuse); }
+        .v2 .s3 .stat-value { color: var(--c-violet); }
+        .v2 .s4 .stat-value { color: var(--c-tangerine); }
+        .v2 .s5 .stat-value { color: var(--c-saffron); }
+        .v2 .s6 .stat-value { color: var(--c-rose); }
+
+        /* V2 — Team adaptation */
+        .v2 .team-row {
+            display: flex; gap: 48px; justify-content: center;
+        }
+        .v2 .team-col {
+            width: 320px; text-align: center;
+        }
+        .v2 .team-name {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 22px; text-transform: uppercase;
+            line-height: 1.1; margin-bottom: 3px;
+        }
+        .v2 .team-role {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-mid);
+            margin-bottom: 6px;
+        }
+        .v2 .team-bio {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 14px; color: var(--text-dark);
+            line-height: 1.35; text-align: left;
+        }
+        .v2 .team-bio p { margin-bottom: 8px; }
+        .v2 .team-bio p:last-child { margin-bottom: 0; }
+        .v2 .t1 .team-name { color: var(--c-crimson); }
+        .v2 .t2 .team-name { color: var(--c-chartreuse); }
+        .v2 .t3 .team-name { color: var(--c-violet); }
+
+        /* V2 team — give bios full slide height */
+        .v2.team-slide .monkey-peek { display: none; }
+        .v2.team-slide .top-band { top: 46px; }
+        .v2.team-slide .section-title { font-size: 80px; margin-bottom: 12px; }
+        .v2.team-slide .team-col { display: flex; flex-direction: column; align-items: center; }
+        .v2.team-slide .team-bio { align-self: stretch; }
+        .v2.team-slide .team-monkey { height: 200px; margin-bottom: 10px; object-fit: contain; }
+        .v2.team-slide .team-col.t1 .team-monkey { transform: none; }
+        .v2.team-slide .team-col.t3 .team-monkey { transform: none; }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V4 — Watermark monkey, 2×2 point grid, callout at bottom
+        ══════════════════════════════════════════════════════════════ */
+        .v4 .monkey-watermark {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            height: 900px; opacity: 0.15; z-index: 1;
+        }
+        .v4 .content {
+            position: absolute; inset: 0;
+            padding: var(--pad); z-index: 2;
+            display: flex; flex-direction: column;
+        }
+        .v4 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+        }
+        .v4 .section-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 96px; color: var(--c-crimson);
+            letter-spacing: -0.02em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 6px;
+        }
+        .v4 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 32px; color: var(--c-chartreuse);
+            line-height: 1.15; margin-bottom: 36px; max-width: 600px;
+        }
+        .v4 .points-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 60px; max-width: 1000px;
+        }
+        .v4 .point-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em; color: #000;
+        }
+        .v4 .point-title {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 30px;
+            text-transform: uppercase; line-height: 0.83;
+            letter-spacing: -0.01em; margin-bottom: 4px;
+        }
+        .v4 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; color: var(--text-dark); line-height: 1.35;
+        }
+        .v4 .p1 .point-title { color: var(--c-crimson); }
+        .v4 .p2 .point-title { color: var(--c-violet); }
+        .v4 .p3 .point-title { color: var(--c-chartreuse); }
+        .v4 .p4 .point-title { color: var(--c-tangerine); }
+        .v4 .callout {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 18px; color: var(--c-rose);
+            line-height: 1.3; margin-top: auto; margin-bottom: 48px; max-width: 700px;
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V7 — Market Opportunity: side-by-side charts + 3-col bullets
+        ══════════════════════════════════════════════════════════════ */
+        .v7 .monkey-cluster-1, .v7 .monkey-cluster-2, .v7 .monkey-cluster-3 { display: none; }
+        .v7 .content {
+            position: absolute; top: 28px; left: var(--pad); right: var(--pad);
+            bottom: 40px; z-index: 4;
+            display: flex; flex-direction: column;
+        }
+        .v7 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+        }
+        .v7 .section-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 52px; color: var(--c-rose);
+            line-height: 0.9; text-transform: uppercase;
+            margin-bottom: 4px; white-space: nowrap;
+        }
+        .v7 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 20px; color: var(--text-dark);
+            line-height: 1.2; margin-bottom: 12px;
+        }
+
+        /* ── Charts side by side ── */
+        .v7 .charts-row {
+            display: flex; gap: 32px; flex: 0 0 auto; height: 320px; margin-top: 50px; margin-bottom: 24px;
+        }
+        .v7 .chart-panel {
+            flex: 1;
+            background: transparent;
+            padding: 0;
+            position: relative;
+            overflow: visible;
+            display: flex; flex-direction: column;
+        }
+        .v7 .chart-header {
+            display: flex; justify-content: center; align-items: baseline;
+            margin-bottom: 4px; position: relative;
+        }
+        .v7 .chart-title {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 20px; text-transform: uppercase;
+            color: var(--text-dark);
+            letter-spacing: 0.08em;
+        }
+        .v7 .chart-source {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 9px; color: var(--text-mid);
+            opacity: 0.5; position: absolute; right: 0;
+        }
+        .v7 .chart-bars {
+            display: flex; align-items: flex-end;
+            gap: 24px; flex: 1;
+            position: relative;
+            max-width: 700px; margin: 0 auto;
+        }
+        .v7 .chart-bar-group {
+            flex: 1; display: flex; flex-direction: column;
+            align-items: stretch; justify-content: flex-end;
+            height: 100%; position: relative;
+        }
+        .v7 .bar-value {
+            font-family: var(--carrig-di); font-weight: 700;
+            font-size: 26px; color: var(--text-dark);
+            margin-bottom: 2px; white-space: nowrap;
+            line-height: 1; text-align: center;
+        }
+        .v7 .bar-fill {
+            width: 100%; min-height: 3px;
+        }
+        .v7 .bar-label {
+            font-family: var(--carrig); font-weight: 700;
+            font-size: 11px; color: var(--text-mid);
+            margin-top: 4px; text-align: center;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+            height: 16px;
+        }
+        /* Chart — fun colors: indigo, golden, hot pink for the comeback */
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-fill { background: #3a3a8c; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-value { font-size: 22px; color: #3a3a8c; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-fill { background: #F0D870; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-value { font-size: 18px; color: #c4a830; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: #E84393; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 40px; color: #E84393; }
+        .v7 .chart-subtitle {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 10px; color: var(--text-mid);
+            text-align: center; margin-top: -2px; margin-bottom: 8px;
+            opacity: 0.7;
+        }
+
+        /* ── 3-column bullet points below charts ── */
+        .v7 .points {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px 28px;
+            align-items: start;
+            margin-top: 25px;
+            max-width: 100%; padding-left: 60px;
+        }
+        .v7 .point {
+            padding-left: 12px;
+            border-left: 3px solid currentColor;
+        }
+        .v7 .point-num { display: none; }
+        .v7 .point-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 13px; text-transform: uppercase;
+            line-height: 1.1; margin-bottom: 2px;
+            white-space: nowrap;
+        }
+        .v7 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 13px; line-height: 1.3;
+            color: var(--text-mid);
+        }
+        .v7 .p1 { border-color: #5B65E8; }
+        .v7 .p1 .point-title { color: #5B65E8; }
+        .v7 .p2 { border-color: #6AAA44; }
+        .v7 .p2 .point-title { color: #6AAA44; }
+        .v7 .p3 { border-color: #2E8B57; }
+        .v7 .p3 .point-title { color: #2E8B57; }
+        .v7 .p4 { border-color: #E84393; }
+        .v7 .p4 .point-title { color: #E84393; }
+        .v7 .p5 { border-color: #C4622A; }
+        .v7 .p5 .point-title { color: #C4622A; }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V8 — Centered monkey + giant title behind, 4-col bottom
+        ══════════════════════════════════════════════════════════════ */
+        .v8 .monkey-center {
+            position: absolute; top: 20px; left: 50%;
+            transform: translateX(-50%);
+            height: 320px; z-index: 1;
+        }
+        .v8 .title-behind {
+            position: absolute; top: 40px; left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 160px; color: var(--c-rose);
+            opacity: 0.15; letter-spacing: -0.04em;
+            text-transform: uppercase; white-space: nowrap;
+            z-index: 2;
+        }
+        .v8 .subtitle {
+            position: absolute; top: 348px; left: 50%;
+            transform: translateX(-50%);
+            text-align: center; z-index: 3; white-space: nowrap;
+        }
+        .v8 .subtitle .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 34px; color: var(--c-rose);
+            line-height: 1.15;
+        }
+        .v8 .four-cols {
+            position: absolute; bottom: 40px;
+            left: 40px; right: 40px;
+            display: flex; gap: 30px; z-index: 3;
+        }
+        .v8 .four-cols .col { flex: 1; }
+        .v8 .point-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            color: #000; margin-bottom: 4px; display: block;
+        }
+        .v8 .point-title {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 22px;
+            text-transform: uppercase; line-height: 0.85;
+            margin-bottom: 6px;
+        }
+        .v8 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; color: var(--text-dark); line-height: 1.35;
+        }
+        .v8 .c1 .point-title { color: var(--c-crimson); }
+        .v8 .c2 .point-title { color: var(--c-chartreuse); }
+        .v8 .c3 .point-title { color: var(--c-violet); }
+        .v8 .c4 .point-title { color: var(--c-tangerine); }
+
+        /* V8 intro — no four-cols, wider hero, callout below */
+        .v8.intro-slide .subtitle {
+            white-space: normal;
+            width: 1000px;
+            top: 330px;
+        }
+        .v8.intro-slide .subtitle .hero-text {
+            font-size: 30px;
+            white-space: normal;
+            line-height: 1.2;
+        }
+        .v8.intro-slide .subtitle .hero-text strong {
+            font-family: var(--carrig); font-weight: 900;
+            color: var(--c-crimson);
+        }
+        .v8.intro-slide .intro-text {
+            position: absolute; top: 40px; left: 50%;
+            transform: translateX(-50%);
+            text-align: center; z-index: 3;
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 14px; color: var(--c-violet);
+            line-height: 1.45; max-width: 860px;
+            opacity: 0.75;
+        }
+        .v8.intro-slide .callout {
+            position: absolute; bottom: 60px; left: 50%;
+            transform: translateX(-50%);
+            text-align: center; z-index: 3;
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 22px; color: var(--c-violet);
+            line-height: 1.3; max-width: 900px;
+        }
+        .v8.intro-slide .title-behind {
+            font-size: 200px; top: 20px;
+        }
+        .v8.intro-slide .monkey-center {
+            height: 280px; top: 30px;
+        }
+        .v8.intro-slide .logo-corner {
+            position: absolute;
+            top: 24px; right: 32px;
+            height: 56px; z-index: 5;
+            filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.25));
+        }
+
+        /* V8 interface — feature columns at bottom */
+        .v8 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+            z-index: 5;
+        }
+        .v8.interface-slide .section-num {
+            position: absolute; top: 14px; left: 50%;
+            transform: translateX(-50%); text-align: center;
+        }
+        .v8.interface-slide .title-behind { display: none; }
+        .v8.interface-slide .monkey-center { display: none; }
+        .v8.interface-slide .subtitle { top: 28px; left: 50%; transform: translateX(-50%); text-align: center; }
+        .v8.interface-slide .subtitle .hero-text { font-size: 24px; }
+        .v8.interface-slide .four-cols {
+            position: absolute;
+            top: 80px; bottom: 30px; left: 40px; right: 40px;
+            display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+            gap: 14px 40px;
+        }
+        .v8.interface-slide .four-cols .col {
+            text-align: left; display: flex; flex-direction: column;
+            min-height: 0;
+        }
+        .v8.interface-slide .four-cols .col .interface-img {
+            width: 100%; flex: 1 1 0; min-height: 0; object-fit: cover; object-position: top left;
+            border-radius: 8px; margin-bottom: 4px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .v8.interface-slide .point-title { font-size: 18px; white-space: nowrap; flex: 0 0 auto; }
+        .v8.interface-slide .point-body { display: none; }
+        .v8.interface-slide .point-num { flex: 0 0 auto; margin-bottom: 0; }
+
+        /* V8 interface-2up — two large images per slide */
+        .v8.interface-2up .two-cols {
+            position: absolute;
+            top: 70px; bottom: 40px; left: 60px; right: 60px;
+            display: flex; gap: 40px;
+            align-items: center; justify-content: center;
+        }
+        .v8.interface-2up .two-cols .col {
+            flex: 1; text-align: left; display: flex; flex-direction: column;
+            align-items: flex-start;
+        }
+        .v8.interface-2up .two-cols .col .interface-img {
+            width: 100%; max-height: 620px; object-fit: contain; object-position: center;
+            border-radius: 8px; margin-bottom: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .v8.interface-2up .point-title { font-size: 20px; white-space: nowrap; }
+        .v8.interface-2up .point-num { margin-bottom: 0; }
+        .v8.interface-2up .title-behind { display: none; }
+        .v8.interface-2up .monkey-center { display: none; }
+        .v8.interface-2up .subtitle { top: 28px; left: 50%; transform: translateX(-50%); text-align: center; }
+        .v8.interface-2up .subtitle .hero-text { font-size: 24px; }
+        .v8.interface-2up .section-num {
+            position: absolute; top: 14px; left: 50%;
+            transform: translateX(-50%); text-align: center;
+        }
+
+        /* V8 thank-you — big centered title */
+        .v8.thankyou-slide .title-behind {
+            display: none;
+        }
+        .v8.thankyou-slide .monkey-center {
+            height: 360px;
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -60%);
+            z-index: 3;
+            display: block;
+        }
+        .v8.thankyou-slide .subtitle {
+            position: absolute;
+            top: 65%; left: 0; right: 0;
+            text-align: center;
+            transform: none;
+        }
+        .v8.thankyou-slide .subtitle .hero-text {
+            font-size: 56px; color: var(--c-violet);
+        }
+        .v8.thankyou-slide .logo-big {
+            display: none;
+        }
+        .v8.thankyou-slide .contact-info {
+            position: absolute; bottom: 50px; left: 50%;
+            transform: translateX(-50%);
+            text-align: center; z-index: 5;
+            font-family: var(--carrig); font-weight: 400;
+            font-size: 16px; color: var(--text-mid);
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V9 — Scattered monkey stickers, centered column layout
+        ══════════════════════════════════════════════════════════════ */
+        .v9 .scatter-monkey { position: absolute; z-index: 1; }
+        .v9 .sm-1 { top: 20px; left: 30px; height: 160px; transform: rotate(-15deg); opacity: 0.4; }
+        .v9 .sm-2 { top: 40px; right: 40px; height: 200px; transform: rotate(10deg) scaleX(-1); opacity: 0.35; }
+        .v9 .sm-3 { bottom: 80px; left: 50px; height: 180px; transform: rotate(8deg); opacity: 0.35; }
+        .v9 .sm-4 { bottom: 20px; right: 80px; height: 150px; transform: rotate(-12deg) scaleX(-1); opacity: 0.45; }
+        .v9 .sm-5 { top: 300px; left: 200px; height: 120px; transform: rotate(20deg); opacity: 0.25; }
+        .v9 .sm-6 { top: 180px; right: 200px; height: 140px; transform: rotate(-6deg) scaleX(-1); opacity: 0.3; }
+
+        .v9 { display: flex; align-items: center; justify-content: center; }
+        .v9 .center-column {
+            width: 860px; text-align: center; z-index: 2;
+            margin-top: -40px;
+        }
+        .v9 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+        }
+        .v9 .section-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 78px; color: var(--c-crimson);
+            line-height: 0.9; text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .v9 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 24px; color: var(--text-dark);
+            margin-bottom: 20px; line-height: 1.15;
+        }
+        .v9 .points {
+            text-align: left; display: flex; flex-direction: column; gap: 14px; max-width: 720px; margin: 0 auto;
+        }
+        .v9 .point-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 20px; line-height: 1;
+        }
+        .v9 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; color: var(--text-dark); line-height: 1.35;
+        }
+        .v9 .p1 .point-title { color: var(--c-rose); }
+        .v9 .p2 .point-title { color: var(--c-chartreuse); }
+        .v9 .p3 .point-title { color: var(--c-violet); }
+        .v9 .p4 .point-title { color: var(--c-saffron); }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V10 — Ladder monkeys left, right-aligned text
+        ══════════════════════════════════════════════════════════════ */
+        .v10 .ladder-monkey { position: absolute; left: 0; z-index: 1; }
+        .v10 .lm-1 { top: 0; height: 220px; opacity: 0.15; transform: translateX(-30px); }
+        .v10 .lm-2 { top: 180px; height: 260px; opacity: 0.3; transform: translateX(-15px) scaleX(-1); }
+        .v10 .lm-3 { top: 400px; height: 300px; opacity: 0.5; }
+        .v10 .lm-4 { top: 560px; height: 360px; opacity: 0.8; transform: translateX(20px) scaleX(-1); }
+
+        .v10 .content {
+            position: absolute; top: 36px; left: 340px; right: 50px;
+            bottom: 30px; z-index: 2;
+            display: flex; flex-direction: column;
+        }
+        .v10 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson);
+            letter-spacing: 0.05em; text-align: right;
+        }
+        .v10 .section-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 68px; text-align: right;
+            color: var(--c-tangerine);
+            letter-spacing: -0.03em; line-height: 0.9;
+            text-transform: uppercase; margin-bottom: 4px;
+        }
+        .v10 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 22px; text-align: right;
+            color: var(--c-rose); line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .v10 .points {
+            display: flex; flex-direction: column;
+            gap: 22px; text-align: right;
+        }
+        .v10 .point-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em; color: #000;
+        }
+        .v10 .point-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 19px;
+            text-transform: uppercase; line-height: 1;
+            margin-bottom: 2px;
+            white-space: nowrap;
+        }
+        .v10 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; line-height: 1.35;
+            max-width: 700px; margin-left: auto;
+            color: var(--text-dark);
+        }
+        .v10 .p1 .point-title { color: var(--c-crimson); }
+        .v10 .p2 .point-title { color: var(--c-violet); }
+        .v10 .p3 .point-title { color: var(--c-chartreuse); }
+        .v10 .p4 .point-title { color: var(--c-tangerine); }
+        .v10 .p5 .point-title { color: var(--c-saffron); }
+        .v10 .callout {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 18px; color: var(--c-crimson);
+            line-height: 1.3; margin-top: auto; text-align: right;
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V11 — Billboard giant title behind monkey, columns bottom
+        ══════════════════════════════════════════════════════════════ */
+        .v11 .section-num {
+            position: absolute; top: 16px; left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+            z-index: 5;
+        }
+        .v11 .billboard-title {
+            position: absolute; top: 30px; left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 200px; color: var(--c-violet);
+            opacity: 0.18; letter-spacing: -0.02em;
+            text-transform: uppercase; white-space: nowrap;
+            z-index: 2; line-height: 1;
+        }
+        .v11 .monkey-billboard {
+            position: absolute; top: 0; left: 50%;
+            transform: translateX(-50%);
+            height: 380px; z-index: 1;
+        }
+        .v11 .content {
+            position: absolute; bottom: 40px;
+            left: var(--pad); right: var(--pad); z-index: 3;
+        }
+        .v11 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 36px; text-align: center;
+            color: var(--c-rose);
+            margin-bottom: 32px; max-width: 800px;
+            margin-left: auto; margin-right: auto;
+            line-height: 1.2;
+        }
+        .v11 .point-row {
+            display: flex; gap: 30px; justify-content: center;
+        }
+        .v11 .point-col { width: 300px; text-align: center; }
+        .v11 .point-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            display: block; margin-bottom: 6px; color: #000;
+        }
+        .v11 .point-title {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 18px; text-transform: uppercase;
+            line-height: 0.95; margin-bottom: 6px;
+        }
+        .v11 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; color: var(--text-dark); line-height: 1.35;
+        }
+        .v11 .c1 .point-title { color: var(--c-crimson); }
+        .v11 .c2 .point-title { color: var(--c-chartreuse); }
+        .v11 .c3 .point-title { color: var(--c-violet); }
+        .v11 .c4 .point-title { color: var(--c-saffron); }
+        .v11 .c5 .point-title { color: var(--c-tangerine); }
+        .v11 .c6 .point-title { color: var(--c-rose); }
+
+        /* V11 loop — circular flow layout */
+        .v11.loop-slide .billboard-title {
+            position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 52px; text-transform: uppercase;
+            color: var(--c-rose); z-index: 3; white-space: nowrap;
+        }
+        .v11.loop-slide .monkey-billboard { display: none; }
+        .v11.loop-slide .section-num {
+            display: block; position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em; z-index: 3; text-align: center;
+        }
+        .v11.loop-slide .content {
+            position: absolute; top: 80px; bottom: 0; left: 0; right: 0; z-index: 2;
+        }
+        .v11.loop-slide .hero-text { display: none; }
+        .v11.loop-slide .step-grid {
+            position: relative;
+            width: 100%; height: 100%;
+        }
+        .v11.loop-slide .step-grid .point-col {
+            position: absolute;
+            width: 340px;
+            text-align: center;
+            padding: 8px 14px;
+        }
+        .v11.loop-slide .step-monkey {
+            height: 50px; margin-bottom: 4px; object-fit: contain;
+        }
+        .v11.loop-slide .step-num { display: none; }
+        .v11.loop-slide .point-title { font-size: 20px; margin-bottom: 4px; }
+        .v11.loop-slide .point-body { font-size: 18px; }
+        .v11.loop-slide .loop-arrow {
+            position: absolute; z-index: 3;
+        }
+        .v11.loop-slide .loop-arrow img {
+            width: 50px; height: auto;
+        }
+        /* Box positions — clockwise: 1=top-center, 2=top-right, 3=mid-right, 4=bottom-center, 5=mid-left, 6=top-left */
+        .v11.loop-slide .c1 { top: 6px; left: 50%; transform: translateX(-50%); }
+        .v11.loop-slide .c6 { top: 55px; left: 30px; }
+        .v11.loop-slide .c2 { top: 55px; right: 30px; }
+        .v11.loop-slide .c5 { top: 370px; left: 30px; }
+        .v11.loop-slide .c3 { top: 370px; right: 30px; }
+        .v11.loop-slide .c4 { bottom: 36px; left: 50%; transform: translateX(-50%); }
+        /* Arrow positions — between each pair, clockwise */
+        .v11.loop-slide .arrow-1-2 { top: 40px; left: 920px; }
+        .v11.loop-slide .arrow-1-2 img { transform: rotate(45deg); }
+        .v11.loop-slide .arrow-2-3 { top: 290px; right: 170px; }
+        .v11.loop-slide .arrow-2-3 img { transform: rotate(90deg); }
+        .v11.loop-slide .arrow-3-4 { top: 510px; right: 420px; }
+        .v11.loop-slide .arrow-3-4 img { transform: rotate(135deg) scaleY(-1); }
+        .v11.loop-slide .arrow-4-5 { top: 515px; left: 420px; }
+        .v11.loop-slide .arrow-4-5 img { transform: rotate(-135deg) scaleY(-1); }
+        .v11.loop-slide .arrow-5-6 { top: 295px; left: 170px; }
+        .v11.loop-slide .arrow-5-6 img { transform: rotate(-90deg); }
+        .v11.loop-slide .arrow-6-1 { top: 35px; left: 420px; }
+        .v11.loop-slide .arrow-6-1 img { transform: rotate(-45deg); }
+        .v11.loop-slide .loop-center-logo {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, calc(-50% - 40px));
+            z-index: 1;
+        }
+        .v11.loop-slide .loop-center-logo img {
+            width: 280px; height: auto;
+        }
+
+        /* V11 product overview — 3 layer columns */
+        .v11.product-slide .section-num { top: 10px; }
+        .v11.product-slide .billboard-title { font-size: 100px; top: 28px; color: var(--c-saffron); }
+        .v11.product-slide .monkey-billboard { height: 300px; top: 100px; opacity: 1; }
+        .v11.product-slide .content { top: 410px; bottom: 30px; left: var(--pad); right: var(--pad); }
+        .v11.product-slide .hero-text { display: none; }
+        .v11.product-slide .point-row { gap: 40px; }
+        .v11.product-slide .point-col { width: 400px; text-align: left; padding-left: 18px; border-left: 3px solid currentColor; }
+        .v11.product-slide .point-col.c1 { border-color: var(--c-crimson); }
+        .v11.product-slide .point-col.c2 { border-color: var(--c-chartreuse); }
+        .v11.product-slide .point-col.c3 { border-color: var(--c-violet); }
+        .v11.product-slide .layer-label {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.06em;
+            color: var(--text-mid); text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .v11.product-slide .point-title { font-size: 20px; text-align: left; margin-bottom: 8px; }
+        .v11.product-slide .point-body { font-size: 18px; text-align: left; line-height: 1.35; }
+        .v11.product-slide .point-body li {
+            margin-bottom: 14px;
+            list-style: none;
+            margin-left: 0;
+        }
+        .v11.product-slide .point-body li strong {
+            display: block;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+
+        /* ══════════════════════════════════════════════════════════════
+           V12 — Left monkey+title column, right text with bordered points
+        ══════════════════════════════════════════════════════════════ */
+        .v12 .content {
+            position: absolute; inset: 0;
+            padding: 40px 60px; z-index: 2;
+            display: flex; gap: 40px;
+        }
+        .v12 .left-col {
+            flex: 0 0 420px;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+        }
+        .v12 .section-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+            text-align: left; align-self: flex-start; margin-bottom: 2px;
+        }
+        .v12 .monkey-inline { height: 420px; margin-bottom: 16px; }
+        .v12 .section-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 70px; text-align: center;
+            color: var(--c-rose); text-transform: uppercase;
+            line-height: 0.9;
+        }
+        .v12 .right-col {
+            flex: 1; display: flex; flex-direction: column;
+            justify-content: center;
+        }
+        .v12 .hero-text {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 34px; color: var(--text-dark);
+            line-height: 1.05; letter-spacing: -0.02em;
+            margin-bottom: 28px;
+        }
+        .v12 .points {
+            display: flex; flex-direction: column; gap: 44px;
+        }
+        .v12 .point {
+            padding-left: 22px;
+            border-left: 3px solid currentColor;
+        }
+        .v12 .point-num {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 11px; letter-spacing: 0.05em;
+            color: #000;
+        }
+        .v12 .point-title {
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 28px; text-transform: uppercase;
+            line-height: 0.95; margin-bottom: 3px;
+        }
+        .v12 .point-body {
+            font-family: var(--carrig); font-weight: 300;
+            font-size: 18px; color: var(--text-dark);
+            line-height: 1.35; max-width: 580px;
+        }
+        .v12 .p1 { border-color: var(--c-crimson); }
+        .v12 .p1 .point-title { color: var(--c-crimson); }
+        .v12 .p2 { border-color: var(--c-violet); }
+        .v12 .p2 .point-title { color: var(--c-violet); }
+        .v12 .p3 { border-color: var(--c-chartreuse); }
+        .v12 .p3 .point-title { color: var(--c-chartreuse); }
+        .v12 .p4 { border-color: var(--c-saffron); }
+        .v12 .p4 .point-title { color: var(--c-saffron); }
+
+        /* V12 roadmap — phase labels */
+        .v12 .phase-label {
+            font-family: var(--carrig); font-weight: 900;
+            font-size: 12px; letter-spacing: 0.06em;
+            text-transform: uppercase; color: var(--text-mid);
+            margin-bottom: 2px;
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           DARK BACKGROUND OVERRIDES
+        ══════════════════════════════════════════════════════════════ */
+
+        /* ── Slide 6: VVViral Loop — electric blue #5B65E8 ── */
+        .v11.loop-slide .section-num { color: var(--c-crimson); }
+        .v11.loop-slide .billboard-title { color: var(--c-rose); opacity: 0.2; }
+        .v11.loop-slide .step-num { color: var(--c-crimson); }
+        .v11.loop-slide .point-body { color: var(--text-dark); }
+        .v11.loop-slide .c1 .point-title { color: var(--c-crimson); }
+        .v11.loop-slide .c2 .point-title { color: var(--c-violet); }
+        .v11.loop-slide .c3 .point-title { color: var(--c-chartreuse); }
+        .v11.loop-slide .c4 .point-title { color: var(--c-saffron); }
+        .v11.loop-slide .c5 .point-title { color: var(--c-tangerine); }
+        .v11.loop-slide .c6 .point-title { color: var(--c-rose); }
+
+        /* ── Coconut accents for poolside blue slides ── */
+        .coconut-accent {
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.22;
+            mix-blend-mode: multiply;
+        }
+        .coconut-accent img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Slide 5 — Interface: diagonal scatter, 3 coconuts descending L→R like bouncing */
+        .interface-slide .coco-1 { top: 30px; left: 80px; width: 140px; height: 140px; transform: rotate(-20deg); }
+        .interface-slide .coco-2 { top: 200px; left: 420px; width: 100px; height: 100px; transform: rotate(45deg) scaleX(-1); opacity: 0.16; }
+        .interface-slide .coco-3 { bottom: 60px; right: 100px; width: 180px; height: 180px; transform: rotate(12deg); }
+
+        /* Slide 8 — Market: exploding outward from chart center */
+        .v7 .coco-1 { top: 50px; right: 40px; width: 120px; height: 120px; transform: rotate(15deg); opacity: 0.10; }
+        .v7 .coco-2 { bottom: 80px; left: 30px; width: 90px; height: 90px; transform: rotate(-30deg) scaleX(-1); opacity: 0.08; }
+        .v7 .coco-3 { top: 200px; left: 160px; width: 70px; height: 70px; transform: rotate(55deg); opacity: 0.12; }
+        .v7 .coco-4 { top: 280px; right: 130px; width: 55px; height: 55px; transform: rotate(-65deg) scaleX(-1); opacity: 0.09; }
+        .v7 .coco-5 { top: 160px; right: 250px; width: 40px; height: 40px; transform: rotate(80deg); opacity: 0.07; }
+        .v7 .coco-6 { top: 350px; left: 280px; width: 45px; height: 45px; transform: rotate(-40deg); opacity: 0.06; }
+        .v7 .scatter-monkey { position: absolute; z-index: 1; }
+        .v7 .sm-1 { bottom: 40px; right: 60px; height: 180px; transform: scaleX(-1); opacity: 0.06; }
+        .v7 .sm-2 { top: 80px; left: 20px; height: 130px; transform: rotate(-5deg); opacity: 0.06; }
+        .v7 .sm-3 { top: 180px; left: 80px; height: 100px; transform: rotate(12deg) scaleX(-1); opacity: 0.05; }
+        .v7 .sm-4 { top: 220px; right: 50px; height: 110px; transform: rotate(-15deg); opacity: 0.05; }
+        .v7 .sm-5 { top: 330px; right: 200px; height: 80px; transform: rotate(25deg) scaleX(-1); opacity: 0.04; }
+        .v7 .sm-6 { top: 300px; left: 130px; height: 90px; transform: rotate(-20deg); opacity: 0.04; }
+
+        /* Slide 9 — Competition: two big coconuts flanking the title like sentinels */
+        .v9 .coco-1 { top: 60px; left: 30px; width: 220px; height: 220px; transform: rotate(-10deg); }
+        .v9 .coco-2 { bottom: 40px; right: 30px; width: 200px; height: 200px; transform: rotate(15deg) scaleX(-1); }
+
+        /* Slide 10 — Why Now: ascending trail of 5 coconuts, starting near bottom monkey going up-right */
+        .v10 .coco-1 { bottom: 220px; left: 270px; width: 130px; height: 130px; transform: rotate(5deg); }
+        .v10 .coco-2 { bottom: 330px; left: 420px; width: 105px; height: 105px; transform: rotate(-25deg) scaleX(-1); opacity: 0.19; }
+        .v10 .coco-3 { bottom: 420px; left: 560px; width: 80px; height: 80px; transform: rotate(40deg); opacity: 0.16; }
+        .v10 .coco-4 { top: 180px; left: 680px; width: 60px; height: 60px; transform: rotate(-50deg) scaleX(-1); opacity: 0.13; }
+        .v10 .coco-5 { top: 90px; left: 790px; width: 45px; height: 45px; transform: rotate(70deg); opacity: 0.10; }
+
+        /* Slide 12 — Roadmap: row of 3 along bottom edge like rolling, progressively bigger */
+        .v12 .coco-1 { bottom: 20px; right: 500px; width: 80px; height: 80px; transform: rotate(-30deg); opacity: 0.14; }
+        .v12 .coco-2 { bottom: 15px; right: 300px; width: 120px; height: 120px; transform: rotate(20deg) scaleX(-1); opacity: 0.18; }
+        .v12 .coco-3 { bottom: 10px; right: 80px; width: 170px; height: 170px; transform: rotate(-5deg); }
+
+        /* ── Slide 9: Competition — poolside blue (default) ── */
+        .v9 .section-num { color: var(--c-crimson); }
+
+        /* ── Slide 11: Business Model — poolside blue (default) ── */
+
+        /* ── Slide 14: Thank You — poolside blue (default) ── */
+
+
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 1 — INTRO (V8)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>01</span> — Intro</div>
+        <div class="slide v8 intro-slide" style="background: url('backgrounds/intro%20copy-shadow.png') center/cover no-repeat, #add8e8;">
+            <div class="callout">$124 trillion is changing hands.<br>The next generation collects differently.<br>No platform is built for them — until now.<br><span style="opacity:0.45; font-size:0.55em; font-style: normal;">(Cerulli Associates, 2024)</span></div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>1/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 2 — TRACTION (V2)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>02</span> — Traction</div>
+        <div class="slide v2 traction-slide">
+            <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey monkey-peek" alt="">
+            <div class="top-band">
+                <div class="section-num">01</div>
+                <div class="section-title">Traction</div>
+
+                <div class="hero-text">Fully organic growth since launch in May 2025 —<br>no paid marketing, no incentives, no wash trading.</div>
+                <div class="stat-grid">
+                    <div class="stat-item s1">
+                        <div class="stat-value">3,855 SOL</div>
+                        <div class="stat-label">Total Primary<br>Sales Volume</div>
+                    </div>
+                    <div class="stat-item s2">
+                        <div class="stat-value">641</div>
+                        <div class="stat-label">Launched<br>Collections</div>
+                    </div>
+                    <div class="stat-item s3">
+                        <div class="stat-value">301</div>
+                        <div class="stat-label">Unique<br>Creators</div>
+                    </div>
+                    <div class="stat-item s4">
+                        <div class="stat-value">5,472</div>
+                        <div class="stat-label">Unique<br>Collectors</div>
+                    </div>
+                    <div class="stat-item s5">
+                        <div class="stat-value">3,929</div>
+                        <div class="stat-label">Repeat<br>Collectors</div>
+                    </div>
+                    <div class="stat-item s6">
+                        <div class="stat-value">67,528</div>
+                        <div class="stat-label">NFTs<br>Minted</div>
+                    </div>
+                </div>
+            </div>
+            <div class="monkey-row">
+                <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey" alt="">
+                <img src="backgrounds/monkeys/isolate/03ae7b3b-7903-46e8-9297-ea8cb112283b%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="backgrounds/monkeys/isolate/561671a0-7683-43c7-a85b-d782380031e2%20copy.png" class="monkey" alt="">
+                <img src="backgrounds/monkeys/isolate/19e62c2c-ee8c-4914-8f49-3cdb8c55141d%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="backgrounds/monkeys/isolate/ff99e1f5-7a58-4f63-a9fc-5b59b553773b%20copy.png" class="monkey" alt="">
+                <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey" alt="">
+                <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey" alt="">
+                <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
+                <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="monkey" alt="">
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>2/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 3 — PROBLEM (V1)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>03</span> — Problem</div>
+        <div class="slide v1 problem-slide">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
+            <img src="backgrounds/monkeys/shadow/problem-shadow.png" class="monkey monkey-presenter" alt="">
+            <div class="text-area">
+                <div class="section-num">02</div>
+                <div class="section-title">Problem</div>
+                <div class="hero-text">The basics of a seamless experience for artists and collectors still aren't solved.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have no way to show what they own</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Everything is built for flipping, nothing for collecting</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists and collectors are siloed</div>
+                        <p class="point-body">No platform treats them as one ecosystem</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">No platform recontextualizes bluechip ETH NFTs within today's cultural landscape</p>
+                    </div>
+                </div>
+                <div class="callout">Until these basics are solved, market growth is capped<br>by what the tech can reach — not what the culture can sustain.</div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>3/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 4 — SOLUTION (V1 flipped)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>04</span> — Solution</div>
+        <div class="slide v1 v1-flip">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
+            <img src="backgrounds/monkeys/shadow/monkey2%20copy.png" class="monkey monkey-presenter" alt="">
+            <div class="text-area">
+                <div class="section-num">03</div>
+                <div class="section-title">Solution</div>
+                <div class="hero-text">A cultural platform where artists<br>and collectors grow together.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Gallery + social layer + market</div>
+                        <p class="point-body">Built for cultural growth, not just trading.</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">Side by side, not siloed</div>
+                        <p class="point-body">Artists and collectors grow together.</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Viewing finally works</div>
+                        <p class="point-body">Sharing and showcasing NFTs feels natural.</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">Cross-chain</div>
+                        <p class="point-body">Ethereum's legacy + Solana's energy. One place to grow.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>4/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 5 — INTERFACE: Grid + Mint (V8)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>05</span> — Interface</div>
+        <div class="slide v8 interface-2up">
+            <div class="section-num">04</div>
+            <div class="subtitle">
+                <div class="hero-text">VVV.SO Interface</div>
+            </div>
+            <div class="two-cols">
+                <div class="col c1">
+                    <img src="interface2/discovery-grid.png" class="interface-img" alt="Discovery Grid">
+                    <span class="point-num">01</span>
+                    <div class="point-title">Discovery Grid</div>
+                </div>
+                <div class="col c2">
+                    <img src="interface2/mint-page.png" class="interface-img" alt="Mint Pages">
+                    <span class="point-num">02</span>
+                    <div class="point-title">Mint Pages</div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>5/14</span></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 6 — INTERFACE: Profiles + Galleries (V8)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>06</span> — Interface</div>
+        <div class="slide v8 interface-2up">
+            <div class="section-num">05</div>
+            <div class="subtitle">
+                <div class="hero-text">VVV.SO Interface</div>
+            </div>
+            <div class="two-cols">
+                <div class="col c1">
+                    <img src="interface2/user-profile.png" class="interface-img" alt="User Profiles">
+                    <span class="point-num">03</span>
+                    <div class="point-title">User Profiles</div>
+                </div>
+                <div class="col c2">
+                    <img src="interface2/gallery.png" class="interface-img" alt="User Galleries">
+                    <span class="point-num">04</span>
+                    <div class="point-title">User Galleries</div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>6/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 6 — THE VVVIRAL LOOP (V11)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>07</span> — The VVViral Loop</div>
+        <div class="slide v11 loop-slide">
+            <div class="section-num">06</div>
+            <div class="billboard-title">THE VVVIRAL LOOP</div>
+            <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey monkey-billboard" alt="">
+            <div class="content">
+                <div class="step-grid">
+                    <div class="point-col c1">
+                        <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="step-monkey" alt="">
+                        <div class="point-title">Artists launch<br>new work on VVV</div>
+                    </div>
+                    <div class="point-col c2">
+                        <img src="backgrounds/monkeys/isolate/561671a0-7683-43c7-a85b-d782380031e2%20copy.png" class="step-monkey" alt="">
+                        <div class="point-title">Collectors<br>mint + display</div>
+                    </div>
+                    <div class="point-col c3">
+                        <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="step-monkey" alt="">
+                        <div class="point-title">Discovery spreads through the network</div>
+                    </div>
+                    <div class="point-col c4">
+                        <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="step-monkey" alt="">
+                        <div class="point-title">Secondary market activates</div>
+                    </div>
+                    <div class="point-col c5">
+                        <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="step-monkey" alt="">
+                        <div class="point-title">Reputation builds</div>
+                    </div>
+                    <div class="point-col c6">
+                        <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="step-monkey" alt="">
+                        <div class="point-title">Artists expand into<br>new formats</div>
+                    </div>
+                    <!-- Arrows -->
+                    <div class="loop-arrow arrow-1-2"><img src="icons/arrow.png" alt="→"></div>
+                    <div class="loop-arrow arrow-2-3"><img src="icons/arrow.png" alt="→"></div>
+                    <div class="loop-arrow arrow-3-4"><img src="icons/arrow.png" alt="→"></div>
+                    <div class="loop-arrow arrow-4-5"><img src="icons/arrow.png" alt="→"></div>
+                    <div class="loop-arrow arrow-5-6"><img src="icons/arrow.png" alt="→"></div>
+                    <div class="loop-arrow arrow-6-1"><img src="icons/arrow.png" alt="→"></div>
+                    <div class="loop-center-logo"><img src="backgrounds/intro%20copy-shadow.png" alt="VVV.SO"></div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>7/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 7 — PRODUCT OVERVIEW (V11)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>08</span> — Product Overview</div>
+        <div class="slide v11 product-slide">
+            <div class="section-num">07</div>
+            <div class="billboard-title">PRODUCT</div>
+            <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey monkey-billboard" alt="">
+            <div class="content">
+                <div class="hero-text">Three product layers building<br>the cultural infrastructure.</div>
+                <div class="point-row">
+                    <div class="point-col c1">
+                        <div class="layer-label">Layer 1 — Live</div>
+                        <div class="point-title">Minting + Launchpad</div>
+                        <div class="point-body">
+                            <ul>
+                                <li><strong>NFT minting</strong></li>
+                                <li><strong>$600K+ volume</strong></li>
+                                <li><strong>2.2% platform fee</strong></li>
+                                <li><strong>Product-market fit</strong></li>
+                                <li><strong>Physical Artwork Redemption</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="point-col c2">
+                        <div class="layer-label">Layer 2 — Next</div>
+                        <div class="point-title">Artist + Collector Profiles &amp; Galleries</div>
+                        <div class="point-body">
+                            <ul>
+                                <li><strong>Wallets become galleries</strong></li>
+                                <li><strong>Social by design</strong></li>
+                                <li><strong>Referral links + rewards</strong></li>
+                                <li><strong>Identity layer</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="point-col c3">
+                        <div class="layer-label">Layer 3 — Future</div>
+                        <div class="point-title">Secondary + Social Layer</div>
+                        <div class="point-body">
+                            <ul>
+                                <li><strong>Fully integrated secondary market</strong></li>
+                                <li><strong>Multiple trading modes</strong></li>
+                                <li><strong>Multi-chain secondary trading</strong></li>
+                                <li><strong>Escrowed P2P deals</strong></li>
+                                <li><strong>Collector reputation scores</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>8/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 8 — MARKET OPPORTUNITY (V7)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>09</span> — Market Opportunity</div>
+        <div class="slide v7">
+            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-4"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-5"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-6"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <img src="backgrounds/monkeys/isolate/ff99e1f5-7a58-4f63-a9fc-5b59b553773b%20copy.png" class="scatter-monkey sm-1" alt="">
+            <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="scatter-monkey sm-2" alt="">
+            <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="scatter-monkey sm-3" alt="">
+            <img src="backgrounds/monkeys/isolate/fc4d4ef0-1715-407f-b359-d68691d6905e%20copy.png" class="scatter-monkey sm-4" alt="">
+            <img src="backgrounds/monkeys/isolate/19e62c2c-ee8c-4914-8f49-3cdb8c55141d%20copy.png" class="scatter-monkey sm-5" alt="">
+            <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="scatter-monkey sm-6" alt="">
+            <div class="content">
+                <div class="section-num">08</div>
+                <div class="section-title">Market Opportunity</div>
+                <div class="hero-text">No platform built for culture. VVV changes that.</div>
+
+                <!-- ── Chart ── -->
+                <div class="charts-row">
+                    <div class="chart-panel c1">
+                        <div class="chart-header">
+                            <div class="chart-title">HNW Collectors Purchasing Digital Art</div>
+                        </div>
+                        <div class="chart-subtitle">Share of high-net-worth individuals who purchased digital art</div>
+                        <div class="chart-bars">
+                            <div class="chart-bar-group">
+                                <span class="bar-value">17%</span>
+                                <div class="bar-fill" style="height: 28%;"></div>
+                                <span class="bar-label">2022</span>
+                            </div>
+                            <div class="chart-bar-group">
+                                <span class="bar-value">9%</span>
+                                <div class="bar-fill" style="height: 15%;"></div>
+                                <span class="bar-label">2024</span>
+                            </div>
+                            <div class="chart-bar-group">
+                                <span class="bar-value">51%</span>
+                                <div class="bar-fill" style="height: 85%;"></div>
+                                <span class="bar-label">2025</span>
+                            </div>
+                        </div>
+                        <div class="chart-source" style="position: static; text-align: center; margin-top: 8px;">Art Basel &amp; UBS Survey of Global Collecting 2024; Art Basel &amp; UBS Art Market Report 2026 (Arts Economics)</div>
+                    </div>
+                </div>
+
+                <!-- ── Key Stats ── -->
+                <div class="points">
+                    <div class="point p1">
+                        <div class="point-title" style="font-size: 48px; color: var(--c-crimson);">$57.5B</div>
+                        <p class="point-body">global art market, shifting digital<br>(Art Basel &amp; UBS 2025)</p>
+                    </div>
+                    <div class="point p2">
+                        <div class="point-title" style="font-size: 48px; color: var(--c-saffron);">$124T</div>
+                        <p class="point-body">wealth transfer to<br>digital-native generations</p>
+                    </div>
+                    <div class="point p3">
+                        <div class="point-title" style="font-size: 48px; color: var(--c-rose);">51%</div>
+                        <p class="point-body">of HNW collectors already buy digital art<br>(Art Basel &amp; UBS 2025)</p>
+                    </div>
+                </div>
+                <div class="callout" style="text-align: center; margin-top: 49px;">80%+ of volume flows through platforms with zero social layer or focus on expanding the culture.</div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>9/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 9 — COMPETITION (V9)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>10</span> — Competition</div>
+        <div class="slide v9">
+            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <img src="backgrounds/monkeys/isolate/03ae7b3b-7903-46e8-9297-ea8cb112283b%20copy.png" class="monkey scatter-monkey sm-1" alt="">
+            <img src="backgrounds/monkeys/isolate/19e62c2c-ee8c-4914-8f49-3cdb8c55141d%20copy.png" class="monkey scatter-monkey sm-2" alt="">
+            <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey scatter-monkey sm-3" alt="">
+            <img src="backgrounds/monkeys/isolate/561671a0-7683-43c7-a85b-d782380031e2%20copy.png" class="monkey scatter-monkey sm-4" alt="">
+            <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey scatter-monkey sm-5" alt="">
+            <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey scatter-monkey sm-6" alt="">
+            <div class="center-column">
+                <div class="section-num">09</div>
+                <div class="section-title">Competition</div>
+                <div class="hero-text">Existing platforms optimize for one task.<br>VVV builds the full cultural stack.</div>
+                <div class="points">
+                    <div class="point p1">
+                        <div class="point-title">OpenSea · Magic Eden · Tensor</div>
+                        <p class="point-body">Trading terminals. No social layer, no culture.</p>
+                    </div>
+                    <div class="point p2">
+                        <div class="point-title">LaunchMyNFT</div>
+                        <p class="point-body">Deployment tool. Upload, mint, done. No community.</p>
+                    </div>
+                    <div class="point p3">
+                        <div class="point-title">Zora</div>
+                        <p class="point-body">Speculation layer, not a cultural platform.</p>
+                    </div>
+                    <div class="point p4">
+                        <div class="point-title">VVV.SO: the full cultural stack</div>
+                        <p class="point-body">The only platform unifying minting, galleries, social discovery, reputation, and secondary market into one ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>10/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 10 — BUSINESS MODEL (V4)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>11</span> — Business Model</div>
+        <div class="slide v4">
+            <img src="backgrounds/monkeys/isolate/fc4d4ef0-1715-407f-b359-d68691d6905e%20copy.png" class="monkey monkey-watermark" alt="">
+            <div class="content">
+                <div class="section-num">10</div>
+                <div class="section-title">Business<br>Model</div>
+                <div class="hero-text">Four revenue streams<br>powering sustainable growth.</div>
+                <div class="points-grid">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Primary Market Fees</div>
+                        <p class="point-body">2.2% on all mints. Live today.</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">Secondary Market Fees</div>
+                        <p class="point-body">Fees on all trades, SOL + ETH.</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Physical Redemption + Merch</div>
+                        <p class="point-body">Fees on physical items linked to NFTs.</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">Premium Customization</div>
+                        <p class="point-body">Paid profile and gallery features.</p>
+                    </div>
+                </div>
+                <div class="callout">An end-to-end hub for the entire ecosystem. Everything flows through VVV.</div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>11/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 11 — PRODUCT ROADMAP (V12)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>12</span> — Product Roadmap</div>
+        <div class="slide v12">
+            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="content">
+                <div class="left-col">
+                    <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey monkey-inline" alt="">
+                    <div class="section-num">11</div>
+                    <div class="section-title">Product<br>Roadmap</div>
+                </div>
+                <div class="right-col">
+                    <div class="points">
+                        <div class="point p1">
+                            <div class="phase-label">Q1 2026</div>
+                            <div class="point-title">Artist + Collector Profiles &amp; Galleries</div>
+                            <p class="point-body">Wallets become galleries, optimized for desktop and mobile.</p>
+                        </div>
+                        <div class="point p2">
+                            <div class="phase-label">Q1–Q2 2026</div>
+                            <div class="point-title">Social Layer</div>
+                            <p class="point-body">Follow, notifications, collecting feeds, P2P swaps.</p>
+                        </div>
+                        <div class="point p3">
+                            <div class="phase-label">Q3–Q4 2026</div>
+                            <div class="point-title">Secondary Market</div>
+                            <p class="point-body">Multi-chain trading, P2P escrow, reputation layer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>12/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 12 — TEAM (V2)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>13</span> — Team</div>
+        <div class="slide v2 team-slide">
+            <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey monkey-peek" alt="">
+            <div class="top-band">
+                <div class="section-num">12</div>
+                <div class="section-title">Team</div>
+                <div class="team-row">
+                    <div class="team-col t1">
+                        <img src="backgrounds/monkeys/isolate/jared-monkey%20copy.png" class="team-monkey" alt="">
+                        <div class="team-name">Jared Madere</div>
+                        <div class="team-role">Co-Founder &amp; CEO</div>
+                        <div class="team-bio"><p>Artist, curator, gallerist. Whitney Museum, Istanbul Biennial, Art Basel. Founded Yeche Lange NFT gallery in NYC.</p></div>
+                    </div>
+                    <div class="team-col t2">
+                        <img src="backgrounds/monkeys/isolate/ramon-monkey%20copy.png" class="team-monkey" alt="">
+                        <div class="team-name">Ramon Hungerbühler</div>
+                        <div class="team-role">Co-Founder &amp; COO</div>
+                        <div class="team-bio"><p>Co-founded The Straight and Narrow (2012–2020). NFT creator since 2021. Master's from Zurich University of the Arts.</p></div>
+                    </div>
+                    <div class="team-col t3">
+                        <img src="backgrounds/monkeys/isolate/miles-monkey%20copy.png" class="team-monkey" alt="">
+                        <div class="team-name">Miles Peyton</div>
+                        <div class="team-role">Co-Founder &amp; CTO</div>
+                        <div class="team-bio"><p>Graphics engineer at The New York Times. Founded Purity Finance. CS &amp; Art from Carnegie Mellon, MFA from UCLA under Casey Reas.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>13/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 13 — THANK YOU (V8)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>14</span> — Thank You</div>
+        <div class="slide v8 thankyou-slide">
+            <div class="title-behind">THANK YOU</div>
+            <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey monkey-center" alt="">
+            <div class="subtitle">
+                <div class="hero-text">Thank you!</div>
+            </div>
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-big" alt="VVV.SO">
+            <div class="contact-info">vvv.so</div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>14/14</span></div>
+        </div>
+    </div>
+
+</body>
+</html>
