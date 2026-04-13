@@ -652,21 +652,21 @@
         /* V8 interface-2up — two large images per slide */
         .v8.interface-2up .two-cols {
             position: absolute;
-            top: 80px; bottom: 30px; left: 40px; right: 40px;
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 20px 40px;
+            top: 70px; bottom: 40px; left: 60px; right: 60px;
+            display: flex; gap: 40px;
+            align-items: center; justify-content: center;
         }
         .v8.interface-2up .two-cols .col {
-            text-align: left; display: flex; flex-direction: column;
-            min-height: 0;
+            flex: 1; text-align: left; display: flex; flex-direction: column;
+            align-items: flex-start;
         }
         .v8.interface-2up .two-cols .col .interface-img {
-            width: 100%; flex: 1 1 0; min-height: 0; object-fit: contain; object-position: top center;
+            width: 100%; max-height: 620px; object-fit: contain; object-position: center;
             border-radius: 8px; margin-bottom: 8px;
             box-shadow: 0 2px 12px rgba(0,0,0,0.12);
         }
-        .v8.interface-2up .point-title { font-size: 20px; white-space: nowrap; flex: 0 0 auto; }
-        .v8.interface-2up .point-num { flex: 0 0 auto; margin-bottom: 0; }
+        .v8.interface-2up .point-title { font-size: 20px; white-space: nowrap; }
+        .v8.interface-2up .point-num { margin-bottom: 0; }
         .v8.interface-2up .title-behind { display: none; }
         .v8.interface-2up .monkey-center { display: none; }
         .v8.interface-2up .subtitle { top: 28px; left: 50%; transform: translateX(-50%); text-align: center; }
