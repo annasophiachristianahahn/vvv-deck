@@ -464,26 +464,19 @@
             margin-top: 4px; text-align: center;
             letter-spacing: 0.03em; align-self: stretch;
         }
-        /* Chart 1 — indigo → electric blue → sky → green → chartreuse */
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-fill { background: #3a3a8c; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-value { font-size: 14px; color: var(--text-dark); }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-fill { background: #A4C828; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-value { font-size: 24px; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: #3a3a8c; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 28px; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(4) .bar-fill { background: #A4C828; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(4) .bar-value { font-size: 34px; }
-        .v7 .chart-panel.c1 .chart-bar-group:nth-child(5) .bar-fill { background: #3a3a8c; }
-        .v7 .chart-panel.c1 .chart-bar-group:last-child .bar-value { color: #3a3a8c; font-size: 40px; }
-        /* Chart 2 — alternating golden + hot pink */
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(1) .bar-fill { background: #E84393; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(1) .bar-value { font-size: 22px; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(2) .bar-fill { background: #F0D870; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(2) .bar-value { font-size: 26px; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(3) .bar-fill { background: #E84393; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(3) .bar-value { font-size: 34px; }
-        .v7 .chart-panel.c2 .chart-bar-group:nth-child(4) .bar-fill { background: #F0D870; }
-        .v7 .chart-panel.c2 .chart-bar-group:last-child .bar-value { color: #E84393; font-size: 46px; }
+        /* Chart — muted bars for 2022/2024, accent for 2025 comeback */
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-fill { background: #8a8ab0; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(1) .bar-value { font-size: 22px; color: #8a8ab0; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-fill { background: #8a8ab0; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(2) .bar-value { font-size: 18px; color: #8a8ab0; }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-fill { background: var(--c-crimson); }
+        .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 40px; color: var(--c-crimson); }
+        .v7 .chart-subtitle {
+            font-family: var(--carrig-di); font-weight: 400;
+            font-size: 10px; color: var(--text-mid);
+            text-align: center; margin-top: -2px; margin-bottom: 8px;
+            opacity: 0.7;
+        }
 
         /* ── 3-column bullet points below charts ── */
         .v7 .points {
@@ -1409,102 +1402,52 @@
             <div class="content">
                 <div class="section-num">07</div>
                 <div class="section-title">Market Opportunity</div>
-                <div class="hero-text">A $48.7B market with no platform built for fandom.</div>
+                <div class="hero-text">No platform built for culture. VVV changes that.</div>
 
-                <!-- ── Charts ── -->
+                <!-- ── Chart ── -->
                 <div class="charts-row">
                     <div class="chart-panel c1">
                         <div class="chart-header">
-                            <div class="chart-title">NFT Users Worldwide</div>
-                            <div class="chart-source">Statista, DemandSage</div>
+                            <div class="chart-title">HNW Collectors Purchasing Digital Art</div>
                         </div>
+                        <div class="chart-subtitle">Share of high-net-worth individuals who purchased digital art</div>
                         <div class="chart-bars">
                             <div class="chart-bar-group">
-                                <span class="bar-value">0.15M</span>
-                                <div class="bar-fill" style="height: 2%;"></div>
-                                <span class="bar-label">2018</span>
-                            </div>
-                            <div class="chart-bar-group">
-                                <span class="bar-value">8.7M</span>
-                                <div class="bar-fill" style="height: 58%;"></div>
+                                <span class="bar-value">17%</span>
+                                <div class="bar-fill" style="height: 28%;"></div>
                                 <span class="bar-label">2022</span>
                             </div>
                             <div class="chart-bar-group">
-                                <span class="bar-value">10.2M</span>
-                                <div class="bar-fill" style="height: 68%;"></div>
-                                <span class="bar-label">2023</span>
+                                <span class="bar-value">9%</span>
+                                <div class="bar-fill" style="height: 15%;"></div>
+                                <span class="bar-label">H1 2024</span>
                             </div>
                             <div class="chart-bar-group">
-                                <span class="bar-value">11.6M</span>
-                                <div class="bar-fill" style="height: 78%;"></div>
-                                <span class="bar-label">2024</span>
-                            </div>
-                            <div class="chart-bar-group">
-                                <span class="bar-value">11.6M</span>
-                                <div class="bar-fill" style="height: 78%;"></div>
+                                <span class="bar-value">51%</span>
+                                <div class="bar-fill" style="height: 85%;"></div>
                                 <span class="bar-label">2025</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="chart-panel c2">
-                        <div class="chart-header">
-                            <div class="chart-title">Monthly Sales Volume, Q4 2024</div>
-                            <div class="chart-source">CryptoSlam</div>
-                        </div>
-                        <div class="chart-bars">
-                            <div class="chart-bar-group">
-                                <span class="bar-value">$303M</span>
-                                <div class="bar-fill" style="height: 35%;"></div>
-                                <span class="bar-label">Sep</span>
-                            </div>
-                            <div class="chart-bar-group">
-                                <span class="bar-value">$353M</span>
-                                <div class="bar-fill" style="height: 40%;"></div>
-                                <span class="bar-label">Oct</span>
-                            </div>
-                            <div class="chart-bar-group">
-                                <span class="bar-value">$562M</span>
-                                <div class="bar-fill" style="height: 64%;"></div>
-                                <span class="bar-label">Nov</span>
-                            </div>
-                            <div class="chart-bar-group">
-                                <span class="bar-value">$877M</span>
-                                <div class="bar-fill" style="height: 100%;"></div>
-                                <span class="bar-label">Dec</span>
-                            </div>
-                        </div>
+                        <div class="chart-source" style="position: static; text-align: center; margin-top: 8px;">Art Basel &amp; UBS Survey of Global Collecting 2024; Art Basel &amp; UBS Art Market Report 2026 (Arts Economics)</div>
                     </div>
                 </div>
 
-                <!-- ── Points ── -->
+                <!-- ── Key Stats ── -->
                 <div class="points">
                     <div class="point p1">
-                        <span class="point-num">01</span>
-                        <div class="point-title">$48.7B market, 2025</div>
-                        <p class="point-body">All trading, no culture. 85% of volume flows through platforms with no social layer, no identity, no community. Just trading. <span style="opacity:0.6; font-size:0.85em;">(Source: Precedence Research, 2025)</span></p>
+                        <div class="point-title" style="font-size: 48px; color: var(--c-crimson);">$57.5B</div>
+                        <p class="point-body">global art market, shifting digital<br>(Art Basel &amp; UBS 2025)</p>
                     </div>
                     <div class="point p2">
-                        <span class="point-num">02</span>
-                        <div class="point-title">Built for growth, not flipping</div>
-                        <p class="point-body">Artists and collectors need spaces to start small and grow together.</p>
+                        <div class="point-title" style="font-size: 48px; color: var(--c-saffron);">$124T</div>
+                        <p class="point-body">wealth transfer to<br>digital-native generations</p>
                     </div>
                     <div class="point p3">
-                        <span class="point-num">03</span>
-                        <div class="point-title">The 2021 cycle was a beginning, not an ending</div>
-                        <p class="point-body">The boom-and-bust burned speculators but proved demand. What survived is a permanent behavioral shift — digitally native generations see digital ownership as natural as streaming. As these collectors enter peak spending years, this market doesn't contract. It compounds.</p>
-                    </div>
-                    <div class="point p4">
-                        <span class="point-num">04</span>
-                        <div class="point-title">The gap is massive</div>
-                        <p class="point-body">The next dominant platform won't be another marketplace — it will be the cultural layer where collecting begins.</p>
-                    </div>
-                    <div class="point p5">
-                        <span class="point-num">05</span>
-                        <div class="point-title">Early-stage culture is unserved</div>
-                        <p class="point-body">No platform supports the messy, identity-driven beginning of the collector funnel.</p>
+                        <div class="point-title" style="font-size: 48px; color: var(--c-rose);">51%</div>
+                        <p class="point-body">of HNW collectors already buy digital art<br>(Art Basel &amp; UBS 2025)</p>
                     </div>
                 </div>
+                <div class="callout" style="text-align: center; margin-top: 12px;">80%+ of this volume flows through platforms with zero social layer.</div>
             </div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>8/14</span></div>
         </div>
