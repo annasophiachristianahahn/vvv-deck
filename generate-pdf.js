@@ -12,7 +12,7 @@ const PAGE_H = 810;
   // Use a very tall viewport so ALL slides are rendered without scrolling
   await page.setViewport({ width: PAGE_W, height: PAGE_H * 20, deviceScaleFactor: 2 });
 
-  const filePath = 'file://' + path.resolve(__dirname, 'workshop.html');
+  const filePath = 'file://' + path.resolve(__dirname, 'v4.html');
   await page.goto(filePath, { waitUntil: 'networkidle0', timeout: 30000 });
 
   // Hide slide labels and margins for clean screenshots
@@ -49,7 +49,7 @@ const PAGE_H = 810;
     margin: 0,
     autoFirstPage: false,
   });
-  const outputPath = path.resolve(__dirname, 'VVV-Deck.pdf');
+  const outputPath = path.resolve(__dirname, 'VVV-Deck-v4.pdf');
   doc.pipe(fs.createWriteStream(outputPath));
 
   for (let i = 0; i < slides.length; i++) {
