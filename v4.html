@@ -355,7 +355,7 @@
             font-family: var(--coconat); font-weight: 700;
             font-size: 96px; color: var(--c-crimson);
             letter-spacing: -0.02em; line-height: 0.9;
-            text-transform: uppercase; margin-bottom: 6px;
+            text-transform: uppercase; margin-bottom: 32px;
         }
         .v4 .hero-text {
             font-family: var(--body); font-weight: 500; font-style: italic;
@@ -736,9 +736,9 @@
         }
         .v9 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 78px; color: var(--c-crimson);
-            line-height: 0.9; text-transform: uppercase;
-            margin-bottom: 8px;
+            font-size: 62px; color: var(--c-crimson);
+            line-height: 0.95; text-transform: uppercase;
+            margin-bottom: 14px;
         }
         .v9 .hero-text {
             font-family: var(--body); font-weight: 500; font-style: italic;
@@ -760,6 +760,55 @@
         .v9 .p2 .point-title { color: var(--c-chartreuse); }
         .v9 .p3 .point-title { color: var(--c-violet); }
         .v9 .p4 .point-title { color: var(--c-saffron); }
+
+        /* ══════════════════════════════════════════════════════════════
+           V9 redesign — "only complete platform" comparison matrix
+        ══════════════════════════════════════════════════════════════ */
+        .v9 .center-column { width: 1180px; margin-top: -20px; }
+        .v9 .hero-text { margin-bottom: 4px; }
+
+        .v9 .comp { position: relative; width: 1120px; margin: 26px auto 0; font-family: var(--body); }
+
+        .v9 .comp-row { position: relative; z-index: 1; display: flex; align-items: stretch; }
+        .v9 .comp-row .rl { flex: 0 0 300px; }
+        .v9 .comp-row .cell { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+        /* colored row labels — palette text only, no tint */
+        .v9 .comp-row.comp-head { border-bottom: 1.5px solid rgba(26,40,54,0.14); }
+        .v9 .comp-row.dat + .comp-row.dat { border-top: 1px solid rgba(26,40,54,0.10); }
+        .v9 .comp-row.r1 .rl { color: var(--c-crimson); }
+        .v9 .comp-row.r2 .rl { color: var(--c-tangerine); }
+        .v9 .comp-row.r3 .rl { color: var(--c-violet); }
+        .v9 .comp-row.r4 .rl { color: var(--c-rose); }
+        .v9 .comp-row.r5 .rl { color: var(--c-saffron); }
+
+        /* row labels */
+        .v9 .comp .rl {
+            display: flex; align-items: center; text-align: left;
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 22px; color: var(--text-dark); line-height: 1.05;
+            padding: 18px 18px 18px 24px;
+        }
+
+        /* header platform names */
+        .v9 .comp-head .cell { justify-content: flex-end; padding-bottom: 18px; }
+        .v9 .comp .pf-name { font-family: var(--coconat); font-weight: 700; font-size: 18px; color: var(--text-mid); line-height: 1.2; text-align: center; }
+        .v9 .comp-head .vvv .pf-name { color: var(--c-chartreuse); font-size: 23px; }
+
+        /* data cell padding */
+        .v9 .comp-row.dat .cell { padding: 17px 8px; }
+
+        /* present — VVV filled check badge */
+        .v9 .comp .check { width: 36px; height: 36px; border-radius: 50%; background: var(--c-chartreuse); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 9px rgba(106,154,26,0.30); }
+        .v9 .comp .check svg { width: 19px; height: 19px; }
+        .v9 .comp .check svg path { stroke: #fff; }
+        /* present — competitor lighter outline check */
+        .v9 .comp .check.alt { background: transparent; box-shadow: none; width: auto; height: auto; }
+        .v9 .comp .check.alt svg { width: 27px; height: 27px; }
+        .v9 .comp .check.alt svg path { stroke: var(--c-chartreuse); }
+
+        /* absent — muted dash */
+        .v9 .comp .nope { width: 22px; height: 0; border-top: 2.5px solid rgba(26,40,54,0.22); }
 
 
         /* ══════════════════════════════════════════════════════════════
@@ -1024,7 +1073,7 @@
             margin-bottom: 28px;
         }
         .v12 .points {
-            display: flex; flex-direction: column; gap: 44px;
+            display: flex; flex-direction: column; gap: 30px;
         }
         .v12 .point {
             padding-left: 22px;
@@ -1146,7 +1195,7 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>01</span> — Intro</div>
         <div class="slide v8 intro-slide" style="background: url('backgrounds/intro%20copy-shadow.png') center/cover no-repeat, #add8e8;">
-            <div class="callout">$124 trillion is changing hands.<br>The next generation collects differently.<br>No platform is built for them — until now.<br><span style="opacity:0.45; font-size:0.55em; font-style: normal;">(Cerulli Associates, 2024)</span></div>
+            <div class="callout">$124 trillion is changing hands.<br>The heirs are digital natives — culture and collecting both live online.<br>No platform is built for them — until now.<br><span style="opacity:0.45; font-size:0.55em; font-style: normal;">(Cerulli Associates, 2024)</span></div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>1/14</span></div>
         </div>
     </div>
@@ -1534,28 +1583,52 @@
             <img src="backgrounds/monkeys/isolate/19e62c2c-ee8c-4914-8f49-3cdb8c55141d%20copy.png" class="monkey scatter-monkey sm-2" alt="">
             <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey scatter-monkey sm-3" alt="">
             <img src="backgrounds/monkeys/isolate/561671a0-7683-43c7-a85b-d782380031e2%20copy.png" class="monkey scatter-monkey sm-4" alt="">
-            <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey scatter-monkey sm-5" alt="">
-            <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey scatter-monkey sm-6" alt="">
             <div class="center-column">
                 <div class="section-num">09</div>
-                <div class="section-title">Competition</div>
-                <div class="hero-text">Existing platforms optimize for one task.<br>VVV builds the full cultural stack.</div>
-                <div class="points">
-                    <div class="point p1">
-                        <div class="point-title">OpenSea · Magic Eden · Tensor</div>
-                        <p class="point-body">Trading terminals. No social layer, no culture.</p>
+                <div class="section-title">VVV is the only<br>complete platform</div>
+                <div class="comp">
+                    <div class="comp-row comp-head">
+                        <div class="rl"></div>
+                        <div class="cell vvv"><span class="pf-name">VVV.SO</span></div>
+                        <div class="cell"><span class="pf-name">OpenSea<br>Magic Eden<br>Tensor</span></div>
+                        <div class="cell"><span class="pf-name">Zora</span></div>
+                        <div class="cell"><span class="pf-name">LaunchMyNFT</span></div>
                     </div>
-                    <div class="point p2">
-                        <div class="point-title">LaunchMyNFT</div>
-                        <p class="point-body">Deployment tool. Upload, mint, done. No community.</p>
+
+                    <div class="comp-row dat r1">
+                        <div class="rl">Mint &amp; launch NFTs</div>
+                        <div class="cell vvv"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="check alt"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
                     </div>
-                    <div class="point p3">
-                        <div class="point-title">Zora</div>
-                        <p class="point-body">Speculation layer, not a cultural platform.</p>
+                    <div class="comp-row dat r2">
+                        <div class="rl">Secondary marketplace</div>
+                        <div class="cell vvv"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                        <div class="cell"><span class="check alt"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
                     </div>
-                    <div class="point p4">
-                        <div class="point-title">VVV.SO: the full cultural stack</div>
-                        <p class="point-body">The only platform unifying minting, galleries, social discovery, reputation, and secondary market into one ecosystem.</p>
+                    <div class="comp-row dat r3">
+                        <div class="rl">Galleries &amp; social discovery</div>
+                        <div class="cell vvv"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                    </div>
+                    <div class="comp-row dat r4">
+                        <div class="rl">Reputation &amp; culture layer</div>
+                        <div class="cell vvv"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                    </div>
+                    <div class="comp-row dat r5">
+                        <div class="rl">RWA redemptions</div>
+                        <div class="cell vvv"><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
+                        <div class="cell"><span class="nope"></span></div>
                     </div>
                 </div>
             </div>
@@ -1573,8 +1646,7 @@
             <img src="backgrounds/monkeys/isolate/fc4d4ef0-1715-407f-b359-d68691d6905e%20copy.png" class="monkey monkey-watermark" alt="">
             <div class="content">
                 <div class="section-num">10</div>
-                <div class="section-title">Business<br>Model</div>
-                <div class="hero-text">Four revenue streams<br>powering sustainable growth.</div>
+                <div class="section-title">Four Revenue<br>Streams</div>
                 <div class="points-grid">
                     <div class="point p1">
                         <span class="point-num">01</span>
@@ -1615,23 +1687,28 @@
             <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
             <div class="content">
                 <div class="left-col">
-                    <img src="backgrounds/monkeys/isolate/6905d8f3-6a39-49b1-9607-1437c497f32c%20copy.png" class="monkey monkey-inline" alt="">
+                    <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey monkey-inline" alt="">
                     <div class="section-num">11</div>
                     <div class="section-title">Product<br>Roadmap</div>
                 </div>
                 <div class="right-col">
                     <div class="points">
                         <div class="point p1">
+                            <div class="phase-label">Q2 2025</div>
+                            <div class="point-title">Minting + Launchpad</div>
+                            <p class="point-body">Already live — $600K+ minted across 641 collections — customizable drops become cultural events.</p>
+                        </div>
+                        <div class="point p2">
                             <div class="phase-label">Q1 2026</div>
                             <div class="point-title">Artist + Collector Profiles &amp; Galleries</div>
                             <p class="point-body">Wallets become galleries, optimized for desktop and mobile.</p>
                         </div>
-                        <div class="point p2">
+                        <div class="point p3">
                             <div class="phase-label">Q1–Q2 2026</div>
                             <div class="point-title">Social Layer</div>
                             <p class="point-body">Follow, notifications, collecting feeds, P2P swaps.</p>
                         </div>
-                        <div class="point p3">
+                        <div class="point p4">
                             <div class="phase-label">Q3–Q4 2026</div>
                             <div class="point-title">Secondary Market</div>
                             <p class="point-body">Multi-chain trading, P2P escrow, reputation layer.</p>
