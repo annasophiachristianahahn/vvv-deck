@@ -124,10 +124,10 @@
             margin-bottom: 6px;
         }
         .v1 .hero-text {
-            font-family: var(--body); font-weight: 500; font-style: italic;
-            font-size: 36px; color: var(--text-dark);
-            line-height: 1.1; letter-spacing: -0.02em;
-            margin-bottom: 18px; max-width: 600px;
+            font-family: var(--coconat); font-weight: 700;
+            font-size: 38px; color: var(--text-dark);
+            line-height: 1.04; letter-spacing: -0.01em; text-transform: uppercase;
+            margin-bottom: 18px; max-width: 780px;
         }
         .v1 .points { display: flex; flex-direction: column; gap: 20px; flex: 1; overflow: hidden; }
         .v1 .point-num {
@@ -142,7 +142,7 @@
         }
         .v1 .point-body {
             font-family: var(--body); font-weight: 500;
-            font-size: 22px; color: var(--text-dark);
+            font-size: 26px; color: var(--text-dark);
             line-height: 1.35; max-width: 700px;
         }
         .v1 .callout {
@@ -158,7 +158,7 @@
         /* V1 problem-slide — poolside blue (default) */
         .v1.problem-slide .section-num { color: var(--c-crimson); }
         .v1.problem-slide .section-title { color: var(--c-crimson); }
-        .v1.problem-slide .hero-text { color: var(--text-dark); }
+        .v1.problem-slide .hero-text { color: var(--c-crimson); font-size: 60px; line-height: 0.98; }
         .v1.problem-slide .point-num { color: #000; }
         .v1.problem-slide .point-body { color: var(--text-dark); }
         .v1.problem-slide .p1 .point-title { color: var(--c-crimson); }
@@ -166,7 +166,7 @@
         .v1.problem-slide .p3 .point-title { color: var(--c-chartreuse); }
         .v1.problem-slide .p4 .point-title { color: var(--c-tangerine); }
         .v1.problem-slide .callout { color: var(--c-rose); margin-top: 24px; }
-        .v1.problem-slide .points { flex: 0 1 auto; }
+        .v1.problem-slide .points { flex: 1; justify-content: space-between; padding: 8px 0 24px; }
 
         /* V1 flipped — monkey left, text right-justified, logo top-left */
         .v1.v1-flip .monkey-presenter {
@@ -180,11 +180,12 @@
             left: auto; right: var(--pad);
             text-align: right;
         }
-        .v1.v1-flip .hero-text { margin-left: auto; }
+        .v1.v1-flip .hero-text { margin-left: auto; color: var(--c-chartreuse); }
+        .v1.v1-flip .hero-text .sub { display: block; font-size: 0.55em; opacity: 0.8; margin-top: 6px; letter-spacing: 0; }
         .v1.v1-flip .point-body { margin-left: auto; }
         .v1.v1-flip .callout { margin-left: auto; }
         .v1.v1-flip .point-title { white-space: nowrap; }
-        .v1.v1-flip .points { gap: 32px; justify-content: center; }
+        .v1.v1-flip .points { gap: 20px; justify-content: center; }
         .v1.v1-flip .section-title { color: var(--c-chartreuse); }
         .v1.v1-flip .p1 .point-title { color: var(--c-crimson); }
         .v1.v1-flip .p2 .point-title { color: var(--c-violet); }
@@ -227,7 +228,7 @@
             line-height: 1.15;
         }
         .v2.traction-slide .hero-text {
-            font-size: 24px; margin-bottom: 20px;
+            font-size: 38px; margin-bottom: 24px; max-width: 1000px;
         }
         .v2.traction-slide .top-band { top: 66px; }
         .v2.traction-slide .stat-grid { margin-bottom: 0; margin-top: 80px; }
@@ -353,9 +354,9 @@
         }
         .v4 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 96px; color: var(--c-crimson);
+            font-size: 70px; color: var(--c-crimson);
             letter-spacing: -0.02em; line-height: 0.9;
-            text-transform: uppercase; margin-bottom: 32px;
+            text-transform: uppercase; margin-bottom: 22px;
         }
         .v4 .hero-text {
             font-family: var(--body); font-weight: 500; font-style: italic;
@@ -365,7 +366,7 @@
         .v4 .points-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px 60px; max-width: 1000px;
+            gap: 18px 60px; max-width: 1000px;
         }
         .v4 .point-num {
             font-family: var(--body); font-weight: 700;
@@ -379,16 +380,17 @@
         }
         .v4 .point-body {
             font-family: var(--body); font-weight: 500;
-            font-size: 22px; color: var(--text-dark); line-height: 1.35;
+            font-size: 25px; color: var(--text-dark); line-height: 1.35;
         }
         .v4 .p1 .point-title { color: var(--c-crimson); }
         .v4 .p2 .point-title { color: var(--c-violet); }
         .v4 .p3 .point-title { color: var(--c-chartreuse); }
         .v4 .p4 .point-title { color: var(--c-tangerine); }
+        .v4 .p5 .point-title { color: var(--c-saffron); }
         .v4 .callout {
             font-family: var(--body); font-weight: 500; font-style: italic;
             font-size: 22px; color: var(--c-rose);
-            line-height: 1.3; margin-top: auto; margin-bottom: 48px; max-width: 700px;
+            line-height: 1.3; margin-top: 30px; margin-bottom: 48px; max-width: 700px;
         }
 
 
@@ -404,12 +406,13 @@
         .v7 .section-num {
             font-family: var(--carrig); font-weight: 900;
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em;
+            text-align: center;
         }
         .v7 .section-title {
             font-family: var(--coconat); font-weight: 700;
-            font-size: 52px; color: var(--c-rose);
-            line-height: 0.9; text-transform: uppercase;
-            margin-bottom: 4px; white-space: nowrap;
+            font-size: 50px; color: var(--c-rose);
+            line-height: 0.95; text-transform: uppercase;
+            margin-bottom: 8px; text-align: center;
         }
         .v7 .hero-text {
             font-family: var(--body); font-weight: 500; font-style: italic;
@@ -481,9 +484,9 @@
         .v7 .chart-panel.c1 .chart-bar-group:nth-child(3) .bar-value { font-size: 40px; color: #E84393; }
         .v7 .chart-subtitle {
             font-family: var(--body); font-weight: 500; font-style: italic;
-            font-size: 10px; color: var(--text-mid);
-            text-align: center; margin-top: -2px; margin-bottom: 8px;
-            opacity: 0.7;
+            font-size: 19px; color: var(--text-dark);
+            text-align: center; margin-top: 0; margin-bottom: 14px;
+            opacity: 0.85;
         }
 
         /* ── 3-column bullet points below charts ── */
@@ -605,7 +608,7 @@
             transform: translateX(-50%);
             text-align: center; z-index: 3;
             font-family: var(--body); font-weight: 500; font-style: italic;
-            font-size: 22px; color: var(--c-violet);
+            font-size: 26px; color: var(--c-violet);
             line-height: 1.3; max-width: 900px;
         }
         .v8.intro-slide .title-behind {
@@ -939,10 +942,15 @@
 
         /* V11 loop — circular flow layout */
         .v11.loop-slide .billboard-title {
-            position: absolute; top: 24px; left: 50%; transform: translateX(-50%);
+            position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
             font-family: var(--coconat); font-weight: 700;
             font-size: 52px; text-transform: uppercase;
             color: var(--c-rose); z-index: 3; white-space: nowrap;
+        }
+        .v11.loop-slide .loop-sub {
+            position: absolute; top: 74px; left: 50%; transform: translateX(-50%);
+            font-family: var(--body); font-weight: 500; font-style: italic;
+            font-size: 20px; color: var(--c-violet); z-index: 3; white-space: nowrap;
         }
         .v11.loop-slide .monkey-billboard { display: none; }
         .v11.loop-slide .section-num {
@@ -951,7 +959,7 @@
             font-size: 14px; color: var(--c-crimson); letter-spacing: 0.05em; z-index: 3; text-align: center;
         }
         .v11.loop-slide .content {
-            position: absolute; top: 80px; bottom: 0; left: 0; right: 0; z-index: 2;
+            position: absolute; top: 108px; bottom: 0; left: 0; right: 0; z-index: 2;
         }
         .v11.loop-slide .hero-text { display: none; }
         .v11.loop-slide .step-grid {
@@ -1091,7 +1099,7 @@
         }
         .v12 .point-body {
             font-family: var(--body); font-weight: 500;
-            font-size: 22px; color: var(--text-dark);
+            font-size: 25px; color: var(--text-dark);
             line-height: 1.35; max-width: 580px;
         }
         .v12 .p1 { border-color: var(--c-crimson); }
@@ -1102,6 +1110,12 @@
         .v12 .p3 .point-title { color: var(--c-chartreuse); }
         .v12 .p4 { border-color: var(--c-saffron); }
         .v12 .p4 .point-title { color: var(--c-saffron); }
+
+        .v12 .product-sub {
+            font-family: var(--body); font-weight: 500; font-style: italic;
+            font-size: 19px; color: var(--c-violet);
+            text-align: center; line-height: 1.3; margin-top: 12px; max-width: 380px;
+        }
 
         /* V12 roadmap — phase labels */
         .v12 .phase-label {
@@ -1195,23 +1209,99 @@
     <div class="slide-wrapper">
         <div class="slide-label"><span>01</span> — Intro</div>
         <div class="slide v8 intro-slide" style="background: url('backgrounds/intro%20copy-shadow.png') center/cover no-repeat, #add8e8;">
-            <div class="callout">$124 trillion is changing hands.<br>The heirs are digital natives — culture and collecting both live online.<br>No platform is built for them — until now.<br><span style="opacity:0.45; font-size:0.55em; font-style: normal;">(Cerulli Associates, 2024)</span></div>
+            <div class="callout">$124 trillion is changing hands.<br>The next generation builds culture and collects online.<br>No platform is built for them — until now.<br><span style="opacity:0.45; font-size:0.55em; font-style: normal;">(Cerulli Associates, 2024)</span></div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>1/14</span></div>
         </div>
     </div>
 
 
     <!-- ═══════════════════════════════════════════════════════════
-         SLIDE 2 — TRACTION (V2)
+         SLIDE 2 — PROBLEM (V1)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>02</span> — Traction</div>
+        <div class="slide-label"><span>02</span> — Problem</div>
+        <div class="slide v1 problem-slide">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
+            <img src="backgrounds/monkeys/shadow/problem-shadow.png" class="monkey monkey-presenter" alt="">
+            <div class="text-area">
+                <div class="section-num">01</div>
+                <div class="hero-text">No platform nails the basics</div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Viewing is broken</div>
+                        <p class="point-body">Collectors have no way to show what they own</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">No platform feels fun</div>
+                        <p class="point-body">Everything is built for flipping, nothing for collecting</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Artists and collectors are siloed</div>
+                        <p class="point-body">No platform treats them as one ecosystem</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">History is frozen in 2021</div>
+                        <p class="point-body">No platform recontextualizes bluechip ETH NFTs within today's cultural landscape</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>2/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 3 — SOLUTION (V1 flipped)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>03</span> — Solution</div>
+        <div class="slide v1 v1-flip">
+            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
+            <img src="backgrounds/monkeys/shadow/monkey2%20copy.png" class="monkey monkey-presenter" alt="">
+            <div class="text-area">
+                <div class="section-num">02</div>
+                <div class="hero-text">A platform where artists and collectors build flourishing culture <span class="sub">not just flip mints</span></div>
+                <div class="points">
+                    <div class="point p1">
+                        <span class="point-num">01</span>
+                        <div class="point-title">Gallery + social layer + market</div>
+                        <p class="point-body">Built for cultural growth, not just trading.</p>
+                    </div>
+                    <div class="point p2">
+                        <span class="point-num">02</span>
+                        <div class="point-title">Side by side, not siloed</div>
+                        <p class="point-body">Artists and collectors grow together.</p>
+                    </div>
+                    <div class="point p3">
+                        <span class="point-num">03</span>
+                        <div class="point-title">Viewing finally works</div>
+                        <p class="point-body">Sharing and showcasing NFTs feels natural.</p>
+                    </div>
+                    <div class="point p4">
+                        <span class="point-num">04</span>
+                        <div class="point-title">Cross-chain</div>
+                        <p class="point-body">Ethereum's legacy + Solana's energy. One place to grow.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer"><span>vvv.so</span><span></span><span>3/14</span></div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SLIDE 4 — TRACTION (V2)
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-wrapper">
+        <div class="slide-label"><span>04</span> — Traction</div>
         <div class="slide v2 traction-slide">
             <img src="backgrounds/monkeys/isolate/monkey2%20copy.png" class="monkey monkey-peek" alt="">
             <div class="top-band">
-                <div class="section-num">01</div>
-                <div class="section-title">Traction</div>
-
+                <div class="section-num">03</div>
                 <div class="hero-text">Fully organic growth since launch in May 2025 —<br>no paid marketing, no incentives, no wash trading.</div>
                 <div class="stat-grid">
                     <div class="stat-item s1">
@@ -1252,86 +1342,6 @@
                 <img src="backgrounds/monkeys/isolate/91f10ea6-3b69-4d33-b0ac-dae569b783bf%20copy.png" class="monkey" alt="">
                 <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="monkey" alt="" style="transform: scaleX(-1);">
                 <img src="backgrounds/monkeys/isolate/a7a264b3-28c4-4e55-b331-7025239beff5%20copy.png" class="monkey" alt="">
-            </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>2/14</span></div>
-        </div>
-    </div>
-
-
-    <!-- ═══════════════════════════════════════════════════════════
-         SLIDE 3 — PROBLEM (V1)
-    ═══════════════════════════════════════════════════════════ -->
-    <div class="slide-wrapper">
-        <div class="slide-label"><span>03</span> — Problem</div>
-        <div class="slide v1 problem-slide">
-            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
-            <img src="backgrounds/monkeys/shadow/problem-shadow.png" class="monkey monkey-presenter" alt="">
-            <div class="text-area">
-                <div class="section-num">02</div>
-                <div class="section-title">Problem</div>
-                <div class="hero-text">The basics of a seamless experience for artists and collectors still aren't solved.</div>
-                <div class="points">
-                    <div class="point p1">
-                        <span class="point-num">01</span>
-                        <div class="point-title">Viewing is broken</div>
-                        <p class="point-body">Collectors have no way to show what they own</p>
-                    </div>
-                    <div class="point p2">
-                        <span class="point-num">02</span>
-                        <div class="point-title">No platform feels fun</div>
-                        <p class="point-body">Everything is built for flipping, nothing for collecting</p>
-                    </div>
-                    <div class="point p3">
-                        <span class="point-num">03</span>
-                        <div class="point-title">Artists and collectors are siloed</div>
-                        <p class="point-body">No platform treats them as one ecosystem</p>
-                    </div>
-                    <div class="point p4">
-                        <span class="point-num">04</span>
-                        <div class="point-title">History is frozen in 2021</div>
-                        <p class="point-body">No platform recontextualizes bluechip ETH NFTs within today's cultural landscape</p>
-                    </div>
-                </div>
-            </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>3/14</span></div>
-        </div>
-    </div>
-
-
-    <!-- ═══════════════════════════════════════════════════════════
-         SLIDE 4 — SOLUTION (V1 flipped)
-    ═══════════════════════════════════════════════════════════ -->
-    <div class="slide-wrapper">
-        <div class="slide-label"><span>04</span> — Solution</div>
-        <div class="slide v1 v1-flip">
-            <img src="https://pub-8f7214e97fbf4eb0bfb12d1927000ed6.r2.dev/icons/cutout-2.png" class="logo-corner" alt="VVV.SO">
-            <img src="backgrounds/monkeys/shadow/monkey2%20copy.png" class="monkey monkey-presenter" alt="">
-            <div class="text-area">
-                <div class="section-num">03</div>
-                <div class="section-title">Solution</div>
-                <div class="hero-text">A cultural platform where artists<br>and collectors grow together.</div>
-                <div class="points">
-                    <div class="point p1">
-                        <span class="point-num">01</span>
-                        <div class="point-title">Gallery + social layer + market</div>
-                        <p class="point-body">Built for cultural growth, not just trading.</p>
-                    </div>
-                    <div class="point p2">
-                        <span class="point-num">02</span>
-                        <div class="point-title">Side by side, not siloed</div>
-                        <p class="point-body">Artists and collectors grow together.</p>
-                    </div>
-                    <div class="point p3">
-                        <span class="point-num">03</span>
-                        <div class="point-title">Viewing finally works</div>
-                        <p class="point-body">Sharing and showcasing NFTs feels natural.</p>
-                    </div>
-                    <div class="point p4">
-                        <span class="point-num">04</span>
-                        <div class="point-title">Cross-chain</div>
-                        <p class="point-body">Ethereum's legacy + Solana's energy. One place to grow.</p>
-                    </div>
-                </div>
             </div>
             <div class="slide-footer"><span>vvv.so</span><span></span><span>4/14</span></div>
         </div>
@@ -1399,6 +1409,7 @@
         <div class="slide v11 loop-slide">
             <div class="section-num">06</div>
             <div class="billboard-title">THE VVVIRAL LOOP</div>
+            <div class="loop-sub">Our Unique Flywheel</div>
             <img src="backgrounds/monkeys/isolate/491ac856-ea59-44d4-89ab-c93a4a36a8a8%20copy.png" class="monkey monkey-billboard" alt="">
             <div class="content">
                 <div class="step-grid">
@@ -1442,53 +1453,42 @@
 
 
     <!-- ═══════════════════════════════════════════════════════════
-         SLIDE 7 — PRODUCT OVERVIEW (V11)
+         SLIDE 8 — PRODUCT (V12)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
-        <div class="slide-label"><span>08</span> — Product Overview</div>
-        <div class="slide v11 product-slide">
-            <div class="section-num">07</div>
-            <div class="billboard-title">PRODUCT</div>
-            <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey monkey-billboard" alt="">
+        <div class="slide-label"><span>08</span> — Product</div>
+        <div class="slide v12">
+            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
+            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
             <div class="content">
-                <div class="hero-text">Three product layers building<br>the cultural infrastructure.</div>
-                <div class="point-row">
-                    <div class="point-col c1">
-                        <div class="layer-label">Layer 1 — Live</div>
-                        <div class="point-title">Minting + Launchpad</div>
-                        <div class="point-body">
-                            <ul>
-                                <li><strong>NFT minting</strong></li>
-                                <li><strong>$600K+ volume</strong></li>
-                                <li><strong>2.2% platform fee</strong></li>
-                                <li><strong>Product-market fit</strong></li>
-                                <li><strong>Physical Artwork Redemption</strong></li>
-                            </ul>
+                <div class="left-col">
+                    <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey monkey-inline" alt="">
+                    <div class="section-num">07</div>
+                    <div class="section-title">Product</div>
+                    <div class="product-sub">VVV will corner every aspect of the NFT ecosystem in 24 months</div>
+                </div>
+                <div class="right-col">
+                    <div class="points">
+                        <div class="point p1">
+                            <div class="phase-label">Q2 2025</div>
+                            <div class="point-title">Minting + Launchpad</div>
+                            <p class="point-body">Already live — $600K+ minted across 641 collections. Customizable drops become cultural events.</p>
                         </div>
-                    </div>
-                    <div class="point-col c2">
-                        <div class="layer-label">Layer 2 — Next</div>
-                        <div class="point-title">Artist + Collector Profiles &amp; Galleries</div>
-                        <div class="point-body">
-                            <ul>
-                                <li><strong>Wallets become galleries</strong></li>
-                                <li><strong>Social by design</strong></li>
-                                <li><strong>Referral links + rewards</strong></li>
-                                <li><strong>Identity layer</strong></li>
-                            </ul>
+                        <div class="point p2">
+                            <div class="phase-label">Q1 2026</div>
+                            <div class="point-title">Artist + Collector Profiles &amp; Galleries</div>
+                            <p class="point-body">Wallets become galleries, optimized for desktop and mobile.</p>
                         </div>
-                    </div>
-                    <div class="point-col c3">
-                        <div class="layer-label">Layer 3 — Future</div>
-                        <div class="point-title">Secondary + Social Layer</div>
-                        <div class="point-body">
-                            <ul>
-                                <li><strong>Fully integrated secondary market</strong></li>
-                                <li><strong>Multiple trading modes</strong></li>
-                                <li><strong>Multi-chain secondary trading</strong></li>
-                                <li><strong>Escrowed P2P deals</strong></li>
-                                <li><strong>Collector reputation scores</strong></li>
-                            </ul>
+                        <div class="point p3">
+                            <div class="phase-label">Q1–Q2 2026</div>
+                            <div class="point-title">Social Layer</div>
+                            <p class="point-body">Follow, notifications, collecting feeds, P2P swaps.</p>
+                        </div>
+                        <div class="point p4">
+                            <div class="phase-label">Q3–Q4 2026</div>
+                            <div class="point-title">Secondary Market</div>
+                            <p class="point-body">Multi-chain trading, P2P escrow, reputation layer.</p>
                         </div>
                     </div>
                 </div>
@@ -1518,15 +1518,11 @@
             <img src="backgrounds/monkeys/isolate/c4d584d0-66e2-463b-8cf4-9f2be5c81970%20copy.png" class="scatter-monkey sm-6" alt="">
             <div class="content">
                 <div class="section-num">08</div>
-                <div class="section-title">Market Opportunity</div>
-                <div class="hero-text">No platform built for culture. VVV changes that.</div>
+                <div class="section-title">HNW Collectors<br>Purchasing Digital Art</div>
 
                 <!-- ── Chart ── -->
                 <div class="charts-row">
                     <div class="chart-panel c1">
-                        <div class="chart-header">
-                            <div class="chart-title">HNW Collectors Purchasing Digital Art</div>
-                        </div>
                         <div class="chart-subtitle">Share of high-net-worth individuals who purchased digital art</div>
                         <div class="chart-bars">
                             <div class="chart-bar-group">
@@ -1646,7 +1642,7 @@
             <img src="backgrounds/monkeys/isolate/fc4d4ef0-1715-407f-b359-d68691d6905e%20copy.png" class="monkey monkey-watermark" alt="">
             <div class="content">
                 <div class="section-num">10</div>
-                <div class="section-title">Four Revenue<br>Streams</div>
+                <div class="section-title">Five Revenue<br>Streams</div>
                 <div class="points-grid">
                     <div class="point p1">
                         <span class="point-num">01</span>
@@ -1668,6 +1664,11 @@
                         <div class="point-title">Premium Customization</div>
                         <p class="point-body">Paid profile and gallery features.</p>
                     </div>
+                    <div class="point p5">
+                        <span class="point-num">05</span>
+                        <div class="point-title">Repinning Tools</div>
+                        <p class="point-body">Tools that allow communities to claim stewardship of orphaned bluechips and grails.</p>
+                    </div>
                 </div>
                 <div class="callout">An end-to-end hub for the entire ecosystem. Everything flows through VVV.</div>
             </div>
@@ -1677,52 +1678,7 @@
 
 
     <!-- ═══════════════════════════════════════════════════════════
-         SLIDE 11 — PRODUCT ROADMAP (V12)
-    ═══════════════════════════════════════════════════════════ -->
-    <div class="slide-wrapper">
-        <div class="slide-label"><span>12</span> — Product Roadmap</div>
-        <div class="slide v12">
-            <div class="coconut-accent coco-1"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-2"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="coconut-accent coco-3"><img src="backgrounds/coconut/smooth-coconut.png" alt=""></div>
-            <div class="content">
-                <div class="left-col">
-                    <img src="backgrounds/monkeys/isolate/a712d223-fd8e-4aee-9277-d974a4d9769e%20copy.png" class="monkey monkey-inline" alt="">
-                    <div class="section-num">11</div>
-                    <div class="section-title">Product<br>Roadmap</div>
-                </div>
-                <div class="right-col">
-                    <div class="points">
-                        <div class="point p1">
-                            <div class="phase-label">Q2 2025</div>
-                            <div class="point-title">Minting + Launchpad</div>
-                            <p class="point-body">Already live — $600K+ minted across 641 collections — customizable drops become cultural events.</p>
-                        </div>
-                        <div class="point p2">
-                            <div class="phase-label">Q1 2026</div>
-                            <div class="point-title">Artist + Collector Profiles &amp; Galleries</div>
-                            <p class="point-body">Wallets become galleries, optimized for desktop and mobile.</p>
-                        </div>
-                        <div class="point p3">
-                            <div class="phase-label">Q1–Q2 2026</div>
-                            <div class="point-title">Social Layer</div>
-                            <p class="point-body">Follow, notifications, collecting feeds, P2P swaps.</p>
-                        </div>
-                        <div class="point p4">
-                            <div class="phase-label">Q3–Q4 2026</div>
-                            <div class="point-title">Secondary Market</div>
-                            <p class="point-body">Multi-chain trading, P2P escrow, reputation layer.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide-footer"><span>vvv.so</span><span></span><span>12/14</span></div>
-        </div>
-    </div>
-
-
-    <!-- ═══════════════════════════════════════════════════════════
-         SLIDE 12 — TEAM (V2)
+         SLIDE 11 — TEAM (V2)
     ═══════════════════════════════════════════════════════════ -->
     <div class="slide-wrapper">
         <div class="slide-label"><span>13</span> — Team</div>
